@@ -1,0 +1,318 @@
+{
+  "BRAND": {
+    "PREFIX": "Das",
+    "NAME": "Paradise",
+    "SUFFIX": "Hotel"
+  },
+  "NAV": {
+    "HOME": "Startseite",
+    "ROOMS": "Zimmer",
+    "ABOUT": "Über uns",
+    "PROFILE": "Profil",
+    "SETTINGS": "Einstellungen",
+    "BOOKINGS": "Buchungen",
+    "DASHBOARD": "Dashboard",
+    "UPDATE_PASSWORD": "Passwort aktualisieren"
+  },
+  "TITLE": {
+    "BRAND": "Das Paradise Hotel",
+    "GREETING": "Willkommen",
+    "WELCOME_BACK": "Willkommen zurück",
+    "HOME": "Willkommen im Garten des Paradieses",
+    "ROOMS": "Unsere Luxuszimmer",
+    "ABOUT": "Über uns",
+    "STORY": "Unsere Geschichte",
+    "DASHBOARD": "Ihr Benutzerkonto",
+    "SETTINGS": "Profileinstellungen aktualisieren",
+    "PASSWORD": "Passwort aktualisieren",
+    "BOOKINGS": "Ihre Buchungen",
+    "EDIT": "Buchung bearbeiten",
+    "DATE": "Aufenthalt buchen",
+    "LOCATION": "Unser Standort",
+    "AMENITIES": "Zimmerausstattung & Einrichtungen",
+    "NOT_FOUND": "Seite nicht gefunden",
+    "VERIFY_EMAIL": "Prüfen Sie Ihre E-Mails zur Verifizierung",
+    "RESET_PASSWORD": "Prüfen Sie Ihre E-Mails zum Zurücksetzen des Passworts",
+    "UPDATE_PROFILE": "Profil aktualisieren",
+    "AUTH_ERROR": "E-Mail-Verifizierung fehlgeschlagen",
+    "GENERAL_ERROR": "Ein Fehler ist aufgetreten"
+  },
+  "SUB_TITLE": {
+    "ROOMS": "Gemütliche und raffinierte Zimmer, tief im mystischen Schwarzwald gelegen. Wachen Sie mit dem sanften Schein des Morgennebels auf, der durch die Kiefern zieht, atmen Sie die frische Waldluft ein und lauschen Sie nichts als den Klängen der Natur. Jedes unserer acht Boutique-Zimmer ist als Ihr privater Rückzugsort konzipiert – warm, elegant und vollkommen abgeschieden. Verbringen Sie Ihre Tage auf alten Waldpfaden, entspannen Sie am Feuer oder genießen Sie die friedliche Stille von Ihrem Balkon aus.",
+    "ABOUT": [
+      "Das Paradise Hotel ist ein abgeschiedenes Luxus-Retreat mit {count} Zimmern im Smaragdhain-Tal, einem fiktiven Ort, der vom mystischen Schwarzwald inspiriert ist. Umgeben von hohen Kiefern, Morgennebel und unberührter Natur bietet das Hotel einen intimen Zufluchtsort, an dem Gäste die Welt vergessen und zu sich selbst finden können.",
+      "Die Architektur verbindet Naturstein, warmes Holz und große Panoramafenster – so entsteht eine Harmonie zwischen modernem Luxus und der wilden Natur draußen. Mit nur acht exklusiven Zimmern garantiert das Paradise Hotel Privatsphäre, Ruhe und ein persönliches Erlebnis.",
+      "Es ist ein Ort für Paare, Autoren, Naturliebhaber und alle, die Frieden, frische Luft und den Zauber des Waldes suchen."
+    ],
+    "STORY": [
+      "Seit 1974, eingebettet in die unberührte Schönheit des Smaragdhain-Tals, wurde das Paradise Hotel mit einem Ziel entworfen – einen friedlichen Zufluchtsort zu schaffen, an dem Gäste entschleunigen, durchatmen und sich mit der Natur verbinden können.",
+      "Umgeben von alten Kiefern und sanftem Morgennebel bietet das Hotel nur acht private Zimmer, die jeweils den natürlichen Charme des Waldes hervorheben. Von Panorama-Glasfenstern bis hin zu handgefertigten Holzelementen spiegelt jedes Detail unser Engagement für Komfort und Nachhaltigkeit wider.",
+      "Ob Sie einen romantischen Kurzurlaub, einen kreativen Rückzugsort oder einfach einen ruhigen Platz zum Ausruhen suchen – das Paradise Hotel verspricht ein unvergessliches Erlebnis im Herzen des Schwarzwaldes."
+    ],
+    "DASHBOARD": "Hier finden Sie Ihre Buchungshistorie. Verwalten Sie Ihre persönlichen Informationen und Einstellungen.",
+    "SETTINGS": "Die Angabe der folgenden Informationen macht Ihren Check-in-Prozess schneller und reibungsloser. Bis bald!",
+    "PASSWORD": "Sorgen Sie für die Sicherheit Ihres Kontos, indem Sie Ihr Passwort regelmäßig aktualisieren.",
+    "BOOKINGS": "Überprüfen und verwalten Sie hier Ihre Buchungen. Sie können Details einsehen, Änderungen vornehmen oder Reservierungen stornieren.",
+    "EDIT": "Sie können das Datum und das Formular an Ihre Verfügbarkeit anpassen.",
+    "DATE": "Wählen Sie unten Ihre Reisedaten aus, um die Verfügbarkeit und den Gesamtpreis zu prüfen.",
+    "LOCATION": "Tief eingebettet im idyllischen <strong>Smaragdhain-Tal</strong> im mystischen <strong>Schwarzwald</strong>.",
+    "AMENITIES": "Zimmerausstattung & Einrichtungen",
+    "SELECT_DATES": "Bitte wählen Sie Ihr Anreise- und Abreisedatum.",
+    "NOT_FOUND": "Entschuldigung, die gesuchte Seite existiert nicht.",
+    "LOGIN_MESSAGE": "Bitte wählen Sie eine der folgenden Optionen.",
+    "VERIFY_EMAIL": "Wir haben einen Verifizierungslink an Ihre E-Mail gesendet. Klicken Sie auf den Link, um Ihr Konto zu verifizieren.",
+    "RESET_PASSWORD": "Wir haben einen Link zum Zurücksetzen des Passworts gesendet. Klicken Sie auf den Link, um ein neues Passwort zu erstellen.",
+    "UPDATE_PROFILE": "Halten Sie Ihre Informationen auf dem neuesten Stand."
+  },
+  "BUTTON": {
+    "EXPLORE": "Luxuszimmer entdecken",
+    "BOOK": "Jetzt buchen",
+    "LOGIN": "Anmelden",
+    "REGISTER": "Registrieren",
+    "LOGOUT": "Abmelden",
+    "VIEW": "Details & Reservierung",
+    "BOOKINGS": "Meine Buchungen",
+    "NEW": "Neue Buchung",
+    "EDIT": "Profil bearbeiten",
+    "HOME": "Zurück zur Startseite",
+    "CLEAR": "Daten löschen",
+    "CHANGE": "Daten ändern",
+    "GOOGLE": "Mit Google fortfahren",
+    "RESET_EMAIL": "Reset-Link senden",
+    "VERIFICATION_EMAIL": "Verifizierungs-E-Mail erneut senden",
+    "START_SELECTION": "Zuerst Daten wählen",
+    "CREATE_BOOKING": "Buchung erstellen",
+    "UPDATE_BOOKING": "Buchung aktualisieren",
+    "UPDATE_PASSWORD": "Passwort aktualisieren",
+    "FORGOT_PASSWORD": "Passwort vergessen?",
+    "SAVE": "Änderungen speichern",
+    "CONFIRMING": "Bestätige...",
+    "LOGGING_IN": "Melde an...",
+    "REGISTERING_IN": "Registriere...",
+    "SENDING": "Sende...",
+    "CONNECTING": "Verbinde...",
+    "SAVING": "Speichere...",
+    "UPDATING": "Aktualisiere..."
+  },
+  "LIST_ITEM": {
+    "TAGLINE": "Luxuriöses Wald-Retreat – Smaragdhain-Tal, Schwarzwald",
+    "RIGHTS": "Alle Rechte vorbehalten.",
+    "DESIGNED": "Entworfen mit ❤️ von Onur Yemez",
+    "CONTACT": "Kontakt",
+    "FOLLOW_US": "Folgen Sie uns",
+    "ADDRESS": {
+      "LINE1": "Smaragdhain-Tal",
+      "LINE2": "Schwarzwald",
+      "LINE3": "Deutschland"
+    },
+    "PRIVACY": {
+      "LINE1": "Privatsphäre",
+      "LINE2": "garantiert"
+    },
+    "GUEST": {
+      "PREFIX": "Für bis zu",
+      "SUFFIX": "Gäste"
+    },
+    "GUEST_SINGLE": "Gast",
+    "GUEST_MULTIPLE": "Gäste",
+    "NIGHT": "pro Nacht",
+    "NO_ACCOUNT": "Noch kein Konto?",
+    "HAVE_ACCOUNT": "Bereits ein Konto vorhanden?",
+    "PLEASE_LOGIN": "Bitte melden Sie sich an, um fortzufahren.",
+    "REMEMBER_PASSWORD": "Passwort gemerkt?",
+    "INVALID_CREDENTIALS": "Ungültige E-Mail oder Passwort.",
+    "NO_BOOKINGS": "Sie haben noch keine Buchungen. Besuchen Sie unsere",
+    "NOT_CHANGED": "Vergangene Buchungen können nicht geändert werden",
+    "BOOKED": "Gebucht am",
+    "UPDATE_PROFILE": "Profilbild ändern",
+    "WHERE_FROM": "Woher kommen Sie?"
+  },
+  "ROOMS": {
+    "DESC": "Gemütliche und raffinierte Zimmer, tief im mystischen Schwarzwald. Wachen Sie mit dem sanften Schein des Morgennebels auf, atmen Sie die frische Waldluft ein und genießen Sie die Stille.",
+    "CATEGORY": {
+      "ALL": "Alle Zimmer",
+      "N2": "2 Gäste",
+      "N4": "4 Gäste",
+      "N6": "6 Gäste",
+      "N8": "8-10 Gäste"
+    }
+  },
+  "ROOM": {
+    "Name": "Zimmer",
+    "NAMES": {
+      "TypeA": "Wald-Suite",
+      "TypeB": "Familien-Rückzug",
+      "TypeC": "Luxus-Panorama",
+      "TypeD": "Grand Deluxe"
+    },
+    "DESC": {
+      "TypeA": "Für Paare, die Ruhe und Intimität suchen. Geräumige Suiten mit privaten Balkonen und Blick auf den Kiefernwald. Ausstattung: King-Bett, Kamin, Panorama-Glaswand, Regendusche.",
+      "TypeB": "Perfekt für kleine Familien oder enge Freunde. Dieses Zimmer kombiniert modernen Komfort mit natürlichen Materialien: Holztexturen, sanftes Licht und weite Fenster.",
+      "TypeC": "Ideal für Gruppen oder große Familien. Die Lodge bietet zwei separate Schlafzimmer, einen Wohnbereich mit Kamin und eine voll ausgestattete Küchenzeile.",
+      "TypeD": "Das Kronjuwel des Paradise Hotel – eine luxuriöse Waldvilla für große Familien oder Gruppen. Mit fünf Schlafzimmern, privatem Pool, Außen-Whirlpool und großer Terrasse."
+    }
+  },
+  "BADGE": {
+    "PAST": "Vergangen",
+    "UPCOMING": "Anstehend",
+    "CANCELLED": "Storniert",
+    "LOGGED_IN": "Angemeldet"
+  },
+  "AMENITIES": {
+    "OUTDOOR": "Außenpool",
+    "SPA": "Spa & Sauna",
+    "RESTAURANT": "Restaurant & Frühstücksbuffet",
+    "BAR": "Bar & Lounge",
+    "PARKING": "Kostenloser Parkplatz",
+    "WI_FI": "Hochgeschwindigkeits-WLAN",
+    "CONCIERGE": "24/7 Concierge",
+    "FITNESS": "Fitnessstudio",
+    "EVENT": "Veranstaltungs- & Konferenzsaal",
+    "FAMILY_ROOMS": "Familienzimmer verfügbar",
+    "SECURITY": "24/7 Sicherheitsdienst",
+    "FOREST": "Terrasse mit Waldblick",
+    "COFFEE": "Kaffeemaschine im Zimmer",
+    "MINI_BAR": "Minibar",
+    "TV": "Smart-TV mit Streaming-Diensten",
+    "BATH": "Privates Badezimmer",
+    "BED": "King/Queen Size Bett",
+    "AIR_CONDITIONING": "Klimaanlage",
+    "DINING_SERVICE": "Zimmerservice",
+    "BALCONY": "Balkon mit Aussicht",
+    "HOUSEKEEPING": "Tägliche Reinigung"
+  },
+  "BOOKING": {
+    "NIGHTS_IN": "{count} Nächte in",
+    "TOTAL_PRICE": "Gesamtpreis:",
+    "PER_PERSON": "(pro Person)",
+    "FOR_GUESTS": "(für {count} Gäste)",
+    "STATISTICS": "Statistik",
+    "RECENT_ACTIVITY": "Letzte Aktivitäten",
+    "TOTAL_BOOKINGS": "Buchungen gesamt",
+    "ACTIVE_BOOKINGS": "Aktive Buchungen",
+    "PAST_BOOKINGS": "Vergangene Buchungen",
+    "NO_RECENT_ACTIVITY": "Keine letzten Aktivitäten.",
+    "ROOM": "Zimmer",
+    "REMINDER": "Sie haben eine laufende Reservierung für den oben genannten Zeitraum. Vergessen Sie nicht, Ihre Reservierung abzuschließen oder zu stornieren, bevor Sie mit einer neuen Buchung fortfahren.",
+    "STAYED_FROM": "Aufenthalt von",
+    "TO": "bis"
+  },
+  "FORM": {
+    "FIELD": {
+      "NAME": "Vollständiger Name",
+      "EMAIL": "E-Mail",
+      "PASSWORD": "Passwort",
+      "NEW_PASSWORD": "Neues Passwort",
+      "CONFIRM_PASSWORD": "Passwort bestätigen",
+      "NATIONAL_ID": "Ausweisnummer",
+      "NATIONALITY": "Nationalität",
+      "OBSERVATIONS": "Anmerkungen",
+      "NUM_GUESTS": "Anzahl der Gäste",
+      "ADD_BREAKFAST": "Frühstück für <highlight>{price}</highlight> pro Nacht hinzufügen"
+    },
+    "PLACEHOLDER": {
+      "NAME": "Geben Sie Ihren Namen ein",
+      "EMAIL": "Geben Sie Ihre E-Mail ein",
+      "PASSWORD": "Geben Sie Ihr Passwort ein",
+      "NEW_PASSWORD": "Geben Sie Ihr neues Passwort ein",
+      "CONFIRM_PASSWORD": "Passwort bestätigen",
+      "NATIONAL_ID": "Geben Sie Ihre Ausweisnummer ein",
+      "NATIONALITY": "Wählen Sie Ihre Nationalität",
+      "OBSERVATIONS": "Haben Sie spezielle Wünsche?",
+      "NUM_GUESTS": "Anzahl der Gäste wählen"
+    }
+  },
+  "ERROR": {
+    "AUTH_REQUIRED": "Bitte melden Sie sich an.",
+    "LOGIN_FAILED": "Anmeldung fehlgeschlagen. Bitte prüfen Sie Ihre Daten.",
+    "REGISTER_FAILED": "Registrierung fehlgeschlagen.",
+    "OAUTH_FAILED": "Social Login fehlgeschlagen.",
+    "RESET_MAIL_FAILED": "E-Mail zum Zurücksetzen konnte nicht gesendet werden.",
+    "RESEND_FAILED": "Verifizierungs-E-Mail konnte nicht gesendet werden.",
+    "PASSWORD_UPDATE_FAILED": "Passwort-Update fehlgeschlagen.",
+    "INVALID_EMAIL": "Die E-Mail-Adresse ist ungültig.",
+    "EMAIL_VERIFICATION_FAILED": "E-Mail-Verifizierung fehlgeschlagen.",
+    "RESET_RESTRICTED": "Passwort-Reset für Google-Konten nicht möglich.",
+    "EMAIL_ALREADY_VERIFIED": "E-Mail ist bereits verifiziert.",
+    "PASSWORD_RESET_REQUIRED": "Passwort-Reset erforderlich.",
+
+    "NO_CODE": "Kein Autorisierungscode vorhanden.",
+    "NO_TOKEN": "Kein Token vorhanden.",
+    "INVALID_LINK": "Der Link ist ungültig oder abgelaufen.",
+    "SESSION_FAILED": "Sitzung konnte nicht erstellt werden.",
+    "SESSION_EXPIRED": "Ihre Sitzung ist abgelaufen.",
+    "SAME_PASSWORD": "Das neue Passwort muss sich vom alten unterscheiden.",
+
+    "USER_NOT_FOUND": "Kein Konto mit dieser E-Mail gefunden.",
+    "USER_EXISTS": "Ein Konto mit dieser E-Mail existiert bereits.",
+    "USER_EXISTS_UNVERIFIED": "Konto existiert, aber E-Mail ist nicht verifiziert.",
+    "USER_EXISTS_OAUTH": "Bitte melden Sie sich über Google an.",
+
+    "ROOM_TYPE_INVALID": "Ungültiger Zimmertyp.",
+
+    "BOOKING_OVERLAP": "Das Zimmer ist zu diesen Daten nicht verfügbar.",
+    "BOOKING_NOT_FOUND": "Buchung nicht gefunden.",
+    "BOOKING_FORBIDDEN": "Keine Berechtigung für diese Buchung.",
+    "BOOKING_CREATE_FAILED": "Buchung konnte nicht erstellt werden.",
+    "BOOKING_UPDATE_FAILED": "Buchung konnte nicht aktualisiert werden.",
+    "BOOKING_DELETE_FAILED": "Buchung konnte nicht gelöscht werden.",
+    "BOOKING_DELETE_FORBIDDEN": "Sie haben keine Berechtigung, diese Buchung zu löschen.",
+    "INVALID_BOOKING_DATES": "Die ausgewählten Daten überschneiden sich mit bereits gebuchten Daten. Bitte wählen Sie andere Daten.",
+    "INVALID_SELECTED_RANGE": "Der ausgewählte Datumsbereich ist für dieses Zimmer nicht verfügbar. Bitte wählen Sie einen gültigen Datumsbereich.",
+    "INVALID_SELECTED_GUEST_NUMBER": "Die ausgewählte Gästeanzahl gilt nicht für dieses Zimmer. Die Gästeanzahl wird auf die maximale Kapazität dieses Zimmers gesetzt.",
+    "INVALID_RANGE_AND_GUEST": "Der ausgewählte Datumsbereich ist nicht verfügbar und die Gästeanzahl überschreitet die Kapazität des Zimmers. Bitte wählen Sie einen gültigen Datumsbereich und eine gültige Gästeanzahl.",
+
+    "ROOMS_FETCH_FAILED": "Zimmer konnten nicht geladen werden.",
+    "BOOKINGS_FETCH_FAILED": "Buchungen konnten nicht geladen werden.",
+    "COUNTRIES_FETCH_FAILED": "Länderliste konnte nicht geladen werden.",
+    "EXCHANGE_RATE_FAILED": "Wechselkurse konnten nicht geladen werden.",
+
+    "PROFILE_UPDATE_FAILED": "Profil konnte nicht aktualisiert werden.",
+
+    "REQUIRED": "Dieses Feld ist erforderlich.",
+    "FORM_INVALID": "Das Formular ist ungültig.",
+    "FORM_MISSING": "Bitte alle Pflichtfelder ausfüllen.",
+    "FORM_INVALID_NUMBER": "Ungültiger Zahlenwert.",
+    "FORM_INVALID_DATE": "Ungültiges Datum.",
+    "FORM_EMAIL_REQUIRED": "E-Mail ist erforderlich.",
+    "FORM_EMAIL": "Bitte geben Sie eine gültige E-Mail ein.",
+    "FORM_PASSWORD": "Passwort muss mindestens 6 Zeichen lang sein.",
+    "FORM_PASSWORD_MISMATCH": "Passwörter stimmen nicht überein.",
+    "FORM_NAME": "Name muss mindestens 2 Zeichen lang sein.",
+    "FORM_NATIONAL_ID": "Bitte gültige Ausweisnummer eingeben.",
+    "FORM_OBSERVATION": "Anmerkungen max. 500 Zeichen.",
+    "MIN_2": "Wert muss mindestens 2 sein.",
+
+    "UNKNOWN": "Etwas ist schiefgelaufen.",
+    "INTERNAL_ERROR": "Technisches Problem. Bitte versuchen Sie es gleich erneut."
+  },
+  "SUCCESS": {
+    "LOGOUT": "Erfolgreich abgemeldet.",
+    "LOGGED_IN": "Erfolgreich angemeldet.",
+    "REGISTER": "Registrierung erfolgreich. Willkommen!",
+    "RESET_EMAIL": "E-Mail zum Zurücksetzen wurde gesendet.",
+    "EMAIL_VERIFIED": "E-Mail erfolgreich verifiziert.",
+    "VERIFICATION_EMAIL": "Verifizierungs-E-Mail wurde gesendet.",
+    "PASSWORD_UPDATED": "Passwort erfolgreich aktualisiert.",
+
+    "BOOKING_CREATED": "Buchung erfolgreich erstellt.",
+    "BOOKING_UPDATED": "Buchung erfolgreich aktualisiert.",
+    "BOOKING_DELETED": "Buchung erfolgreich gelöscht.",
+
+    "PROFILE_UPDATED": "Profil erfolgreich aktualisiert."
+  },
+  "LOADING": {
+    "DEFAULT": "Lädt...",
+
+    "ROOMS": "Zimmer werden geladen...",
+    "ROOM": "Zimmerdetails werden geladen...",
+    "ROOM_BOOK_DETAILS": "Buchungsdetails werden geladen...",
+    "COUNTRIES": "Länder werden geladen...",
+    "EXCHANGE_RATES": "Wechselkurse werden geladen...",
+    "ACCOUNT": "Kontodetails werden geladen...",
+    "DASHBOARD": "Dashboard wird geladen...",
+    "SETTINGS": "Profileinstellungen werden geladen...",
+    "BOOKINGS": "Buchungen werden geladen...",
+    "BOOK": "Wird geladen..."
+  }
+}

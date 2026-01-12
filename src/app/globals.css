@@ -1,26 +1,459 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import 'tw-animate-css';
+@import 'tailwindcss';
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --breakpoint-3xl: 120rem;
+  --font-body: 'var(--font-inter)', sans-serif;
+  --font-heading: 'var(--font-playfair)', serif;
+
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-700: var(--color-primary-700);
+  --color-primary-800: var(--color-primary-800);
+  --color-primary-900: var(--color-primary-900);
+  --color-primary-950: var(--color-primary-950);
+
+  --color-accent-50: var(--color-accent-50);
+  --color-accent-100: var(--color-accent-100);
+  --color-accent-200: var(--color-accent-200);
+  --color-accent-300: var(--color-accent-300);
+  --color-accent-400: var(--color-accent-400);
+  --color-accent-500: var(--color-accent-500);
+  --color-accent-600: var(--color-accent-600);
+  --color-accent-700: var(--color-accent-700);
+  --color-accent-800: var(--color-accent-800);
+  --color-accent-900: var(--color-accent-900);
+  --color-accent-950: var(--color-accent-950);
+
+  --color-background: var(--color-primary-900);
+
+  --color-border: var(--color-primary-500);
+  --color-accent-border: var(--color-accent-border);
+
+  --color-btn-primary-bg: var(--color-btn-primary-bg);
+  --color-btn-primary-hover-bg: var(--color-btn-primary-hover-bg);
+  --color-btn-primary-foreground: var(--color-btn-primary-foreground);
+  --color-btn-primary-hover-foreground: var(
+    --color-btn-primary-hover-foreground
+  );
+
+  --color-toggle-bg: var(--color-toggle-bg);
+  --color-toggle-icon: var(--color-toggle-icon);
+  --color-toggle-bg-hover: var(--color-toggle-bg-hover);
+
+  --color-nav-foreground: var(--color-nav-foreground);
+  --color-nav-hover-foreground: var(--color-nav-hover-foreground);
+  --color-nav-active-foreground: var(--color-nav-active-foreground);
+
+  --color-sidebar-foreground: var(--color-sidebar-foreground);
+  --color-sidebar-hover-foreground: var(--color-sidebar-hover-foreground);
+  --color-sidebar-hover-bg: var(--color-sidebar-hover-bg);
+  --color-sidebar-active-foreground: var(--color-sidebar-active-foreground);
+  --color-sidebar-active-bg: var(--color-sidebar-active-bg);
+
+  --color-footer-foreground: var(--color-footer-foreground);
+
+  --color-animate-wave-start: var(--color-animate-wave-start);
+  --color-animate-wave-mid: var(--color-animate-wave-mid);
+  --color-animate-wave-mid2: var(--color-animate-wave-mid2);
+  --color-animate-wave-end: var(--color-animate-wave-end);
+
+  --color-explore-btn: var(--color-explore-btn);
+
+  --color-mobile-nav-bg: var(--color-mobile-nav-bg);
+
+  --color-utility-text: var(--color-utility-text);
+  --color-utility-bg: var(--color-utility-bg);
+  --color-utility-hover-bg: var(--color-utility-hover-bg);
+  --color-utility-hover-text: var(--color-utility-hover-text);
+
+  --color-toast-error-bg: var(--color-toast-error-bg);
+  --color-toast-error-border: var(--color-toast-error-border);
+  --color-toast-error-foreground: var(--color-toast-error-foreground);
+
+  --color-toast-success-bg: var(--color-toast-success-bg);
+  --color-toast-success-border: var(--color-toast-success-border);
+  --color-toast-success-foreground: var(--color-toast-success-foreground);
+
+  --color-toast-info-bg: var(--color-toast-info-bg);
+  --color-toast-info-border: var(--color-toast-info-border);
+  --color-toast-info-foreground: var(--color-toast-info-foreground);
+
+  --color-toast-warning-bg: var(--color-toast-warning-bg);
+  --color-toast-warning-border: var(--color-toast-warning-border);
+  --color-toast-warning-foreground: var(--color-toast-warning-foreground);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  &,
+  &.dark {
+    --color-primary-50: #f2f8f6;
+    --color-primary-100: #d9ebe7;
+    --color-primary-200: #b4d7d0;
+    --color-primary-300: #8fc3b9;
+    --color-primary-400: #6aa091;
+    --color-primary-500: #4b7a6e;
+    --color-primary-600: #375d52;
+    --color-primary-700: #264039;
+    --color-primary-800: #162623;
+    --color-primary-900: #0d1715;
+    --color-primary-950: #060b0a;
+
+    --color-accent-50: #fff9f2;
+    --color-accent-100: #ffeedf;
+    --color-accent-200: #ffd4b3;
+    --color-accent-300: #ffb87f;
+    --color-accent-400: #ff9b4a;
+    --color-accent-500: #e67e2c;
+    --color-accent-600: #b85f20;
+    --color-accent-700: #8a4518;
+    --color-accent-800: #5c2c0f;
+    --color-accent-900: #2e1607;
+    --color-accent-950: #170b04;
+
+    --color-accent-border: var(--color-accent-600);
+
+    --color-btn-primary-bg: var(--color-accent-500);
+    --color-btn-primary-hover-bg: var(--color-accent-600);
+    --color-btn-primary-foreground: var(--color-accent-100);
+    --color-btn-primary-hover-foreground: var(--color-accent-50);
+
+    --color-toggle-bg: #16302a;
+    --color-toggle-icon: #ffffff;
+    --color-toggle-bg-hover: #e8e8e8;
+
+    --color-nav-foreground: var(--color-primary-100);
+    --color-nav-hover-foreground: var(--color-accent-300);
+    --color-nav-active-foreground: var(--color-accent-400);
+
+    --color-sidebar-foreground: var(--color-primary-200);
+    --color-sidebar-hover-foreground: var(--color-primary-100);
+    --color-sidebar-hover-bg: var(--color-primary-500);
+    --color-sidebar-active-foreground: var(--color-accent-400);
+    --color-sidebar-active-bg: var(--color-primary-600);
+
+    --color-footer-foreground: #888888;
+
+    --color-animate-wave-start: var(--color-primary-50);
+    --color-animate-wave-mid: var(--color-primary-300);
+    --color-animate-wave-mid2: var(--color-primary-200);
+    --color-animate-wave-end: var(--color-primary-100);
+
+    --color-explore-btn: var(--color-primary-100);
+
+    --color-mobile-nav-bg: var(--color-primary-950);
+
+    --color-utility-text: var(--color-primary-100);
+    --color-utility-bg: var(--color-accent-500);
+    --color-utility-hover-bg: var(--color-accent-600);
+    --color-utility-hover-text: var(--color-primary-50);
+
+    --color-toast-error-bg: #5c1212;
+    --color-toast-error-border: #a50e0e;
+    --color-toast-error-foreground: #ffcccc;
+    --color-toast-success-bg: #134e4a;
+    --color-toast-success-border: #0e7c78;
+    --color-toast-success-foreground: #ccf9f7;
+    --color-toast-info-bg: #1e3a8a;
+    --color-toast-info-border: #3b82f6;
+    --color-toast-info-foreground: #c2dcff;
+    --color-toast-warning-bg: #663e00;
+    --color-toast-warning-border: #b27c00;
+    --color-toast-warning-foreground: #ffedcc;
+  }
+
+  &.light {
+    --color-primary-50: #0d1715;
+    --color-primary-100: #162623;
+    --color-primary-200: #264039;
+    --color-primary-300: #375d52;
+    --color-primary-400: #4b7a6e;
+    --color-primary-500: #6aa091;
+    --color-primary-600: #8fc3b9;
+    --color-primary-700: #b4d7d0;
+    --color-primary-800: #d9ebe7;
+    --color-primary-900: #f2f8f6;
+    --color-primary-950: #ffffff;
+
+    --color-accent-50: #2e1607;
+    --color-accent-100: #5c2c0f;
+    --color-accent-200: #8a4518;
+    --color-accent-300: #b85f20;
+    --color-accent-400: #e67e2c;
+    --color-accent-500: #ff9b4a;
+    --color-accent-600: #ffb87f;
+    --color-accent-700: #ffd4b3;
+    --color-accent-800: #ffeedf;
+    --color-accent-900: #fff9f2;
+    --color-accent-950: #ffffff;
+
+    --color-accent-border: var(--color-primary-400);
+
+    --color-btn-primary-bg: var(--color-primary-500);
+    --color-btn-primary-hover-bg: var(--color-primary-400);
+    --color-btn-primary-foreground: var(--color-primary-800);
+    --color-btn-primary-hover-foreground: var(--color-primary-950);
+
+    --color-toggle-bg: #ecebeb;
+    --color-toggle-icon: #f97000;
+    --color-toggle-bg-hover: #b95401;
+
+    --color-nav-foreground: var(--color-primary-400);
+    --color-nav-hover-foreground: var(--color-accent-500);
+    --color-nav-active-foreground: var(--color-accent-400);
+
+    --color-sidebar-foreground: var(--color-primary-400);
+    --color-sidebar-hover-foreground: var(--color-primary-300);
+    --color-sidebar-hover-bg: var(--color-primary-700);
+    --color-sidebar-active-foreground: var(--color-accent-400);
+    --color-sidebar-active-bg: var(--color-primary-600);
+
+    --color-footer-foreground: #555555;
+
+    --color-animate-wave-start: var(--color-primary-200);
+    --color-animate-wave-mid: var(--color-primary-300);
+    --color-animate-wave-mid2: var(--color-primary-300);
+    --color-animate-wave-end: var(--color-primary-200);
+
+    --color-explore-btn: var(--color-primary-400);
+
+    --color-mobile-nav-bg: var(--color-primary-50);
+
+    --color-utility-text: var(--color-primary-900);
+    --color-utility-bg: var(--color-primary-500);
+    --color-utility-hover-bg: var(--color-primary-400);
+    --color-utility-hover-text: var(--color-primary-950);
+
+    --color-toast-error-bg: #fddede;
+    --color-toast-error-border: #f19999;
+    --color-toast-error-foreground: #9a0c0c;
+    --color-toast-success-bg: #d1fae5;
+    --color-toast-success-border: #6ee7b7;
+    --color-toast-success-foreground: #0a785b;
+    --color-toast-info-bg: #dbeafe;
+    --color-toast-info-border: #3b82f6;
+    --color-toast-info-foreground: #2a4fb5;
+    --color-toast-warning-bg: #fffae5;
+    --color-toast-warning-border: #facc15;
+    --color-toast-warning-foreground: #7c5700;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.rdp {
+  --rdbp-font-family: var(--font-body) !important;
+  --rdp-cell-size: clamp(28px, 3vw, 42px) !important;
+  --rdp-accent-color: theme(--color-accent-500) !important;
+  --rdp-background-color: theme(--color-accent-600) !important;
+  margin: 0 !important;
+  --rdp-accent-background-color: theme(--color-accent-700) !important;
+}
+
+.rdp select {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: theme(--color-primary-300) !important;
+  background-color: theme(--color-primary-600) !important;
+  color: theme(--color-primary-50) !important;
+  border-radius: 4px !important;
+  font-weight: 400 !important;
+  cursor: pointer !important;
+  border: 1px solid theme(--color-primary-300) !important;
+  transition: 0.2s ease !important;
+  padding: 4px 8px !important;
+}
+
+.rdp select option:checked {
+  background-color: theme(--color-accent-500) !important;
+  color: theme(--color-primary-50) !important;
+  font-weight: 700;
+}
+
+.rdp select option:active {
+  background-color: theme(--color-accent-500) !important;
+  color: white !important;
+  cursor: pointer;
+}
+
+.rdp .rdp-caption {
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+}
+
+.rdp .rdp-weekday {
+  font-size: clamp(0.7rem, 1.2vw, 1rem);
+}
+
+.rdp .rdp-day {
+  font-size: clamp(0.75rem, 1.4vw, 1.1rem);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary-600);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-500);
+}
+
+@layer utilities {
+  @keyframes colorWave {
+    0% {
+      color: var(--color-animate-wave-start);
+    }
+    50% {
+      color: var(--color-animate-wave-mid);
+    }
+    75% {
+      color: var(--color-animate-wave-mid2);
+    }
+    100% {
+      color: var(--color-animate-wave-end);
+    }
+  }
+
+  .animate-color-wave {
+    animation: colorWave 4s ease-in-out infinite;
+  }
+
+  @keyframes fadeTheme {
+    from {
+      opacity: 0.5;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .theme-fade {
+    animation: fadeTheme 0.5s ease forwards;
+  }
+
+  @keyframes toast-slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-20px) scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes toast-slide-up {
+    from {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-16px) scale(0.96);
+    }
+  }
+
+  @keyframes toast-progress {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes toast-error-move {
+    0% {
+      transform: translateX(0);
+    }
+    10% {
+      transform: translateX(-10px);
+    }
+    20% {
+      transform: translateX(10px);
+    }
+    30% {
+      transform: translateX(-8px);
+    }
+    40% {
+      transform: translateX(8px);
+    }
+    50% {
+      transform: translateX(-6px);
+    }
+    60% {
+      transform: translateX(6px);
+    }
+    70% {
+      transform: translateX(-4px);
+    }
+    80% {
+      transform: translateX(4px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes error-icon-bounce {
+    0% {
+      transform: scale(1) rotate(0deg);
+    }
+    25% {
+      transform: scale(1.2) rotate(-12deg);
+    }
+    50% {
+      transform: scale(1.25) rotate(12deg);
+    }
+    75% {
+      transform: scale(1.15) rotate(-6deg);
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+    }
+  }
+
+  @keyframes success-icon-bounce {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .animate-success-icon {
+    animation: success-icon-bounce 0.6s ease-in-out 2;
+  }
+
+  .animate-toast-error-container {
+    animation: toast-error-move 0.8s ease-in-out 1;
+  }
+  .animate-error-icon {
+    animation: error-icon-bounce 0.6s ease-in-out 2;
+  }
+
+  .animate-toast-in {
+    animation: toast-slide-down 0.35s ease-out forwards;
+  }
+
+  .animate-toast-out {
+    animation: toast-slide-up 0.25s ease-in forwards;
+  }
+
+  .animate-toast-progress {
+    animation: toast-progress linear forwards;
+  }
 }

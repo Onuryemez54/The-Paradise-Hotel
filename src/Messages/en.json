@@ -1,0 +1,318 @@
+{
+  "BRAND": {
+    "PREFIX": "The",
+    "NAME": "Paradise",
+    "SUFFIX": "Hotel"
+  },
+  "NAV": {
+    "HOME": "Home",
+    "ROOMS": "Rooms",
+    "ABOUT": "About",
+    "PROFILE": "Profile",
+    "SETTINGS": "Settings",
+    "BOOKINGS": "Bookings",
+    "DASHBOARD": "Dashboard",
+    "UPDATE_PASSWORD": "Update Password"
+  },
+  "TITLE": {
+    "BRAND": "The Paradise Hotel",
+    "GREETING": "Welcome",
+    "WELCOME_BACK": "Welcome Back",
+    "HOME": "Welcome to the garden of paradise",
+    "ROOMS": "Our Luxury Rooms",
+    "ABOUT": "About Us",
+    "STORY": "Our Story",
+    "DASHBOARD": "Your Account Dashboard",
+    "SETTINGS": "Update Your Profile Settings",
+    "PASSWORD": "Update Your Password",
+    "BOOKINGS": "Your Bookings",
+    "EDIT": "Edit Your Booking",
+    "DATE": "Book Your Stay",
+    "LOCATION": "Our Location",
+    "AMENITIES": "Room Amenities & Facilities",
+    "NOT_FOUND": "Page Not Found",
+    "VERIFY_EMAIL": "Check your email to verify your account",
+    "RESET_PASSWORD": "Check your email to reset your password",
+    "UPDATE_PROFILE": "Update Your Profile",
+    "AUTH_ERROR": "Email Verification Failed",
+    "GENERAL_ERROR": "An Error Occurred"
+  },
+  "SUB_TITLE": {
+    "ROOMS": "Cozy yet refined rooms, tucked deep inside Germany's mystical Black Forest. Wake up to the soft glow of morning mist drifting through the pines, breathe in the crisp forest air, and listen to nothing but the sound of nature around you. Each of our eight boutique rooms is designed to feel like your own private hideaway—warm, elegant, and perfectly secluded. Spend your days wandering through ancient woodland trails, relaxing by the fire, or simply enjoying the peaceful silence from your balcony. At night, unwind in the comfort of your room as the forest grows quiet and the stars appear above the treetops.",
+    "ABOUT": [
+      "Paradise Hotel is a secluded {count} rooms luxury retreat hidden deep inside the Emerald Grove Valley, a fictional location inspired by Germany's mystical Black Forest. Surrounded by towering pine trees, morning mist, and untouched nature, the hotel offers an intimate sanctuary where guests disconnect from the world and reconnect with themselves.",
+      "The architecture blends natural stone, warm wood, and large panoramic windows — creating harmony between modern luxury and the wild forest outside. With just eight exclusive rooms, Paradise Hotel ensures privacy, silence, and a truly personalized experience for every guest.",
+      "It is a place for couples, writers, nature lovers, and anyone seeking peace, fresh air, and forest magic."
+    ],
+    "STORY": [
+      "Since 1974, nestled in the untouched beauty of the Emerald Grove Valley, Paradise Hotel was designed with one purpose — to create a peaceful sanctuary where guests can slow down, breathe, and reconnect with nature.",
+      "Surrounded by ancient pines and soft morning mist, the hotel offers only eight private rooms, each crafted to highlight the forest's natural charm. From panoramic glass windows to handcrafted wooden interiors, every detail reflects our commitment to comfort, sustainability, and authentic forest living.",
+      "Whether you're seeking a romantic escape, a creative retreat, or simply a quiet place to rest, Paradise Hotel promises an unforgettable experience in the heart of the Black Forest."
+    ],
+    "DASHBOARD": "View your booking history here. Manage your personal information and settings to enhance your experience with us.",
+    "SETTINGS": "Providing the following information will make your check-in process faster and smoother. See you soon!",
+    "PASSWORD": "Ensure your account remains secure by updating your password regularly.",
+    "BOOKINGS": "Review and manage your bookings here. You can view details, make changes, or cancel your reservations as needed.",
+    "EDIT": "You can edit the date and form according to another time you are available.",
+    "DATE": "Select your travel dates below to check availability and total pricing.",
+    "LOCATION": "Nestled deep within the serene <strong>Emerald Grove Valley</strong> of Germany’s mystical <strong>Black Forest</strong>.",
+    "AMENITIES": "Room Amenities & Facilities",
+    "SELECT_DATES": "Please select your check-in and check-out dates.",
+    "NOT_FOUND": "Sorry, the page you are looking for does not exist.",
+    "LOGIN_MESSAGE": "Please select one of the options below.",
+    "VERIFY_EMAIL": "We've sent a verification link to your email. Click the link to verify your account and log in automatically.",
+    "RESET_PASSWORD": "We've sent a password reset link to your email. Click the link to create a new password and regain access to your account.",
+    "UPDATE_PROFILE": "Keep your information up to date."
+  },
+  "BUTTON": {
+    "EXPLORE": "Explore Luxury Rooms",
+    "BOOK": "Book Now",
+    "LOGIN": "Login",
+    "REGISTER": "Register",
+    "LOGOUT": "Logout",
+    "VIEW": "Details & Reservation",
+    "BOOKINGS": "My Bookings",
+    "NEW": "New Booking",
+    "EDIT": "Edit Profile",
+    "HOME": "Back to Home",
+    "CLEAR": "Clear Dates",
+    "CHANGE": "Change Dates",
+    "GOOGLE": "Continue with Google",
+    "RESET_EMAIL": "Send Reset Link",
+    "VERIFICATION_EMAIL": "Resend Verification Email",
+    "START_SELECTION": "Start by selecting dates",
+    "CREATE_BOOKING": "Create Booking",
+    "UPDATE_BOOKING": "Update Booking",
+    "UPDATE_PASSWORD": "Update Password",
+    "FORGOT_PASSWORD": "Forgot your password?",
+    "SAVE": "Save Changes",
+    "CONFIRMING": "Confirming...",
+    "LOGGING_IN": "Logging in...",
+    "REGISTERING_IN": "Registering...",
+    "SENDING": "Sending...",
+    "CONNECTING": "Connecting...",
+    "SAVING": "Saving...",
+    "UPDATING": "Updating..."
+  },
+  "LIST_ITEM": {
+    "TAGLINE": "Luxury Forest Retreat – Emerald Grove Valley, Black Forest",
+    "RIGHTS": "All rights reserved.",
+    "DESIGNED": "Designed with ❤️ by Onur Yemez",
+    "CONTACT": "Contact",
+    "FOLLOW_US": "Follow Us",
+    "ADDRESS": {
+      "LINE1": "Emerald Grove Valley",
+      "LINE2": "Black Forest",
+      "LINE3": "Germany"
+    },
+    "PRIVACY": {
+      "LINE1": "Privacy",
+      "LINE2": "guaranteed"
+    },
+    "GUEST": {
+      "PREFIX": "For up to",
+      "SUFFIX": "guests"
+    },
+    "GUEST_SINGLE": "guest",
+    "GUEST_MULTIPLE": "guests",
+    "NIGHT": "per night",
+    "NO_ACCOUNT": "Don't have an account?",
+    "HAVE_ACCOUNT": "Already have an account?",
+    "PLEASE_LOGIN": "Please login to continue.",
+    "REMEMBER_PASSWORD": "Remember your password?",
+    "INVALID_CREDENTIALS": "Invalid email or password.",
+    "NO_BOOKINGS": "You have no bookings yet. Check out our",
+    "NOT_CHANGED": "Past bookings can't be changed",
+    "BOOKED": "Booked on",
+    "UPDATE_PROFILE": "Change your profile photo",
+    "WHERE_FROM": "Where are you from?"
+  },
+  "ROOMS": {
+    "DESC": "Cozy yet refined rooms, tucked deep inside Germany's mystical Black Forest. Wake up to the soft glow of morning mist drifting through the pines, breathe in the crisp forest air, and listen to nothing but the sound of nature around you. Each of our eight boutique rooms is designed to feel like your own private hideaway—warm, elegant, and perfectly secluded. Spend your days wandering through ancient woodland trails, relaxing by the fire, or simply enjoying the peaceful silence from your balcony. At night, unwind in the comfort of your room as the forest grows quiet and the stars appear above the treetops.",
+    "CATEGORY": {
+      "ALL": "All Rooms",
+      "N2": "2 Guests",
+      "N4": "4 Guests",
+      "N6": "6 Guests",
+      "N8": "8_10 Guests"
+    }
+  },
+  "ROOM": {
+    "Name": "Room",
+    "NAMES": {
+      "TypeA": "Forest Suite",
+      "TypeB": "Family Retreat",
+      "TypeC": "Luxury Panorama",
+      "TypeD": "Grand Deluxe"
+    },
+    "DESC": {
+      "TypeA": "Designed for couples seeking peace and intimacy in nature’s embrace. Spacious suites with private balconies overlooking the pine forest. Features: king bed, fireplace, panoramic glass wall, rain shower. Enjoy the scent of pine trees and birdsong as you unwind in your personal sanctuary.",
+      "TypeB": "Perfect for small families or close friends. This spacious room combines modern comfort with natural materials — wooden textures, soft lighting, and wide windows overlooking the forest. Includes a queen bed and a single bed, private terrace, and a luxurious rain shower.",
+      "TypeC": "Ideal for groups or large families who love to stay together without sacrificing privacy. The lodge offers two separate bedrooms, a shared living area with a fireplace, and a fully equipped kitchenette. Large windows and a forest-view veranda make it easy to connect with nature at any hour.",
+      "TypeD": "The crown jewel of Paradise Hotel — a luxurious forest villa for big families, groups, or retreats. Features five bedrooms, a private pool, outdoor jacuzzi, spacious lounge with panoramic glass walls, and a large terrace surrounded by trees. Perfect for celebrations, relaxation, and unforgettable moments in nature’s luxury."
+    }
+  },
+  "BADGE": {
+    "PAST": "Past",
+    "UPCOMING": "Upcoming",
+    "CANCELLED": "Cancelled",
+    "LOGGED_IN": "Logged In"
+  },
+  "AMENITIES": {
+    "OUTDOOR": "Outdoor Swimming Pool",
+    "SPA": "Spa & Sauna",
+    "RESTAURANT": "Restaurant & Breakfast Buffet",
+    "BAR": "Bar & Lounge",
+    "PARKING": "Free Parking",
+    "WI_FI": "High-Speed Wi-Fi",
+    "CONCIERGE": "24/7 Concierge",
+    "FITNESS": "Fitness Center",
+    "EVENT": "Event & Meeting Hall",
+    "FAMILY_ROOMS": "Family Rooms Available",
+    "SECURITY": "24/7 Security",
+    "FOREST": "Forest View Terrace",
+    "COFFEE": "In-Room Coffee Maker",
+    "MINI_BAR": "Mini Bar",
+    "TV": " Smart TV with Streaming Services",
+    "BATH": "Private Bathroom",
+    "BED": "King/Queen Size Bed",
+    "AIR_CONDITIONING": "Air Conditioning",
+    "DINING_SERVICE": "In-room Dining Service",
+    "BALCONY": "Balcony with View",
+    "HOUSEKEEPING": "Daily Housekeeping"
+  },
+  "BOOKING": {
+    "NIGHTS_IN": "{count} nights in",
+    "TOTAL_PRICE": "Total price:",
+    "PER_PERSON": "(per person)",
+    "FOR_GUESTS": "(for {count} guests)",
+    "STATISTICS": "Statistics",
+    "RECENT_ACTIVITY": "Recent Activity",
+    "TOTAL_BOOKINGS": "Total Bookings",
+    "ACTIVE_BOOKINGS": "Active Bookings",
+    "PAST_BOOKINGS": "Past Bookings",
+    "NO_RECENT_ACTIVITY": "No recent activity.",
+    "ROOM": "Room",
+    "REMINDER": "You have an ongoing reservation for the date range above. Don't forget to complete or cancel your reservation before proceeding with a new booking.",
+    "STAYED_FROM": "Stayed from",
+    "TO": "to"
+  },
+  "FORM": {
+    "FIELD": {
+      "NAME": "Full Name",
+      "EMAIL": "Email",
+      "PASSWORD": "Password",
+      "NEW_PASSWORD": "New Password",
+      "CONFIRM_PASSWORD": "Confirm Password",
+      "NATIONAL_ID": "National ID",
+      "NATIONALITY": "Nationality",
+      "OBSERVATIONS": "Observations",
+      "NUM_GUESTS": "Number of Guests",
+      "ADD_BREAKFAST": "Add breakfast for <highlight>{price}</highlight> per night"
+    },
+    "PLACEHOLDER": {
+      "NAME": "Enter your full name",
+      "EMAIL": "Enter your email",
+      "PASSWORD": "Enter your password",
+      "NEW_PASSWORD": "Enter your new password",
+      "CONFIRM_PASSWORD": "Confirm your password",
+      "NATIONAL_ID": "Enter your national ID",
+      "NATIONALITY": "Select your nationality",
+      "OBSERVATIONS": "Any special requests or observations?",
+      "NUM_GUESTS": "Select number of guests"
+    }
+  },
+  "ERROR": {
+    "AUTH_REQUIRED": "Please log in to continue.",
+    "LOGIN_FAILED": "Login failed. Please check your credentials and try again.",
+    "REGISTER_FAILED": "Registration failed. Please try again later.",
+    "OAUTH_FAILED": "Social login failed. Please try again.",
+    "RESET_MAIL_FAILED": "Failed to send password reset email. Please try again.",
+    "RESEND_FAILED": "Failed to resend verification email. Please try again later.",
+    "PASSWORD_UPDATE_FAILED": "Failed to update password. Please try again.",
+    "INVALID_EMAIL": "The email address is not valid.",
+    "EMAIL_VERIFICATION_FAILED": "Email verification failed. The link may be invalid or expired.",
+    "RESET_RESTRICTED": "Password reset is not allowed for google accounts.",
+    "EMAIL_ALREADY_VERIFIED": "Email is already verified.",
+    "PASSWORD_RESET_REQUIRED": "Password reset is required. Please check your email for the reset link.",
+
+    "NO_CODE": "No authorization code provided. Please request a new link.",
+    "NO_TOKEN": "No token hash provided. Please request a new link.",
+    "INVALID_LINK": "The link is invalid or has expired. Please request a new one.",
+    "SESSION_FAILED": "Failed to create a session. Please log in again.",
+    "SESSION_EXPIRED": "Your session has expired. Please log in again.",
+    "SAME_PASSWORD": "New password should be different from the old password.",
+
+    "USER_NOT_FOUND": "No account found with this email address.",
+    "USER_EXISTS": "An account with this email already exists.",
+    "USER_EXISTS_UNVERIFIED": "Account exists but email is not verified. Please verify your email.",
+    "USER_EXISTS_OAUTH": "Please sign in using your google account.",
+
+    "ROOM_TYPE_INVALID": "The selected room type is invalid.",
+
+    "BOOKING_OVERLAP": "The room is not available for the selected dates.",
+    "BOOKING_NOT_FOUND": "The booking could not be found.",
+    "BOOKING_FORBIDDEN": "You do not have permission to access this booking.",
+    "BOOKING_CREATE_FAILED": "Failed to create the booking. Please try again.",
+    "BOOKING_UPDATE_FAILED": "Failed to update the booking. Please try again.",
+    "BOOKING_DELETE_FAILED": "Failed to delete the booking. Please try again.",
+    "BOOKING_DELETE_FORBIDDEN": "You do not have permission to delete this booking.",
+    "INVALID_BOOKING_DATES": "Selected dates overlap with booked dates. Please choose different dates.",
+    "INVALID_SELECTED_RANGE": "The selected date range is not available for this room. Please choose a valid date range.",
+    "INVALID_SELECTED_GUEST_NUMBER": "The selected number of guests does not apply to this room. The number of guests is set to the maximum capacity of this room.",
+    "INVALID_RANGE_AND_GUEST": "The selected date range is unavailable, and the number of guests exceeds the room's capacity. Please select a valid date range and number of guests.",
+
+    "ROOMS_FETCH_FAILED": "Rooms could not be loaded at this time.",
+    "BOOKINGS_FETCH_FAILED": "Bookings could not be loaded at this time.",
+    "COUNTRIES_FETCH_FAILED": "Country list could not be loaded.",
+    "EXCHANGE_RATE_FAILED": "Currency exchange rates could not be loaded.",
+
+    "PROFILE_UPDATE_FAILED": "Failed to update your profile. Please try again.",
+
+    "REQUIRED": "This field is required.",
+    "FORM_INVALID": "The submitted form is invalid.",
+    "FORM_MISSING": "Please fill in all required fields.",
+    "FORM_INVALID_NUMBER": "One of the numeric values is invalid.",
+    "FORM_INVALID_DATE": "The selected date is invalid.",
+    "FORM_EMAIL_REQUIRED": "Email is required.",
+    "FORM_EMAIL": "Please enter a valid email address.",
+    "FORM_PASSWORD": "Password must be at least 6 characters long.",
+    "FORM_PASSWORD_MISMATCH": "Passwords do not match.",
+    "FORM_NAME": "Name must be at least 2 characters long.",
+    "FORM_NATIONAL_ID": "Please enter a valid national ID.",
+    "FORM_OBSERVATION": "Observations must be at most 500 characters long.",
+    "MIN_2": "Value must be at least 2.",
+
+    "UNKNOWN": "Something went wrong. Please try again later.",
+    "INTERNAL_ERROR": "We’re having a technical issue. Please try again shortly."
+  },
+  "SUCCESS": {
+    "LOGOUT": "Successfully logged out.",
+    "LOGGED_IN": "Successfully logged in.",
+    "REGISTER": "Registration successful. Welcome aboard!",
+    "RESET_EMAIL": "Password reset email has been sent.",
+    "EMAIL_VERIFIED": "Your email has been verified successfully.",
+    "VERIFICATION_EMAIL": "Verification email has been sent.",
+    "PASSWORD_UPDATED": "Your password has been updated successfully.",
+
+    "BOOKING_CREATED": "Your booking has been created successfully.",
+    "BOOKING_UPDATED": "Your booking has been updated successfully.",
+    "BOOKING_DELETED": "Your booking has been deleted successfully.",
+
+    "PROFILE_UPDATED": "Your profile has been updated successfully."
+  },
+  "LOADING": {
+    "DEFAULT": "Loading...",
+
+    "ROOMS": "Loading Rooms...",
+    "ROOM": "Loading Room Details...",
+    "ROOM_BOOK_DETAILS": "Loading Room Booking Details...",
+    "COUNTRIES": "Loading Countries...",
+    "EXCHANGE_RATES": "Loading Exchange Rates...",
+    "ACCOUNT": "Loading Your Account Details...",
+    "DASHBOARD": "Loading Your Account Dashboard...",
+    "SETTINGS": "Loading Your Profile Settings...",
+    "BOOKINGS": "Loading Your Bookings...",
+    "BOOK": "Loading Your Book..."
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "BRAND": {
+    "PREFIX": "",
+    "NAME": "Paradise",
+    "SUFFIX": "Hotel"
+  },
+  "NAV": {
+    "HOME": "Ana Sayfa",
+    "ROOMS": "Odalar",
+    "ABOUT": "Hakkımızda",
+    "PROFILE": "Profil",
+    "SETTINGS": "Ayarlar",
+    "BOOKINGS": "Rezervasyonlar",
+    "DASHBOARD": "Panel",
+    "UPDATE_PASSWORD": "Şifreyi Güncelle"
+  },
+  "TITLE": {
+    "BRAND": "Paradise Otel",
+    "GREETING": "Hoş Geldiniz",
+    "WELCOME_BACK": "Tekrar Hoş Geldiniz",
+    "HOME": "Cennet bahçesine hoş geldiniz",
+    "ROOMS": "Lüks Odalarımız",
+    "ABOUT": "Hakkımızda",
+    "STORY": "Hikayemiz",
+    "DASHBOARD": "Hesap Paneliniz",
+    "SETTINGS": "Profil Ayarlarınızı Güncelleyin",
+    "PASSWORD": "Şifrenizi Güncelleyin",
+    "BOOKINGS": "Rezervasyonlarınız",
+    "EDIT": "Rezervasyonunuzu Düzenleyin",
+    "DATE": "Konaklamanızı Ayarlayın",
+    "LOCATION": "Konumumuz",
+    "AMENITIES": "Oda Özellikleri ve İmkanlar",
+    "NOT_FOUND": "Sayfa Bulunamadı",
+    "VERIFY_EMAIL": "Hesabınızı doğrulamak için e-postanızı kontrol edin",
+    "RESET_PASSWORD": "Şifrenizi sıfırlamak için e-postanızı kontrol edin",
+    "UPDATE_PROFILE": "Profilinizi Güncelleyin",
+    "AUTH_ERROR": "E-posta Doğrulaması Başarısız",
+    "GENERAL_ERROR": "Bir Hata Oluştu"
+  },
+  "SUB_TITLE": {
+    "ROOMS": "Almanya'nın mistik Kara Ormanları'nın derinliklerinde gizlenmiş, konforlu ve seçkin odalar. Çam ağaçlarının arasından süzülen sabah sisinin yumuşak parıltısıyla uyanın, taze orman havasını içinize çekin ve doğanın sesinden başka hiçbir şey duymayın. Sekiz butik odamızın her biri; sıcak, zarif ve tamamen izole edilmiş özel bir sığınak hissi verecek şekilde tasarlanmıştır. Günlerinizi antik orman yollarında yürüyerek, şömine başında dinlenerek veya balkonunuzdan huzurlu sessizliğin tadını çıkararak geçirin. Gece olduğunda, orman sessizleşirken ve yıldızlar ağaç tepelerinin üzerinde belirirken odanızın konforunda gevşeyin.",
+    "ABOUT": [
+      "Paradise Hotel, Almanya'nın mistik Kara Ormanlar'ından esinlenen kurgusal bir yer olan Emerald Grove Vadisi'nin derinliklerinde gizlenmiş, {count} odalı özel bir lüks dinlenme tesisidir. Yüksek çam ağaçları, sabah sisi ve el değmemiş doğa ile çevrili olan otel, konukların dünyadan kopup kendileriyle yeniden bağ kurabilecekleri samimi bir sığınak sunar.",
+      "Mimari; doğal taş, sıcak ahşap ve geniş panoramik pencereleri harmanlayarak modern lüks ile dışarıdaki vahşi orman arasında bir uyum yaratır. Sadece sekiz özel odasıyla Paradise Hotel, her konuk için mahremiyet, sessizlik ve gerçekten kişiselleştirilmiş bir deneyim sağlar.",
+      "Burası çiftler, yazarlar, doğa severler ve huzur, taze hava ve orman büyüsü arayan herkes için bir yerdir."
+    ],
+    "STORY": [
+      "1974'ten beri Emerald Grove Vadisi'nin el değmemiş güzelliğinde yer alan Paradise Hotel, tek bir amaçla tasarlandı: konukların yavaşlayabileceği, nefes alabileceği ve doğayla yeniden bağ kurabileceği huzurlu bir sığınak yaratmak.",
+      "Kadim çamlar ve yumuşak sabah sisiyle çevrili otelimiz, her biri ormanın doğal cazibesini vurgulamak için tasarlanmış sadece sekiz özel oda sunmaktadır. Panoramik cam pencerelerden el yapımı ahşap iç mekanlara kadar her detay; konfor, sürdürülebilirlik ve otantik orman yaşamına olan bağlılığımızı yansıtır.",
+      "İster romantik bir kaçamak, ister yaratıcı bir inziva veya sadece dinlenmek için sessiz bir yer arıyor olun; Paradise Hotel, Kara Orman'ın kalbinde unutulmaz bir deneyim vaat ediyor."
+    ],
+    "DASHBOARD": "Rezervasyon geçmişinizi buradan görüntüleyin. Deneyiminizi geliştirmek için kişisel bilgilerinizi ve ayarlarınızı yönetin.",
+    "SETTINGS": "Aşağıdaki bilgileri sağlamanız giriş işlemlerinizi daha hızlı ve sorunsuz hale getirecektir. Yakında görüşmek üzere!",
+    "PASSWORD": "Şifrenizi düzenli olarak güncelleyerek hesabınızın güvende kalmasını sağlayın.",
+    "BOOKINGS": "Rezervasyonlarınızı buradan inceleyin ve yönetin. Detayları görüntüleyebilir, değişiklik yapabilir veya gerektiğinde rezervasyonlarınızı iptal edebilirsiniz.",
+    "EDIT": "Tarihi ve formu müsait olduğunuz başka bir zamana göre düzenleyebilirsiniz.",
+    "DATE": "Müsaitlik durumunu ve toplam fiyatı kontrol etmek için aşağıdan seyahat tarihlerinizi seçin.",
+    "LOCATION": "Almanya'nın mistik <strong>Kara Orman</strong> bölgesindeki huzurlu <strong>Emerald Grove Vadisi</strong>'nin derinliklerinde yer almaktadır.",
+    "AMENITIES": "Oda Özellikleri ve İmkanlar",
+    "SELECT_DATES": "Lütfen giriş ve çıkış tarihlerinizi seçin.",
+    "NOT_FOUND": "Üzgünüz, aradığınız sayfa mevcut değil.",
+    "LOGIN_MESSAGE": "Lütfen aşağıdaki seçeneklerden birini seçin.",
+    "VERIFY_EMAIL": "E-posta adresinize bir doğrulama bağlantısı gönderdik. Hesabınızı doğrulamak ve otomatik olarak giriş yapmak için bağlantıya tıklayın.",
+    "RESET_PASSWORD": "E-posta adresinize bir şifre sıfırlama bağlantısı gönderdik. Yeni bir şifre oluşturmak ve hesabınıza tekrar erişim sağlamak için bağlantıya tıklayın.",
+    "UPDATE_PROFILE": "Bilgilerinizi güncel tutun."
+  },
+  "BUTTON": {
+    "EXPLORE": "Lüks Odaları Keşfedin",
+    "BOOK": "Hemen Rezervasyon Yap",
+    "LOGIN": "Giriş Yap",
+    "REGISTER": "Kayıt Ol",
+    "LOGOUT": "Çıkış Yap",
+    "VIEW": "Detaylar ve Rezervasyon",
+    "BOOKINGS": "Rezervasyonlarım",
+    "NEW": "Yeni Rezervasyon",
+    "EDIT": "Profili Düzenle",
+    "HOME": "Ana Sayfaya Dön",
+    "CLEAR": "Tarihleri Temizle",
+    "CHANGE": "Tarihleri Değiştir",
+    "GOOGLE": "Google ile Devam Et",
+    "RESET_EMAIL": "Sıfırlama Bağlantısı Gönder",
+    "VERIFICATION_EMAIL": "Doğrulama E-postasını Tekrar Gönder",
+    "START_SELECTION": "Tarih seçerek başlayın",
+    "CREATE_BOOKING": "Rezervasyon Oluştur",
+    "UPDATE_BOOKING": "Rezervasyonu Güncelle",
+    "UPDATE_PASSWORD": "Şifreyi Güncelle",
+    "FORGOT_PASSWORD": "Şifrenizi mi unuttunuz?",
+    "SAVE": "Değişiklikleri Kaydet",
+    "CONFIRMING": "Onaylanıyor...",
+    "LOGGING_IN": "Giriş yapılıyor...",
+    "REGISTERING_IN": "Kayıt olunuyor...",
+    "SENDING": "Gönderiliyor...",
+    "CONNECTING": "Bağlanılıyor...",
+    "SAVING": "Kaydediliyor...",
+    "UPDATING": "Güncelleniyor..."
+  },
+  "LIST_ITEM": {
+    "TAGLINE": "Lüks Orman İnzivası – Emerald Grove Vadisi, Kara Orman",
+    "RIGHTS": "Tüm hakları saklıdır.",
+    "DESIGNED": "Onur Yemez tarafından ❤️ ile tasarlandı",
+    "CONTACT": "İletişim",
+    "FOLLOW_US": "Bizi Takip Edin",
+    "ADDRESS": {
+      "LINE1": "Emerald Grove Vadisi",
+      "LINE2": "Kara Orman",
+      "LINE3": "Almanya"
+    },
+    "PRIVACY": {
+      "LINE1": "Gizlilik",
+      "LINE2": "garantilidir"
+    },
+    "GUEST": {
+      "PREFIX": "En fazla",
+      "SUFFIX": "kişi"
+    },
+    "GUEST_SINGLE": "kişi",
+    "GUEST_MULTIPLE": "kişi",
+    "NIGHT": "gecelik",
+    "NO_ACCOUNT": "Hesabınız yok mu?",
+    "HAVE_ACCOUNT": "Zaten bir hesabınız var mı?",
+    "PLEASE_LOGIN": "Devam etmek için lütfen giriş yapın.",
+    "REMEMBER_PASSWORD": "Şifrenizi hatırlıyor musunuz?",
+    "INVALID_CREDENTIALS": "Geçersiz e-posta veya şifre.",
+    "NO_BOOKINGS": "Henüz bir rezervasyonunuz yok. Şuna göz atın:",
+    "NOT_CHANGED": "Geçmiş rezervasyonlar değiştirilemez",
+    "BOOKED": "Rezervasyon tarihi:",
+    "UPDATE_PROFILE": "Profil fotoğrafını değiştir",
+    "WHERE_FROM": "Nerelisiniz?"
+  },
+  "ROOMS": {
+    "DESC": "Almanya'nın mistik Kara Ormanları'nın derinliklerinde gizlenmiş, konforlu ve seçkin odalar. Çam ağaçlarının arasından süzülen sabah sisinin yumuşak parıltısıyla uyanın, taze orman havasını içinize çekin ve doğanın sesinden başka hiçbir şey duymayın. Sekiz butik odamızın her biri; sıcak, zarif ve tamamen izole edilmiş özel bir sığınak hissi verecek şekilde tasarlanmıştır. Günlerinizi antik orman yollarında yürüyerek, şömine başında dinlenerek veya balkonunuzdan huzurlu sessizliğin tadını çıkararak geçirin. Gece olduğunda, orman sessizleşirken ve yıldızlar ağaç tepelerinin üzerinde belirirken odanızın konforunda gevşeyin.",
+    "CATEGORY": {
+      "ALL": "Tüm Odalar",
+      "N2": "2 Kişilik",
+      "N4": "4 Kişilik",
+      "N6": "6 Kişilik",
+      "N8": "8-10 Kişilik"
+    }
+  },
+  "ROOM": {
+    "Name": "Oda",
+    "NAMES": {
+      "TypeA": "Orman Süiti",
+      "TypeB": "Aile Sığınağı",
+      "TypeC": "Lüks Panorama",
+      "TypeD": "Grand Deluxe"
+    },
+    "DESC": {
+      "TypeA": "Doğanın kucağında huzur ve samimiyet arayan çiftler için tasarlandı. Çam ormanına bakan özel balkonlu geniş süitler. Özellikler: king yatak, şömine, panoramik cam duvar, yağmur duşu. Kişisel sığınağınızda dinlenirken çam ağaçlarının kokusunun ve kuş seslerinin tadını çıkarın.",
+      "TypeB": "Küçük aileler veya yakın arkadaşlar için mükemmel. Bu geniş oda, modern konforu doğal malzemelerle birleştiriyor: ahşap dokular, yumuşak aydınlatma ve ormana bakan geniş pencereler. Bir adet çift kişilik yatak, bir adet tek kişilik yatak, özel teras ve lüks bir yağmur duşu içerir.",
+      "TypeC": "Mahremiyetten ödün vermeden birlikte kalmayı seven gruplar veya geniş aileler için ideal. Dağ evi tarzındaki bu oda, iki ayrı yatak odası, şömineli ortak bir yaşam alanı ve tam donanımlı küçük bir mutfak sunar. Büyük pencereler ve orman manzaralı veranda, günün her saatinde doğayla bağ kurmanızı sağlar.",
+      "TypeD": "Paradise Hotel'in göz bebeği — geniş aileler, gruplar veya kurumsal inzivalar için lüks bir orman villası. Beş yatak odası, özel havuz, açık hava jakuzisi, panoramik cam duvarlı geniş salon ve ağaçlarla çevrili büyük bir teras içerir. Kutlamalar, dinlenme ve doğanın lüksünde unutulmaz anlar için mükemmeldir."
+    }
+  },
+  "BADGE": {
+    "PAST": "Geçmiş",
+    "UPCOMING": "Yaklaşan",
+    "CANCELLED": "İptal Edildi",
+    "LOGGED_IN": "Giriş Yapıldı"
+  },
+  "AMENITIES": {
+    "OUTDOOR": "Açık Yüzme Havuzu",
+    "SPA": "Spa & Sauna",
+    "RESTAURANT": "Restoran & Açık Büfe Kahvaltı",
+    "BAR": "Bar & Dinlenme Alanı",
+    "PARKING": "Ücretsiz Otopark",
+    "WI_FI": "Yüksek Hızlı Wi-Fi",
+    "CONCIERGE": "24/7 Resepsiyon",
+    "FITNESS": "Spor Salonu",
+    "EVENT": "Etkinlik & Toplantı Salonu",
+    "FAMILY_ROOMS": "Aile Odaları Mevcut",
+    "SECURITY": "24/7 Güvenlik",
+    "FOREST": "Orman Manzaralı Teras",
+    "COFFEE": "Oda İçi Kahve Makinesi",
+    "MINI_BAR": "Mini Bar",
+    "TV": "Streaming Hizmetli Akıllı TV",
+    "BATH": "Özel Banyo",
+    "BED": "King/Queen Boy Yatak",
+    "AIR_CONDITIONING": "Klima",
+    "DINING_SERVICE": "Odaya Yemek Servisi",
+    "BALCONY": "Manzaralı Balkon",
+    "HOUSEKEEPING": "Günlük Temizlik Hizmeti"
+  },
+  "BOOKING": {
+    "NIGHTS_IN": "{count} gece",
+    "TOTAL_PRICE": "Toplam fiyat:",
+    "PER_PERSON": "(kişi başı)",
+    "FOR_GUESTS": "({count} kişi için)",
+    "STATISTICS": "İstatistikler",
+    "RECENT_ACTIVITY": "Son Hareketler",
+    "TOTAL_BOOKINGS": "Toplam Rezervasyon",
+    "ACTIVE_BOOKINGS": "Aktif Rezervasyonlar",
+    "PAST_BOOKINGS": "Geçmiş Rezervasyonlar",
+    "NO_RECENT_ACTIVITY": "Son hareket bulunamadı.",
+    "ROOM": "Oda",
+    "REMINDER": "Yukarıda belirtilen tarih aralığı için devam eden bir rezervasyonunuz var. Yeni bir rezervasyon yapmadan önce rezervasyonunuzu tamamlamayı veya iptal etmeyi unutmayın.",
+    "STAYED_FROM": "Konaklama başlangıcı",
+    "TO": "bitişi"
+  },
+  "FORM": {
+    "FIELD": {
+      "NAME": "Tam İsim",
+      "EMAIL": "E-posta",
+      "PASSWORD": "Şifre",
+      "NEW_PASSWORD": "Yeni Şifre",
+      "CONFIRM_PASSWORD": "Şifreyi Onayla",
+      "NATIONAL_ID": "T.C. Kimlik / Pasaport No",
+      "NATIONALITY": "Uyruk",
+      "OBSERVATIONS": "Notlar/Gözlemler",
+      "NUM_GUESTS": "Kişi Sayısı",
+      "ADD_BREAKFAST": "Gecelik <highlight>{price}</highlight> karşılığında kahvaltı ekle"
+    },
+    "PLACEHOLDER": {
+      "NAME": "Tam isminizi girin",
+      "EMAIL": "E-posta adresinizi girin",
+      "PASSWORD": "Şifrenizi girin",
+      "NEW_PASSWORD": "Yeni şifrenizi girin",
+      "CONFIRM_PASSWORD": "Şifrenizi onaylayın",
+      "NATIONAL_ID": "Kimlik numaranızı girin",
+      "NATIONALITY": "Uyruğunuzu seçin",
+      "OBSERVATIONS": "Herhangi bir özel isteğiniz veya belirtmek istediğiniz bir şey var mı?",
+      "NUM_GUESTS": "Kişi sayısını seçin"
+    }
+  },
+  "ERROR": {
+    "AUTH_REQUIRED": "Devam etmek için lütfen giriş yapın.",
+    "LOGIN_FAILED": "Giriş başarısız. Lütfen bilgilerinizi kontrol edip tekrar deneyin.",
+    "REGISTER_FAILED": "Kayıt başarısız. Lütfen daha sonra tekrar deneyin.",
+    "OAUTH_FAILED": "Sosyal medya ile giriş başarısız. Lütfen tekrar deneyin.",
+    "RESET_MAIL_FAILED": "Şifre sıfırlama e-postası gönderilemedi. Lütfen tekrar deneyin.",
+    "RESEND_FAILED": "Doğrulama e-postası tekrar gönderilemedi. Lütfen daha sonra deneyin.",
+    "PASSWORD_UPDATE_FAILED": "Şifre güncellenemedi. Lütfen tekrar deneyin.",
+    "INVALID_EMAIL": "E-posta adresi geçerli değil.",
+    "EMAIL_VERIFICATION_FAILED": "E-posta doğrulaması başarısız. Bağlantı geçersiz veya süresi dolmuş olabilir.",
+    "RESET_RESTRICTED": "Google hesapları için şifre sıfırlamaya izin verilmez.",
+    "EMAIL_ALREADY_VERIFIED": "E-posta zaten doğrulanmış.",
+    "PASSWORD_RESET_REQUIRED": "Şifre sıfırlama gereklidir. Lütfen sıfırlama bağlantısı için e-postanızı kontrol edin.",
+
+    "NO_CODE": "Doğrulama kodu sağlanmadı. Lütfen yeni bir bağlantı isteyin.",
+    "NO_TOKEN": "Belirteç (token) sağlanmadı. Lütfen yeni bir bağlantı isteyin.",
+    "INVALID_LINK": "Bağlantı geçersiz veya süresi dolmuş. Lütfen yenisini isteyin.",
+    "SESSION_FAILED": "Oturum oluşturulamadı. Lütfen tekrar giriş yapın.",
+    "SESSION_EXPIRED": "Oturumunuzun süresi doldu. Lütfen tekrar giriş yapın.",
+    "SAME_PASSWORD": "Yeni şifre eski şifreden farklı olmalıdır.",
+
+    "USER_NOT_FOUND": "Bu e-posta adresiyle kayıtlı bir hesap bulunamadı.",
+    "USER_EXISTS": "Bu e-posta adresiyle zaten bir hesap mevcut.",
+    "USER_EXISTS_UNVERIFIED": "Hesap mevcut ancak e-posta doğrulanmamış. Lütfen e-postanızı doğrulayın.",
+    "USER_EXISTS_OAUTH": "Lütfen Google hesabınızı kullanarak giriş yapın.",
+
+    "ROOM_TYPE_INVALID": "Seçilen oda tipi geçersiz.",
+
+    "BOOKING_OVERLAP": "Oda seçilen tarihler için müsait değil.",
+    "BOOKING_NOT_FOUND": "Rezervasyon bulunamadı.",
+    "BOOKING_FORBIDDEN": "bu rezervasyona erişim izniniz yok.",
+    "BOOKING_CREATE_FAILED": "Rezervasyon oluşturulamadı. Lütfen tekrar deneyin.",
+    "BOOKING_UPDATE_FAILED": "Rezervasyon güncellenemedi. Lütfen tekrar deneyin.",
+    "BOOKING_DELETE_FAILED": "Rezervasyon silinemedi. Lütfen tekrar deneyin.",
+    "BOOKING_DELETE_FORBIDDEN": "Bu rezervasyonu silme izniniz yok.",
+    "INVALID_BOOKING_DATES": "Seçilen tarihler mevcut rezervasyonlarla çakışıyor. Lütfen farklı tarihler seçin.",
+    "INVALID_SELECTED_RANGE": "Seçilen tarih aralığı bu oda için uygun değil. Lütfen geçerli bir tarih aralığı seçin.",
+    "INVALID_SELECTED_GUEST_NUMBER": "Seçilen kişi sayısı bu oda için geçerli değil. Kişi sayısı bu odanın maksimum kapasitesine ayarlandı.",
+    "INVALID_RANGE_AND_GUEST": "Seçilen tarih aralığı müsait değil ve misafir sayısı odanın kapasitesini aşıyor. Lütfen geçerli bir tarih aralığı ve kişi sayısı seçin.",
+
+    "ROOMS_FETCH_FAILED": "Odalar şu anda yüklenemedi.",
+    "BOOKINGS_FETCH_FAILED": "Rezervasyonlar şu anda yüklenemedi.",
+    "COUNTRIES_FETCH_FAILED": "Ülke listesi yüklenemedi.",
+    "EXCHANGE_RATE_FAILED": "Döviz kurları yüklenemedi.",
+
+    "PROFILE_UPDATE_FAILED": "Profiliniz güncellenemedi. Lütfen tekrar deneyin.",
+
+    "REQUIRED": "Bu alan zorunludur.",
+    "FORM_INVALID": "Gönderilen form geçersiz.",
+    "FORM_MISSING": "Lütfen tüm zorunlu alanları doldurun.",
+    "FORM_INVALID_NUMBER": "Sayısal değerlerden biri geçersiz.",
+    "FORM_INVALID_DATE": "Seçilen tarih geçersiz.",
+    "FORM_EMAIL_REQUIRED": "E-posta gereklidir.",
+    "FORM_EMAIL": "Lütfen geçerli bir e-posta adresi girin.",
+    "FORM_PASSWORD": "Şifre en az 6 karakter uzunluğunda olmalıdır.",
+    "FORM_PASSWORD_MISMATCH": "Şifreler eşleşmiyor.",
+    "FORM_NAME": "İsim en az 2 karakter uzunluğunda olmalıdır.",
+    "FORM_NATIONAL_ID": "Lütfen geçerli bir kimlik numarası girin.",
+    "FORM_OBSERVATION": "Notlar en fazla 500 karakter olabilir.",
+    "MIN_2": "Değer en az 2 olmalıdır.",
+    "UNKNOWN": "Bir şeyler yanlış gitti. Lütfen daha sonra tekrar deneyin.",
+    "INTERNAL_ERROR": "Teknik bir sorun yaşıyoruz. Lütfen kısa süre sonra tekrar deneyin."
+  },
+  "SUCCESS": {
+    "LOGOUT": "Başarıyla çıkış yapıldı.",
+    "LOGGED_IN": "Başarıyla giriş yapıldı.",
+    "REGISTER": "Kayıt başarılı. Aramıza hoş geldiniz!",
+    "RESET_EMAIL": "Şifre sıfırlama e-postası gönderildi.",
+    "EMAIL_VERIFIED": "E-postanız başarıyla doğrulandı.",
+    "VERIFICATION_EMAIL": "Doğrulama e-postası gönderildi.",
+    "PASSWORD_UPDATED": "Şifreniz başarıyla güncellendi.",
+
+    "BOOKING_CREATED": "Rezervasyonunuz başarıyla oluşturuldu.",
+    "BOOKING_UPDATED": "Rezervasyonunuz başarıyla güncellendi.",
+    "BOOKING_DELETED": "Rezervasyonunuz başarıyla silindi.",
+
+    "PROFILE_UPDATED": "Profiliniz başarıyla güncellendi."
+  },
+  "LOADING": {
+    "DEFAULT": "Yükleniyor...",
+
+    "ROOMS": "Odalar Yükleniyor...",
+    "ROOM": "Oda Detayları Yükleniyor...",
+    "ROOM_BOOK_DETAILS": "Oda Rezervasyon Detayları Yükleniyor...",
+    "COUNTRIES": "Ülkeler Yükleniyor...",
+    "EXCHANGE_RATES": "Döviz Kurları Yükleniyor...",
+    "ACCOUNT": "Hesap Detaylarınız Yükleniyor...",
+    "DASHBOARD": "Hesap Paneliniz Yükleniyor...",
+    "SETTINGS": "Profil Ayarlarınız Yükleniyor...",
+    "BOOKINGS": "Rezervasyonlarınız Yükleniyor...",
+    "BOOK": "Rezervasyonunuz Yükleniyor..."
+  }
+}

@@ -1,0 +1,34 @@
+import { CustomTitle } from '@/components/ui/custom-components/CustomTitle';
+import { LoadingSpinner } from '@/components/common/LoadingSpinner';
+import { Suspense } from 'react';
+import { CustomSubTitle } from '@/components/ui/custom-components/CustomSubTitle';
+import { LoadingKey, SubTitleKey, TitleKey } from '@/types/i18n/keys';
+import { AccountDiv } from '@/components/account/AccountDiv';
+import { EditBooking } from '@/components/account/bookings/EditBooking';
+
+export const metadata = {
+  title: 'Edit Booking',
+};
+
+interface EditBookingPageProps {
+  params: Promise<{
+    bookingId: string;
+  }>;
+}
+
+const EditBookingPage = async ({ params }: EditBookingPageProps) => {
+  const { bookingId } = await params;
+  return (
+    <AccountDiv mode="main">
+      <CustomTitle variant="account" i18nKey={TitleKey.EDIT} className="mb-0" />
+      <CustomSubTitle variant="account" i18nKey={SubTitleKey.EDIT} />
+      <Suspense fallback={<LoadingSpinner label={LoadingKey.BOOK} />}>
+        <AccountDiv mode="edit">
+          <EditBooking bookingId={bookingId} />
+        </AccountDiv>
+      </Suspense>
+    </AccountDiv>
+  );
+};
+
+export default EditBookingPage;
