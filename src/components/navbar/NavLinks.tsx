@@ -1,4 +1,5 @@
 'use client';
+import { useMemo } from 'react';
 import { cn } from '@/utils/utils';
 import { AuthSection } from '../auth/AuthSection';
 import { Link, usePathname } from '@/i18n/navigation';
@@ -12,17 +13,20 @@ interface NavLinksProps {
 export const NavLinks = ({ setIsOpen }: NavLinksProps) => {
   const t = useTranslations(NavKey.TITLE);
 
-  const links = [
-    { href: '/' as const, label: t(NavKey.HOME) },
-    { href: '/rooms' as const, label: t(NavKey.ROOMS) },
-    { href: '/about' as const, label: t(NavKey.ABOUT) },
-  ];
+  const navLinks = useMemo(
+    () => [
+      { href: '/' as const, label: t(NavKey.HOME) },
+      { href: '/rooms' as const, label: t(NavKey.ROOMS) },
+      { href: '/about' as const, label: t(NavKey.ABOUT) },
+    ],
+    [t]
+  );
 
   const pathname = usePathname();
 
   return (
     <>
-      {links.map((link) => {
+      {navLinks.map((link) => {
         const isActive = pathname === link.href;
         const linkClass = isActive
           ? 'text-nav-active-foreground font-bold'

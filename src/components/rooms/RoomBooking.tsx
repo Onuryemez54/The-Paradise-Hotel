@@ -3,7 +3,7 @@ import {
   getCurrentUser,
   getRoomForBookingById,
   getSettings,
-} from '@/lib/actions/db-acitons';
+} from '@/lib/actions/prisma-actions/db-acitons';
 import { RoomBookingClient } from '@/components/common/booking/RoomBookingClient';
 import { ScrollReveal } from '@/components/common/animation/ScrollReveal';
 

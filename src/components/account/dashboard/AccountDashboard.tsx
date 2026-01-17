@@ -6,7 +6,7 @@ import { UserImage } from '@/components/common/UserImage';
 import {
   getCurrentUser,
   getDashboardBookingsByUserId,
-} from '@/lib/actions/db-acitons';
+} from '@/lib/actions/prisma-actions/db-acitons';
 import { AccountDiv } from '../AccountDiv';
 
 export const AccountDashboard = async () => {
@@ -19,12 +19,12 @@ export const AccountDashboard = async () => {
         <div className="mb-10 flex flex-col items-center justify-between gap-2 sm:flex-row">
           <CustomTitle variant="subheading" i18nKey={TitleKey.GREETING}>
             <span className="border-border/80 border-b pb-1">
-              {currentUser?.name || 'Guest'}
+              {currentUser.name || 'Guest'}
             </span>
           </CustomTitle>
           <div className="flex items-center gap-3">
             <UserImage
-              image={currentUser?.image || '/default-user.jpg'}
+              image={currentUser.image || '/default-user.jpg'}
               size="medium"
               borderColor="accent-border"
             />

@@ -20,12 +20,12 @@ export function LocaleSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
 
-  function handleChange(nextLocale: string) {
+  const handleChange = (nextLocale: string) => {
     if (nextLocale === locale) return;
 
     router.replace(pathname, { locale: nextLocale });
     router.refresh();
-  }
+  };
 
   return (
     <Select value={locale} onValueChange={(value) => handleChange(value)}>

@@ -2,7 +2,7 @@ import { CustomSubTitle } from '@/components/ui/custom-components/CustomSubTitle
 import { CustomTitle } from '@/components/ui/custom-components/CustomTitle';
 import { LoadingSpinner } from '@/components/common/LoadingSpinner';
 import { FilterOperations } from '@/components/rooms/FilterOperations';
-import RoomList from '@/components/rooms/RoomList';
+import { RoomList } from '@/components/rooms/RoomList';
 import { Suspense } from 'react';
 import { getTranslations } from 'next-intl/server';
 import {

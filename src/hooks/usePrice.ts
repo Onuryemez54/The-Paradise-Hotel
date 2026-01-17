@@ -1,7 +1,7 @@
 'use client';
+import { useLocale } from 'next-intl';
 import { Locale } from '@/i18n/routing';
 import { Currency, currencyMap, Rates } from '@/types/exchangeTypes';
-import { useLocale } from 'next-intl';
 
 export const usePrice = (basePriceUSD: number, rates: Rates) => {
   const rawLocale = useLocale();

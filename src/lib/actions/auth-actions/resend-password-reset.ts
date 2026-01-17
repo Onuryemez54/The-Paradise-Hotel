@@ -6,13 +6,13 @@ import { assertEmailAvailability } from '../helpers/assertEmailAvailability';
 import { ErrorKey } from '@/types/i18n/keys';
 
 export const resendVerificationEmail = async (email: string) => {
-  await assertEmailAvailability({ email, mode: 'resendEmailVerification' });
+  await assertEmailAvailability({ email, mode: 'reset' });
 
   const { data, error } = await supabaseAdmin.auth.admin.generateLink({
     type: 'magiclink',
     email,
     options: {
-      redirectTo: `${process.env.NEXT_PUBLIC_APP_URL}/api/auth/confirm`,
+      redirectTo: `${process.env.NEXT_PUBLIC_APP_URL}/api/auth/reset`,
     },
   });
 
@@ -24,5 +24,5 @@ export const resendVerificationEmail = async (email: string) => {
     throw new Error(ErrorKey.RESEND_FAILED);
   }
 
-  redirect('/auth/verify?status=EMAIL_VERIFICATION');
+  redirect('/auth/reset-password?status=PASSWORD_RESET');
 };

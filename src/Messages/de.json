@@ -75,8 +75,8 @@
     "NEW": "Neue Buchung",
     "EDIT": "Profil bearbeiten",
     "HOME": "Zurück zur Startseite",
-    "CLEAR": "Daten löschen",
-    "CHANGE": "Daten ändern",
+    "CLEAR": "Löschen",
+    "CHANGE": "Ändern",
     "GOOGLE": "Mit Google fortfahren",
     "RESET_EMAIL": "Reset-Link senden",
     "VERIFICATION_EMAIL": "Verifizierungs-E-Mail erneut senden",
@@ -248,8 +248,10 @@
     "USER_EXISTS_UNVERIFIED": "Konto existiert, aber E-Mail ist nicht verifiziert.",
     "USER_EXISTS_OAUTH": "Bitte melden Sie sich über Google an.",
 
+    "ROOMS_FETCH_FAILED": "Zimmer konnten nicht geladen werden.",
     "ROOM_TYPE_INVALID": "Ungültiger Zimmertyp.",
 
+    "BOOKINGS_FETCH_FAILED": "Buchungen konnten nicht geladen werden.",
     "BOOKING_OVERLAP": "Das Zimmer ist zu diesen Daten nicht verfügbar.",
     "BOOKING_NOT_FOUND": "Buchung nicht gefunden.",
     "BOOKING_FORBIDDEN": "Keine Berechtigung für diese Buchung.",
@@ -262,12 +264,12 @@
     "INVALID_SELECTED_GUEST_NUMBER": "Die ausgewählte Gästeanzahl gilt nicht für dieses Zimmer. Die Gästeanzahl wird auf die maximale Kapazität dieses Zimmers gesetzt.",
     "INVALID_RANGE_AND_GUEST": "Der ausgewählte Datumsbereich ist nicht verfügbar und die Gästeanzahl überschreitet die Kapazität des Zimmers. Bitte wählen Sie einen gültigen Datumsbereich und eine gültige Gästeanzahl.",
 
-    "ROOMS_FETCH_FAILED": "Zimmer konnten nicht geladen werden.",
-    "BOOKINGS_FETCH_FAILED": "Buchungen konnten nicht geladen werden.",
     "COUNTRIES_FETCH_FAILED": "Länderliste konnte nicht geladen werden.",
     "EXCHANGE_RATE_FAILED": "Wechselkurse konnten nicht geladen werden.",
 
     "PROFILE_UPDATE_FAILED": "Profil konnte nicht aktualisiert werden.",
+    "PROFILE_UPDATE_AUTH_FAILED": "Authentifizierung für Profilaktualisierung fehlgeschlagen. Bitte melden Sie sich erneut an.",
+    "PROFILE_IMAGE_UPLOAD_FAILED": "Profilbild konnte nicht hochgeladen werden. Bitte versuchen Sie es erneut.",
 
     "REQUIRED": "Dieses Feld ist erforderlich.",
     "FORM_INVALID": "Das Formular ist ungültig.",

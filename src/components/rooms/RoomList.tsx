@@ -1,4 +1,7 @@
-import { getRoomsForList, RoomListItem } from '@/lib/actions/db-acitons';
+import {
+  getRoomsForList,
+  RoomListItem,
+} from '@/lib/actions/prisma-actions/db-acitons';
 import { RoomCard } from './RoomCard';
 import { FadeUp } from '@/components/common/animation/FadeUp';
 import { FilterValue } from '@/types/i18n/keys';
@@ -7,7 +10,7 @@ interface RoomListProps {
   filter: string;
 }
 
-const RoomList = async ({ filter }: RoomListProps) => {
+export const RoomList = async ({ filter }: RoomListProps) => {
   const rooms = await getRoomsForList();
 
   let displayedRooms: RoomListItem[] = rooms;
@@ -35,4 +38,3 @@ const RoomList = async ({ filter }: RoomListProps) => {
     </FadeUp>
   );
 };
-export default RoomList;

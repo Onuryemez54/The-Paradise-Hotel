@@ -1,5 +1,5 @@
 'use server';
-import { getCurrentUser } from '@/lib/actions/db-acitons';
+import { getCurrentUser } from '@/lib/actions/prisma-actions/db-acitons';
 import { createClient } from '@/db/supabase/server';
 import { db } from '@/db/prisma';
 import { revalidatePath } from 'next/cache';
@@ -8,6 +8,10 @@ import { ErrorKey } from '@/types/i18n/keys';
 export const updateProfileAction = async (formData: FormData) => {
   const supabase = await createClient();
   const currentUser = await getCurrentUser();
+
+  if (!currentUser) {
+    throw new Error(ErrorKey.AUTH_REQUIRED);
+  }
 
   const name = formData.get('fullName') as string;
   const nationalID = formData.get('nationalID') as string;

@@ -14,7 +14,7 @@ import {
   checkboxWrapperClasses,
   checkboxLabelClasses,
   checkboxErrorClasses,
-} from '@/config/form/formStyles';
+} from '@/types/ui/formStyles';
 import { FormKey } from '@/types/i18n/keys';
 import { Label } from '../../shadcn/label';
 

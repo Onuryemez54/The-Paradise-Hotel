@@ -44,16 +44,8 @@ export const Amenities = async ({
               itemClassName
             )}
           >
-            <Icon
-              className={clsx(
-                'text-accent-400 h-5 w-5 md:h-6 md:w-6 lg:h-8 lg:w-8'
-              )}
-            />
-            <span
-              className={clsx(
-                'font-body text-primary-200 text-xs sm:text-sm md:text-base'
-              )}
-            >
+            <Icon className="text-accent-400 h-5 w-5 md:h-6 md:w-6 lg:h-8 lg:w-8" />
+            <span className="font-body text-primary-200 text-xs sm:text-sm md:text-base">
               {t(key)}
             </span>
           </div>
@@ -79,7 +71,7 @@ export const Amenities = async ({
           i18nKey={TitleKey.AMENITIES}
         />
       </ScrollReveal>
-      <ScrollReveal delay={0.1}>{content}</ScrollReveal>
+      <ScrollReveal delay={0.2}>{content}</ScrollReveal>
     </Wrapper>
   );
 };

@@ -75,8 +75,8 @@
     "NEW": "New Booking",
     "EDIT": "Edit Profile",
     "HOME": "Back to Home",
-    "CLEAR": "Clear Dates",
-    "CHANGE": "Change Dates",
+    "CLEAR": "Clear",
+    "CHANGE": "Change",
     "GOOGLE": "Continue with Google",
     "RESET_EMAIL": "Send Reset Link",
     "VERIFICATION_EMAIL": "Resend Verification Email",
@@ -248,8 +248,10 @@
     "USER_EXISTS_UNVERIFIED": "Account exists but email is not verified. Please verify your email.",
     "USER_EXISTS_OAUTH": "Please sign in using your google account.",
 
+    "ROOMS_FETCH_FAILED": "Rooms could not be loaded at this time.",
     "ROOM_TYPE_INVALID": "The selected room type is invalid.",
 
+    "BOOKINGS_FETCH_FAILED": "Bookings could not be loaded at this time.",
     "BOOKING_OVERLAP": "The room is not available for the selected dates.",
     "BOOKING_NOT_FOUND": "The booking could not be found.",
     "BOOKING_FORBIDDEN": "You do not have permission to access this booking.",
@@ -262,12 +264,12 @@
     "INVALID_SELECTED_GUEST_NUMBER": "The selected number of guests does not apply to this room. The number of guests is set to the maximum capacity of this room.",
     "INVALID_RANGE_AND_GUEST": "The selected date range is unavailable, and the number of guests exceeds the room's capacity. Please select a valid date range and number of guests.",
 
-    "ROOMS_FETCH_FAILED": "Rooms could not be loaded at this time.",
-    "BOOKINGS_FETCH_FAILED": "Bookings could not be loaded at this time.",
     "COUNTRIES_FETCH_FAILED": "Country list could not be loaded.",
     "EXCHANGE_RATE_FAILED": "Currency exchange rates could not be loaded.",
 
     "PROFILE_UPDATE_FAILED": "Failed to update your profile. Please try again.",
+    "PROFILE_UPDATE_AUTH_FAILED": "Failed to re-authenticate. Please log in again.",
+    "PROFILE_IMAGE_UPLOAD_FAILED": "Failed to upload profile image. Please try again.",
 
     "REQUIRED": "This field is required.",
     "FORM_INVALID": "The submitted form is invalid.",

@@ -2,7 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import { isPast } from 'date-fns';
 import { Divider } from '../../common/Divider';
 import { BookingKey } from '@/types/i18n/keys';
-import { DashboardBookingByUserIdResult } from '@/lib/actions/db-acitons';
+import { DashboardBookingByUserIdResult } from '@/lib/actions/prisma-actions/db-acitons';
 import { assertDescriptionType } from '@/utils/room-helpers/assertDescriptionType';
 import { RoomType } from '@/types/rooms/room';
 import { getRoomNameServer } from '@/utils/room-helpers/getRoomNameServer';

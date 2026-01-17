@@ -16,7 +16,7 @@ import {
   textareaClasses,
   errorInputClasses,
   labelClasses,
-} from '@/config/form/formStyles';
+} from '@/types/ui/formStyles';
 
 interface TextareaFieldProps {
   name: string;

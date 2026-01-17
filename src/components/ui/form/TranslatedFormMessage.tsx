@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 import { ErrorKey, FormKey } from '@/types/i18n/keys';
 import { FormVariant } from '@/types/ui/formTypes';
 import { cn } from '@/utils/utils';
-import { errorClasses } from '@/config/form/formStyles';
+import { errorClasses } from '@/types/ui/formStyles';
 
 const baseErrorClass = 'text-xs sm:text-sm text-left';
 export const TranslatedFormMessage = ({

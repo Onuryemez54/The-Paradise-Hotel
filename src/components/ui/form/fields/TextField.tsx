@@ -15,7 +15,7 @@ import {
   errorInputClasses,
   inputClasses,
   labelClasses,
-} from '@/config/form/formStyles';
+} from '@/types/ui/formStyles';
 
 interface TextFieldProps {
   name: string;

@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { CustomTitle } from '../../ui/custom-components/CustomTitle';
 import { ListItemKey, SubTitleKey, TitleKey } from '@/types/i18n/keys';
 import { CustomSubTitle } from '../../ui/custom-components/CustomSubTitle';
@@ -17,7 +17,7 @@ export const ProfileFormHeader = ({
 }: ProfileFormHeaderProps) => {
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
 

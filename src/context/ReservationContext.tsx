@@ -72,7 +72,6 @@ const INITIAL_RANGE: DateRange = {
   from: undefined,
   to: undefined,
 };
-
 const INITIAL_GUESTS = 1;
 const INITIAL_BREAKFAST = false;
 const INITIAL_OBSERVATIONS = '';

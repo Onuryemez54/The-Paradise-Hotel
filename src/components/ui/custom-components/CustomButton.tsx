@@ -134,6 +134,7 @@ export const CustomButton = (props: CustomButtonProps) => {
     try {
       if (props.variant === 'logout') {
         await handleLogout();
+        props.onAction?.();
         toast.success(tS(SuccessKey.LOGOUT));
         return;
       } else if (props.variant === 'google') {

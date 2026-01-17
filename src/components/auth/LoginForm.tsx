@@ -26,14 +26,16 @@ import { useSearchParams } from 'next/navigation';
 import { logout } from '@/lib/actions/auth-actions/logout-action';
 
 export const LoginForm = () => {
+  const router = useRouter();
+  const toast = useToast();
   const params = useSearchParams();
   const status = params.get('status');
-  const toast = useToast();
-  const router = useRouter();
-  const tE = useTranslations(ErrorKey.TITLE);
-  const tS = useTranslations(SuccessKey.TITLE);
+
   const [formError, setFormError] = useState(false);
   const [isPending, setIsPending] = useState(false);
+
+  const tE = useTranslations(ErrorKey.TITLE);
+  const tS = useTranslations(SuccessKey.TITLE);
 
   useStatusToast({
     status,

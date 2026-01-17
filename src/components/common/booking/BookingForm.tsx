@@ -28,7 +28,6 @@ import { editBookingAction } from '@/lib/actions/booking-actions/edit-booking.ac
 import { createBookingAction } from '@/lib/actions/booking-actions/create-booking-action';
 import { isRangeOverlapping } from '@/utils/booking-helpers/isRangeOverlapping';
 import { BookingRange } from '@/utils/booking-helpers/types';
-import { excludeCurrentBooking } from '@/utils/booking-helpers/excludeCurrentBooking';
 import { useRates } from '@/context/PriceRatesContext';
 import { User } from '@prisma/client';
 import { useRouter } from 'next/navigation';
@@ -296,8 +295,8 @@ export const BookingForm = ({
       formData.append('startDate', startDate.toISOString());
       formData.append('endDate', endDate.toISOString());
 
-      if (isEditMode) {
-        formData.append('bookingId', bookingId!);
+      if (!!bookingId) {
+        formData.append('bookingId', bookingId);
         await editBookingAction(formData);
         toast.success(tS(SuccessKey.BOOKING_UPDATED), 2000, true);
       } else {
@@ -327,7 +326,7 @@ export const BookingForm = ({
               borderColor="primary-400"
             />
             <h2 className="text-primary-300 hidden font-semibold sm:flex">
-              {user?.name}
+              {user.name}
             </h2>
           </div>
         </header>

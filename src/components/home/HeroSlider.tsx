@@ -8,7 +8,7 @@ import { CustomButton } from '../ui/custom-components/CustomButton';
 
 const images = ['/bg-3.png', '/bg-2.png', '/bg.png'];
 
-export function HeroSlider() {
+export const HeroSlider = () => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -63,4 +63,4 @@ export function HeroSlider() {
       </div>
     </div>
   );
-}
+};

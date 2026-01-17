@@ -1,11 +1,17 @@
 'use server';
 import { db } from '@/db/prisma';
-import { getBookingsListByUserId, getCurrentUser } from '../db-acitons';
+import {
+  getBookingsListByUserId,
+  getCurrentUser,
+} from '../prisma-actions/db-acitons';
 import { revalidatePath, revalidateTag } from 'next/cache';
 import { ErrorKey } from '@/types/i18n/keys';
 
 export const deleteBookingAction = async (bookingId: string) => {
   const currentUser = await getCurrentUser();
+  if (!currentUser) {
+    throw new Error(ErrorKey.AUTH_REQUIRED);
+  }
 
   const userBookings = await getBookingsListByUserId(currentUser.id);
   const userBookingsIds = userBookings.map((booking) => booking.id);

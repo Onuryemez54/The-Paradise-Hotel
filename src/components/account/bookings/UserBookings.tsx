@@ -1,7 +1,7 @@
 import {
   getBookingsListByUserId,
   getCurrentUser,
-} from '@/lib/actions/db-acitons';
+} from '@/lib/actions/prisma-actions/db-acitons';
 import { UserBookingsList } from './UserBookingsList';
 import { AccountDiv } from '../AccountDiv';
 import { CustomListItem } from '@/components/ui/custom-components/CustomListItem';

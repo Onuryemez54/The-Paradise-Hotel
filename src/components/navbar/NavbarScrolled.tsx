@@ -1,5 +1,4 @@
 'use client';
-
 import { cn } from '@/utils/utils';
 import { ReactNode, useEffect, useState } from 'react';
 
@@ -8,8 +7,7 @@ export const NavbarScrolled = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) setScrolled(true);
-      else setScrolled(false);
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll);

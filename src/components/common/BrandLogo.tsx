@@ -6,13 +6,8 @@ import { Link } from '@/i18n/navigation';
 interface BrandLogoProps {
   setIsOpen?: (isOpen: boolean) => void;
   children?: React.ReactNode;
-  showText?: boolean;
 }
-export const BrandLogo = ({
-  setIsOpen,
-  children,
-  showText,
-}: BrandLogoProps) => {
+export const BrandLogo = ({ setIsOpen, children }: BrandLogoProps) => {
   const { theme } = useTheme();
   const logoSrc = theme === 'dark' ? '/logo-dark.png' : '/logo-light.png';
 
@@ -26,7 +21,7 @@ export const BrandLogo = ({
         className="rounded-full opacity-80"
         onClick={() => setIsOpen && setIsOpen(false)}
       />
-      {showText && children}
+      {children && children}
     </Link>
   );
 };

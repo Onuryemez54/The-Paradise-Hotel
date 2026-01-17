@@ -16,7 +16,7 @@ import {
   errorInputClasses,
   inputClasses,
   labelClasses,
-} from '@/config/form/formStyles';
+} from '@/types/ui/formStyles';
 import { cn } from '@/utils/utils';
 
 export const PasswordField = ({

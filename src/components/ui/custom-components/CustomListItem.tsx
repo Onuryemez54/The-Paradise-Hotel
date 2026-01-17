@@ -45,7 +45,7 @@ interface Props {
 const variantStyles: Record<Variant, string> = {
   title: 'text-sm sm:text-base lg:text-lg  font-bold',
   small: 'text-xs md:text-sm',
-  large: 'text-sm sm:text-base text-primary-200',
+  large: 'text-sm sm:text-base text-primary-300',
   link: 'hover:text-accent-400 transition',
   xs: 'text-[8px] sm:text-[10px] text-primary-200 text-center',
 };

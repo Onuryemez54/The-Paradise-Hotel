@@ -1,6 +1,5 @@
 'use server';
 import { createClient } from '@/db/supabase/server';
-import { AppError } from '../../errors/AppError';
 import { redirect } from 'next/navigation';
 import { assertEmailAvailability } from '../helpers/assertEmailAvailability';
 import { ErrorKey } from '@/types/i18n/keys';
@@ -15,7 +14,7 @@ export const requestPasswordReset = async ({ email }: { email: string }) => {
   });
 
   if (error) {
-    throw new AppError(ErrorKey.RESET_MAIL_FAILED);
+    throw new Error(ErrorKey.RESET_MAIL_FAILED);
   }
 
   redirect('/auth/verify?status=PASSWORD_RESET');

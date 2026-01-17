@@ -14,7 +14,7 @@ import { NavbarSection } from '@/components/navbar/NavbarSection';
 import { Footer } from '@/components/footer/Footer';
 import { ToastProvider } from '@/context/ToastContext';
 import { TitleKey } from '@/types/i18n/keys';
-import { getExchangeRates } from '@/lib/price/exchange-rates';
+import { getExchangeRates } from '@/lib/actions/exchange-rates-action/exchange-rates';
 import { PriceRatesProvider } from '@/context/PriceRatesContext';
 
 interface LayoutProps {

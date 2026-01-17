@@ -11,33 +11,37 @@ import { cn } from '@/utils/utils';
 import { Link, usePathname } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import { ButtonKey, NavKey } from '@/types/i18n/keys';
+import { useMemo } from 'react';
 
 export const SidebarLinks = () => {
   const pathName = usePathname();
   const t = useTranslations(NavKey.TITLE);
 
-  const navLinks = [
-    {
-      href: '/account' as const,
-      icon: <HomeIcon />,
-      label: t(NavKey.DASHBOARD),
-    },
-    {
-      href: '/account/settings' as const,
-      icon: <UserCog />,
-      label: t(NavKey.SETTINGS),
-    },
-    {
-      href: '/account/settings/update-password' as const,
-      icon: <RotateCcwKey />,
-      label: t(NavKey.UPDATE_PASSWORD),
-    },
-    {
-      href: '/account/bookings' as const,
-      icon: <CalendarCog />,
-      label: t(NavKey.BOOKINGS),
-    },
-  ];
+  const navLinks = useMemo(
+    () => [
+      {
+        href: '/account' as const,
+        icon: <HomeIcon />,
+        label: t(NavKey.DASHBOARD),
+      },
+      {
+        href: '/account/settings' as const,
+        icon: <UserCog />,
+        label: t(NavKey.SETTINGS),
+      },
+      {
+        href: '/account/settings/update-password' as const,
+        icon: <RotateCcwKey />,
+        label: t(NavKey.UPDATE_PASSWORD),
+      },
+      {
+        href: '/account/bookings' as const,
+        icon: <CalendarCog />,
+        label: t(NavKey.BOOKINGS),
+      },
+    ],
+    [t]
+  );
 
   return (
     <div className="flex h-full w-full flex-row flex-wrap items-center justify-between sm:flex-col sm:items-stretch sm:gap-4">

@@ -7,7 +7,7 @@ import { ArrowRight } from 'lucide-react';
 import { ButtonKey, ListItemKey, TitleKey } from '@/types/i18n/keys';
 import Image from 'next/image';
 import { RoomType } from '@/types/rooms/room';
-import { RoomListItem } from '@/lib/actions/db-acitons';
+import { RoomListItem } from '@/lib/actions/prisma-actions/db-acitons';
 import { assertDescriptionType } from '@/utils/room-helpers/assertDescriptionType';
 import { RoomPrice } from './RoomPrice';
 
@@ -24,7 +24,7 @@ export const RoomCard = async ({ room }: RoomCardProps) => {
       <div className="font-body border-accent-border/70 bg-primary-600 hover:border-accent-border hover:shadow-primary-500 cursor-pointer overflow-hidden rounded-xl border transition-all duration-300 hover:shadow-md">
         <div className="relative h-64 w-full md:h-72">
           <Image
-            src={image || '/room-3.png'}
+            src={image || ''}
             alt={type || 'TypeA'}
             fill
             sizes="

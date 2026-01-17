@@ -1,5 +1,4 @@
 'use client';
-
 import { NavLinks } from './NavLinks';
 import { useEffect, useState } from 'react';
 import { cn } from '@/utils/utils';
@@ -20,7 +19,7 @@ export const MobileNavigation = () => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          'hover:text-accent-400 cursor-pointer p-1 transition duration-300 ease-in-out hover:scale-105',
+          'hover:text-nav-hover-foreground text-nav-foreground cursor-pointer p-1 transition duration-300 ease-in-out hover:scale-105',
           isOpen ? 'rotate-90' : 'rotate-0'
         )}
       >

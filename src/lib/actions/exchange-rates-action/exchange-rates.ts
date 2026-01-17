@@ -22,17 +22,17 @@ export const getExchangeRates = async (): Promise<Rates> => {
     }
     const data = await res.json();
 
-    const eur = data?.rates?.EUR;
+    const eurRate = data?.rates?.EUR;
     const tryRate = data?.rates?.TRY;
 
-    if (typeof eur !== 'number' || typeof tryRate !== 'number') {
+    if (typeof eurRate !== 'number' || typeof tryRate !== 'number') {
       console.error('Invalid exchange rate payload', data);
       throw new Error(ErrorKey.EXCHANGE_RATE_FAILED);
     }
 
     cachedRates = {
       USD: 1,
-      EUR: eur,
+      EUR: eurRate,
       TRY: tryRate,
     };
 

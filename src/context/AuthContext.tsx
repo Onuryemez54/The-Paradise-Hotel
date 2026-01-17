@@ -10,7 +10,7 @@ import type { User } from '@supabase/supabase-js';
 import { createClient } from '@/db/supabase/client';
 import { useRouter } from 'next/navigation';
 import type { User as DbUser } from '@prisma/client';
-import { getCurrentUser } from '@/lib/actions/db-acitons';
+import { getCurrentUser } from '@/lib/actions/prisma-actions/db-acitons';
 import { logout } from '@/lib/actions/auth-actions/logout-action';
 import { useReservation } from './ReservationContext';
 
@@ -24,13 +24,13 @@ interface AuthContextValue {
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const supabase = createClient();
   const router = useRouter();
-
   const [user, setUser] = useState<User | null>(null);
   const [currentUser, setCurrentUser] = useState<DbUser | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const { resetAll } = useReservation();
+
+  const supabase = createClient();
 
   const hydrateUser = async (supabaseUser: User | null) => {
     if (!supabaseUser) {

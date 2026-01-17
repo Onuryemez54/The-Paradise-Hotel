@@ -8,7 +8,7 @@ import { CustomSubTitle } from '@/components/ui/custom-components/CustomSubTitle
 import { CustomTitle } from '@/components/ui/custom-components/CustomTitle';
 import { CustomButton } from '@/components/ui/custom-components/CustomButton';
 import { ButtonKey, NavKey, SubTitleKey, TitleKey } from '@/types/i18n/keys';
-import { getRoomCount } from '@/lib/actions/db-acitons';
+import { getRoomCount } from '@/lib/actions/prisma-actions/db-acitons';
 import { AppLocale } from '@/i18n/routing';
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';

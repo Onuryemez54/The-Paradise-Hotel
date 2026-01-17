@@ -4,7 +4,7 @@ import {
   getBookingById,
   getCurrentUser,
   getSettings,
-} from '@/lib/actions/db-acitons';
+} from '@/lib/actions/prisma-actions/db-acitons';
 
 export const EditBooking = async ({ bookingId }: { bookingId: string }) => {
   const [currentUser, settings, booking] = await Promise.all([

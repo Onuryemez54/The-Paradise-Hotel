@@ -1,4 +1,4 @@
-import { getCurrentUser } from '@/lib/actions/db-acitons';
+import { getCurrentUser } from '@/lib/actions/prisma-actions/db-acitons';
 import { getCountries } from '@/utils/getCountries';
 import { UpdateProfileForm } from './UpdateProfileForm';
 import { AccountDiv } from '../AccountDiv';

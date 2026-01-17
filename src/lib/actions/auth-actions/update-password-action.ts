@@ -1,6 +1,5 @@
 'use server';
 import { createClient } from '@/db/supabase/server';
-import { AppError } from '@/lib/errors/AppError';
 import { redirect } from 'next/navigation';
 import { ErrorKey, SuccessKey } from '@/types/i18n/keys';
 import { cookies } from 'next/headers';
@@ -18,16 +17,16 @@ export const updatePasswordAction = async ({
 
   if (error) {
     if (error.code === 'same_password') {
-      throw new AppError(ErrorKey.SAME_PASSWORD);
+      throw new Error(ErrorKey.SAME_PASSWORD);
     }
     if (error.name === 'AuthSessionMissingError') {
-      throw new AppError(ErrorKey.SESSION_EXPIRED);
+      throw new Error(ErrorKey.SESSION_EXPIRED);
     }
-    throw new AppError(ErrorKey.PASSWORD_UPDATE_FAILED);
+    throw new Error(ErrorKey.PASSWORD_UPDATE_FAILED);
   }
 
   if (data.user && data.user.app_metadata.providers.includes('google')) {
-    throw new AppError(ErrorKey.RESET_RESTRICTED);
+    throw new Error(ErrorKey.RESET_RESTRICTED);
   }
 
   //  after password update, remove the resetting password cookie

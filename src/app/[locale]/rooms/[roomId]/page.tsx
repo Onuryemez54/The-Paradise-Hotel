@@ -6,7 +6,7 @@ import {
   getRoomDetailById,
   getRoomsForList,
   RoomListItem,
-} from '@/lib/actions/db-acitons';
+} from '@/lib/actions/prisma-actions/db-acitons';
 import { Suspense } from 'react';
 import { AppLocale } from '@/i18n/routing';
 import { Metadata } from 'next';
@@ -36,7 +36,7 @@ export async function generateMetadata({
 
 export const generateStaticParams = async () => {
   const rooms = await getRoomsForList();
-  const ids = rooms.map((room: RoomListItem) => ({ roomId: String(room.id) }));
+  const ids = rooms.map((room: RoomListItem) => ({ roomId: room.id }));
   return ids;
 };
 

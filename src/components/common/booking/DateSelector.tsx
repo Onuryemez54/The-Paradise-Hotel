@@ -54,18 +54,17 @@ export const DateSelector = ({
   }, [roomID]);
 
   const availableBookings = useMemo(() => {
-    if (!isEditMode) return bookedRanges;
+    if (!isEditMode || !startDate || !endDate) return bookedRanges;
 
     return excludeCurrentBooking(bookedRanges, {
-      from: startDate!,
-      to: endDate!,
+      from: startDate,
+      to: endDate,
     });
   }, [bookedRanges, startDate, endDate]);
 
   useEffect(() => {
-    if (isEditMode) {
-      hydrateRangeFromDB({ from: startDate, to: endDate });
-    }
+    if (!isEditMode) return;
+    hydrateRangeFromDB({ from: startDate, to: endDate });
   }, [isEditMode, startDate, endDate, hydrateRangeFromDB]);
 
   const handleSelect = (selectedRange?: DateRange) => {

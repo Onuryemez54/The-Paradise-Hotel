@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { DeleteBookingButton } from './DeleteBookingButton';
 import { DateRangeDisplay } from '@/components/account/bookings/DateRangeDisplay';
-import { BookingByUserIdResult } from '@/lib/actions/db-acitons';
+import { BookingByUserIdResult } from '@/lib/actions/prisma-actions/db-acitons';
 import { Badge } from '@/components/common/Badge';
 import { CustomListItem } from '@/components/ui/custom-components/CustomListItem';
 import { usePrice } from '@/hooks/usePrice';

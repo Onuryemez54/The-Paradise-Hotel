@@ -4,7 +4,7 @@ import { useToast } from '@/context/ToastContext';
 import { useTranslations } from 'next-intl';
 import { BookingCard } from './BookingCard';
 import { deleteBookingAction } from '@/lib/actions/booking-actions/delete-booking-action';
-import { BookingByUserIdResult } from '@/lib/actions/db-acitons';
+import { BookingByUserIdResult } from '@/lib/actions/prisma-actions/db-acitons';
 import { ErrorKey, SuccessKey } from '@/types/i18n/keys';
 import { handleAppError } from '@/lib/errors/helpers/handleAppError';
 import { FadeUp } from '@/components/common/animation/FadeUp';

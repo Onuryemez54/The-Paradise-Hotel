@@ -18,7 +18,7 @@ import {
   TitleKey,
 } from '@/types/i18n/keys';
 import { assertDescriptionType } from '@/utils/room-helpers/assertDescriptionType';
-import { RoomDetailType } from '@/lib/actions/db-acitons';
+import { RoomDetailType } from '@/lib/actions/prisma-actions/db-acitons';
 import { RoomPrice } from './RoomPrice';
 
 interface RoomDetailProps {
@@ -27,7 +27,7 @@ interface RoomDetailProps {
 
 export const RoomDetail = async ({ room }: RoomDetailProps) => {
   const { maxCapacity, image, regularPrice, discount, type } = room;
-  const roomType = assertDescriptionType(type! as RoomType);
+  const roomType = assertDescriptionType(type as RoomType);
 
   return (
     <section className="flex flex-col gap-6">

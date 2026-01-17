@@ -9,11 +9,11 @@ interface AuthSectionProps {
 }
 
 export const AuthSection = ({ setIsOpen }: AuthSectionProps) => {
-  const { user, currentUser, isLoading } = useAuth();
+  const { currentUser, isLoading } = useAuth();
 
   return (
     <>
-      {user ? (
+      {currentUser ? (
         isLoading ? (
           <Image
             width={40}
@@ -23,9 +23,9 @@ export const AuthSection = ({ setIsOpen }: AuthSectionProps) => {
             alt={'User Avatar'}
           />
         ) : (
-          <UserProfile user={currentUser!} setNavOpen={setIsOpen} />
+          <UserProfile user={currentUser} setNavOpen={setIsOpen} />
         )
-      ) : !user && isLoading ? (
+      ) : isLoading ? (
         <Image
           width={40}
           height={40}

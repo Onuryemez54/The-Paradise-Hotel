@@ -17,19 +17,17 @@ interface UserProfileProps {
 const DEFAULT_AVATAR = '/default-user.jpg';
 
 export const UserProfile = ({ user, setNavOpen }: UserProfileProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [avatar, setAvatar] = useState<string>(user.image || DEFAULT_AVATAR);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
   const t = useTranslations(NavKey.TITLE);
   const pathname = usePathname();
 
-  const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-
-  const [avatar, setAvatar] = useState<string>(user?.image || DEFAULT_AVATAR);
-
   useEffect(() => {
-    if (user?.image && user.image.trim().length > 0) {
+    if (user.image && user.image.trim().length > 0) {
       setAvatar(user.image);
     }
-  }, [user?.image]);
+  }, [user.image]);
 
   useEffect(() => {
     const handlePointerDown = (event: PointerEvent) => {

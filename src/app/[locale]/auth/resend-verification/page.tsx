@@ -9,10 +9,10 @@ import { resendVerificationEmail } from '@/lib/actions/auth-actions/resend-verif
 import { ErrorKey } from '@/types/i18n/keys';
 
 const ResendVerificationPage = () => {
-  const params = useSearchParams();
-  const status = params.get('status');
   const toast = useToast();
   const tE = useTranslations(ErrorKey.TITLE);
+  const params = useSearchParams();
+  const status = params.get('status');
 
   // status check should run only once
   useStatusToast({

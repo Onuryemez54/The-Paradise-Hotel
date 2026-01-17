@@ -54,7 +54,7 @@ export const getRoomsForList = unstable_cache(
 
 export type RoomListItem = Awaited<ReturnType<typeof getRoomsForList>>[number];
 
-//  getRoomCount is cached for 1 hour
+//  getRoomCount is cached for 2 hours
 export const getRoomCount = unstable_cache(
   async () => {
     try {
@@ -66,7 +66,7 @@ export const getRoomCount = unstable_cache(
   },
   ['room-count'],
   {
-    revalidate: 3600,
+    revalidate: 7200,
     tags: ['rooms'],
   }
 );

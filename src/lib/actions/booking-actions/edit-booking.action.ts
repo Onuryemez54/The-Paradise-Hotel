@@ -1,19 +1,18 @@
 'use server';
 import { revalidatePath, revalidateTag } from 'next/cache';
 import { db } from '@/db/prisma';
-import { getCurrentUser } from '../db-acitons';
+import { getCurrentUser } from '../prisma-actions/db-acitons';
 import {
   getOptionalString,
   getRequiredDate,
   getRequiredNumber,
   getRequiredString,
 } from '@/utils/form-helpers/helpers';
-import { AppError } from '@/lib/errors/AppError';
 import { ErrorKey } from '@/types/i18n/keys';
 
 export const editBookingAction = async (formData: FormData) => {
   const currentUser = await getCurrentUser();
-  if (!currentUser) throw new AppError(ErrorKey.AUTH_REQUIRED);
+  if (!currentUser) throw new Error(ErrorKey.AUTH_REQUIRED);
 
   const roomId = getRequiredNumber(formData, 'roomId');
   const numGuests = getRequiredNumber(formData, 'numGuests');
@@ -58,7 +57,7 @@ export const editBookingAction = async (formData: FormData) => {
       },
     });
 
-    if (overlap) throw new AppError(ErrorKey.BOOKING_OVERLAP);
+    if (overlap) throw new Error(ErrorKey.BOOKING_OVERLAP);
 
     booking = await tx.booking.update({
       where: { id: bookingId },
@@ -68,7 +67,7 @@ export const editBookingAction = async (formData: FormData) => {
     });
   });
 
-  if (!booking) throw new AppError(ErrorKey.BOOKING_UPDATE_FAILED);
+  if (!booking) throw new Error(ErrorKey.BOOKING_UPDATE_FAILED);
 
   revalidateTag(`user-bookings-${currentUser.id}`, 'default');
   revalidatePath('/account/bookings');

@@ -75,8 +75,8 @@
     "NEW": "Yeni Rezervasyon",
     "EDIT": "Profili Düzenle",
     "HOME": "Ana Sayfaya Dön",
-    "CLEAR": "Tarihleri Temizle",
-    "CHANGE": "Tarihleri Değiştir",
+    "CLEAR": "Temizle",
+    "CHANGE": "Değiştir",
     "GOOGLE": "Google ile Devam Et",
     "RESET_EMAIL": "Sıfırlama Bağlantısı Gönder",
     "VERIFICATION_EMAIL": "Doğrulama E-postasını Tekrar Gönder",
@@ -248,8 +248,10 @@
     "USER_EXISTS_UNVERIFIED": "Hesap mevcut ancak e-posta doğrulanmamış. Lütfen e-postanızı doğrulayın.",
     "USER_EXISTS_OAUTH": "Lütfen Google hesabınızı kullanarak giriş yapın.",
 
+    "ROOMS_FETCH_FAILED": "Odalar şu anda yüklenemedi.",
     "ROOM_TYPE_INVALID": "Seçilen oda tipi geçersiz.",
 
+    "BOOKINGS_FETCH_FAILED": "Rezervasyonlar şu anda yüklenemedi.",
     "BOOKING_OVERLAP": "Oda seçilen tarihler için müsait değil.",
     "BOOKING_NOT_FOUND": "Rezervasyon bulunamadı.",
     "BOOKING_FORBIDDEN": "bu rezervasyona erişim izniniz yok.",
@@ -262,12 +264,12 @@
     "INVALID_SELECTED_GUEST_NUMBER": "Seçilen kişi sayısı bu oda için geçerli değil. Kişi sayısı bu odanın maksimum kapasitesine ayarlandı.",
     "INVALID_RANGE_AND_GUEST": "Seçilen tarih aralığı müsait değil ve misafir sayısı odanın kapasitesini aşıyor. Lütfen geçerli bir tarih aralığı ve kişi sayısı seçin.",
 
-    "ROOMS_FETCH_FAILED": "Odalar şu anda yüklenemedi.",
-    "BOOKINGS_FETCH_FAILED": "Rezervasyonlar şu anda yüklenemedi.",
     "COUNTRIES_FETCH_FAILED": "Ülke listesi yüklenemedi.",
     "EXCHANGE_RATE_FAILED": "Döviz kurları yüklenemedi.",
 
     "PROFILE_UPDATE_FAILED": "Profiliniz güncellenemedi. Lütfen tekrar deneyin.",
+    "PROFILE_UPDATE_AUTH_FAILED": "Profil güncellemesi için kimlik doğrulama başarısız. Lütfen tekrar giriş yapın.",
+    "PROFILE_IMAGE_UPLOAD_FAILED": "Profil resmi yüklenemedi. Lütfen tekrar deneyin.",
 
     "REQUIRED": "Bu alan zorunludur.",
     "FORM_INVALID": "Gönderilen form geçersiz.",

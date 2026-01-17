@@ -34,7 +34,7 @@ export async function GET(request: NextRequest) {
   }
 
   const existingUser = await db.user.findFirst({
-    where: { email: user.email! },
+    where: { email: user.email },
   });
 
   if (!existingUser) {

@@ -20,7 +20,7 @@ import {
   inputClasses,
   errorInputClasses,
   labelClasses,
-} from '@/config/form/formStyles';
+} from '@/types/ui/formStyles';
 import { FormKey } from '@/types/i18n/keys';
 
 type Option = {

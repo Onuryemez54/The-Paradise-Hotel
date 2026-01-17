@@ -58,7 +58,7 @@ export const checkboxLabelClasses: Record<FormVariant, string> = {
     text-sm text-primary-200 leading-snug cursor-pointer
   `,
   booking: `
-    text-xs sm:text-sm text-primary-100 leading-snug cursor-pointer 
+    text-xs sm:text-sm text-primary-200 leading-snug cursor-pointer 
   `,
 };
 

@@ -7,7 +7,7 @@ export const NavbarSection = () => {
   return (
     <NavbarScrolled>
       <div className="mx-auto flex max-w-7xl items-center justify-between">
-        <BrandLogo showText>
+        <BrandLogo>
           <BrandName variant="main" />
         </BrandLogo>
         <Navigation />
