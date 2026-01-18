@@ -6,27 +6,16 @@ import { ButtonKey, SubTitleKey, TitleKey } from '@/types/i18n/keys';
 import { Home, HomeIcon } from 'lucide-react';
 import Link from 'next/link';
 
-enum Status {
-  VERIFICATION = 'EMAIL_VERIFICATION',
-  RESET = 'PASSWORD_RESET',
-}
-
 interface VerifyEmailPageProps {
   searchParams: Promise<{
-    status: Status;
+    status: TitleKey.VERIFY_EMAIL | TitleKey.RESET_PASSWORD;
   }>;
 }
 
 const VerifyEmailPage = async ({ searchParams }: VerifyEmailPageProps) => {
   const { status } = await searchParams;
-  const keyTitle =
-    status === Status.VERIFICATION
-      ? TitleKey.VERIFY_EMAIL
-      : TitleKey.RESET_PASSWORD;
-  const keySubTitle =
-    status === Status.VERIFICATION
-      ? SubTitleKey.VERIFY_EMAIL
-      : SubTitleKey.RESET_PASSWORD;
+  const keyTitle = TitleKey[status];
+  const keySubTitle = SubTitleKey[status];
 
   return (
     <FadeUp>
@@ -38,7 +27,7 @@ const VerifyEmailPage = async ({ searchParams }: VerifyEmailPageProps) => {
 
         <CustomSubTitle variant="section" i18nKey={keySubTitle} />
 
-        {status === Status.VERIFICATION ? (
+        {status === TitleKey.VERIFY_EMAIL ? (
           <CustomButton
             variant="bordered"
             href="/"

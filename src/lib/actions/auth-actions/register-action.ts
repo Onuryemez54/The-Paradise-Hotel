@@ -4,7 +4,7 @@ import { assertEmailAvailability } from '../helpers/assertEmailAvailability';
 import { createClient } from '@/db/supabase/server';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
-import { ErrorKey } from '@/types/i18n/keys';
+import { ErrorKey, TitleKey } from '@/types/i18n/keys';
 
 export const registerAction = async ({
   email,
@@ -31,5 +31,5 @@ export const registerAction = async ({
   }
 
   revalidatePath('/');
-  redirect('/auth/verify?status=EMAIL_VERIFICATION');
+  redirect(`/auth/verify?status=${TitleKey.VERIFY_EMAIL}`);
 };

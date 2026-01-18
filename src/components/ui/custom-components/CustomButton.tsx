@@ -195,9 +195,11 @@ export const CustomButton = (props: CustomButtonProps) => {
         return t(ButtonKey.LOGGING_IN);
       case ButtonKey.REGISTER:
         return t(ButtonKey.REGISTERING_IN);
-      case ButtonKey.RESET_EMAIL:
+      case ButtonKey.RESET_PASSWORD:
         return t(ButtonKey.SENDING);
-      case ButtonKey.VERIFICATION_EMAIL:
+      case ButtonKey.RESEND_VERIFY_EMAIL:
+        return t(ButtonKey.SENDING);
+      case ButtonKey.RESEND_RESET_PASSWORD:
         return t(ButtonKey.SENDING);
       case ButtonKey.SAVE:
         return t(ButtonKey.SAVING);

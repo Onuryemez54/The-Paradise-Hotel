@@ -9,20 +9,14 @@ import {
   resendEmailSchema,
 } from '@/types/schemas/authSchemas';
 import { handleAppError } from '@/lib/errors/helpers/handleAppError';
-import {
-  ButtonKey,
-  ErrorKey,
-  FormKey,
-  ListItemKey,
-  SuccessKey,
-} from '@/types/i18n/keys';
+import { ButtonKey, ErrorKey, FormKey, ListItemKey } from '@/types/i18n/keys';
 import { Form } from '../ui/form/Form';
 import { TextField } from '../ui/form/fields/TextField';
 import { CustomButton } from '@/components/ui/custom-components/CustomButton';
 import { CustomListItem } from '../ui/custom-components/CustomListItem';
 import { ArrowRight } from 'lucide-react';
 
-type Mode = 'verify' | 'reset';
+type Mode = 'reset' | 'resendVerification' | 'resendReset';
 type Props = {
   onSubmit: (email: string) => Promise<void>;
   mode: Mode;
@@ -31,12 +25,15 @@ type Props = {
 export const ResendForm = ({ onSubmit, mode }: Props) => {
   const toast = useToast();
   const tE = useTranslations(ErrorKey.TITLE);
-  const tS = useTranslations(SuccessKey.TITLE);
   const [isPending, setIsPending] = useState(false);
   const [isLoginAvailable, setIsLoginAvailable] = useState(false);
 
-  const i18nKey =
-    mode === 'verify' ? SuccessKey.VERIFICATION_EMAIL : SuccessKey.RESET_EMAIL;
+  const i18nKeyButton =
+    mode === 'resendVerification'
+      ? ButtonKey.RESEND_VERIFY_EMAIL
+      : mode === 'resendReset'
+        ? ButtonKey.RESEND_RESET_PASSWORD
+        : ButtonKey.RESET_PASSWORD;
 
   const form = useForm<ResendEmailInput>({
     resolver: zodResolver(resendEmailSchema),
@@ -49,9 +46,17 @@ export const ResendForm = ({ onSubmit, mode }: Props) => {
     setIsPending(true);
     try {
       await onSubmit(email);
-      toast.success(tS(i18nKey));
     } catch (err) {
-      if (mode === 'verify') setIsLoginAvailable(true);
+      if (mode === 'resendVerification') {
+        if (err instanceof Error) {
+          if (
+            err.message === ErrorKey.EMAIL_ALREADY_VERIFIED ||
+            err.message === ErrorKey.USER_EXISTS_OAUTH
+          ) {
+            setIsLoginAvailable(true);
+          }
+        }
+      }
       handleAppError({ err, t: tE, toast });
     } finally {
       setIsPending(false);
@@ -64,11 +69,7 @@ export const ResendForm = ({ onSubmit, mode }: Props) => {
       <CustomButton
         type="submit"
         variant="submit"
-        i18nKey={
-          mode === 'verify'
-            ? ButtonKey.VERIFICATION_EMAIL
-            : ButtonKey.RESET_EMAIL
-        }
+        i18nKey={i18nKeyButton}
         isLoading={isPending}
         disabled={isPending}
       />

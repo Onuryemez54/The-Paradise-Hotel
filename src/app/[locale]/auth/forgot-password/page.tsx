@@ -5,7 +5,7 @@ import { requestPasswordReset } from '@/lib/actions/auth-actions/request-passwor
 
 const ForgotPasswordPage = () => {
   return (
-    <CustomAuthModal mode="reset">
+    <CustomAuthModal mode="forgot">
       <ResendForm
         onSubmit={(email) => requestPasswordReset({ email })}
         mode="reset"

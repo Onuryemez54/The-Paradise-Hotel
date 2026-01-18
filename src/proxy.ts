@@ -17,6 +17,7 @@ export const proxy = (request: NextRequest) => {
   const RESET_ALLOWED_ROUTES = [
     '/auth/reset-password',
     '/auth/verify',
+    '/auth/login',
     '/api/auth/reset',
   ];
 

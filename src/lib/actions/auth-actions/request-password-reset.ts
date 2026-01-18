@@ -2,7 +2,7 @@
 import { createClient } from '@/db/supabase/server';
 import { redirect } from 'next/navigation';
 import { assertEmailAvailability } from '../helpers/assertEmailAvailability';
-import { ErrorKey } from '@/types/i18n/keys';
+import { ErrorKey, TitleKey } from '@/types/i18n/keys';
 
 export const requestPasswordReset = async ({ email }: { email: string }) => {
   await assertEmailAvailability({ email, mode: 'reset' });
@@ -14,8 +14,9 @@ export const requestPasswordReset = async ({ email }: { email: string }) => {
   });
 
   if (error) {
-    throw new Error(ErrorKey.RESET_MAIL_FAILED);
+    console.error('Error resending password reset email:', error.message);
+    throw new Error(ErrorKey.RESET_PASSWORD_FAILED);
   }
 
-  redirect('/auth/verify?status=PASSWORD_RESET');
+  redirect(`/auth/verify?status=${TitleKey.RESET_PASSWORD}`);
 };

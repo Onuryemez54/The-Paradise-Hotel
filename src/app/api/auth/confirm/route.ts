@@ -15,6 +15,10 @@ export async function GET(request: NextRequest) {
     redirect(`/auth/resend-verification?status=${ErrorKey.NO_CODE}`);
   }
 
+  if (type !== 'signup') {
+    redirect(`/auth/resend-verification?status=${ErrorKey.INVALID_LINK}`);
+  }
+
   const supabase = await createClient();
 
   const { data, error } = await supabase.auth.verifyOtp({

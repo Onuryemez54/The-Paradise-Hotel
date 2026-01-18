@@ -3,26 +3,20 @@ import { supabaseAdmin } from '@/db/supabase/service';
 import { redirect } from 'next/navigation';
 
 import { assertEmailAvailability } from '../helpers/assertEmailAvailability';
-import { ErrorKey } from '@/types/i18n/keys';
+import { ErrorKey, TitleKey } from '@/types/i18n/keys';
 
 export const resendVerificationEmail = async (email: string) => {
   await assertEmailAvailability({ email, mode: 'resendEmailVerification' });
 
-  const { data, error } = await supabaseAdmin.auth.admin.generateLink({
-    type: 'magiclink',
+  const { error } = await supabaseAdmin.auth.resend({
+    type: 'signup',
     email,
-    options: {
-      redirectTo: `${process.env.NEXT_PUBLIC_APP_URL}/api/auth/confirm`,
-    },
   });
 
-  if (!data.user) {
-    throw new Error(ErrorKey.USER_NOT_FOUND);
-  }
-
   if (error) {
-    throw new Error(ErrorKey.RESEND_FAILED);
+    console.error('Error resending verification email:', error.message);
+    throw new Error(ErrorKey.RESEND_VERIFY_EMAIL_FAILED);
   }
 
-  redirect('/auth/verify?status=EMAIL_VERIFICATION');
+  redirect(`/auth/verify?status=${TitleKey.VERIFY_EMAIL}`);
 };

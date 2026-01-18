@@ -8,7 +8,7 @@ export async function GET(request: Request) {
   const code = url.searchParams.get('code');
 
   if (!code) {
-    redirect(`/auth/resend-verification?status=${ErrorKey.NO_CODE}`);
+    redirect(`/auth/resend-reset?status=${ErrorKey.NO_CODE}`);
   }
 
   const supabase = await createClient();
@@ -17,9 +17,9 @@ export async function GET(request: Request) {
 
   if (!data.user) {
     if (error?.code === 'validation_failed') {
-      redirect(`/auth/resend-verification?status=${ErrorKey.INVALID_LINK}`);
+      redirect(`/auth/resend-reset?status=${ErrorKey.INVALID_LINK}`);
     } else {
-      redirect(`/auth/resend-verification?status=${ErrorKey.SESSION_FAILED}`);
+      redirect(`/auth/resend-reset?status=${ErrorKey.SESSION_FAILED}`);
     }
   }
 

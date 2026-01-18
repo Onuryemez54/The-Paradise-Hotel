@@ -9,7 +9,7 @@ import { CustomButton } from '../ui/custom-components/CustomButton';
 
 interface CustomAuthModalProps {
   children: ReactNode;
-  mode: 'login' | 'register' | 'reset' | 'verify';
+  mode: 'login' | 'register' | 'forgot' | 'reset';
 }
 
 export const CustomAuthModal = ({ children, mode }: CustomAuthModalProps) => {
@@ -49,7 +49,7 @@ export const CustomAuthModal = ({ children, mode }: CustomAuthModalProps) => {
         </span>
         <div className="space-y-2">
           {children}
-          {mode === 'reset' ? (
+          {mode === 'forgot' ? (
             <p className="text-primary-400 mt-4 flex items-center justify-center">
               <CustomListItem
                 i18nKey={ListItemKey.REMEMBER_PASSWORD}
@@ -64,7 +64,7 @@ export const CustomAuthModal = ({ children, mode }: CustomAuthModalProps) => {
                 icon={<ArrowRight size={16} />}
               />
             </p>
-          ) : mode !== 'verify' ? (
+          ) : mode !== 'reset' ? (
             <>
               <CustomButton variant="google" i18nKey={ButtonKey.GOOGLE} />
               <p className="text-primary-400 mt-4 flex items-center justify-center">
