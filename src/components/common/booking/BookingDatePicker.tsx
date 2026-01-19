@@ -52,13 +52,15 @@ export const BookingDatePicker = ({
         captionLayout="dropdown"
         min={minNights}
         max={maxNights}
-        className="rdp bg-primary-900/60 rounded-2xl p-2 sm:p-1 md:p-4"
+        className="rdp bg-primary-900/60 rounded-3xl p-2 sm:p-1 md:p-4"
         classNames={{
           months: cn(
-            'flex flex-col gap-1 sm:gap-2 md:gap-4 lg:gap-16',
-            isEditMode ? 'lg:flex-row' : 'sm:flex-row md:gap-10'
+            'flex flex-col gap-2',
+            'sm:flex-row sm:gap-4',
+            'lg:gap-10',
+            isEditMode && 'lg:flex-row'
           ),
-          month: 'space-y-4',
+          month: 'space-y-2 sm:space-y-3',
         }}
         disabled={(date) =>
           isPast(date) ||

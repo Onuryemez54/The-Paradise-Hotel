@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { getTranslations } from 'next-intl/server';
 import { CustomTitle } from '../ui/custom-components/CustomTitle';
 import { ScrollReveal } from './animation/ScrollReveal';
-import { AmenityItem } from '@/types/amenitiesTypes';
+import { AmenityItem } from '@/types/ui/amenitiesTypes';
 import { AmenitiesKey, TitleKey } from '@/types/i18n/keys';
 
 type ConteinerType = 'section' | 'div';

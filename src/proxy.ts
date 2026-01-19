@@ -1,12 +1,9 @@
 import createMiddleware from 'next-intl/middleware';
 import { routing } from './i18n/routing';
 import { type NextRequest, NextResponse } from 'next/server';
+import { getSupabaseSession } from './lib/actions/helpers/getSupabaseSession';
 
 const intlMiddleware = createMiddleware(routing);
-
-const getSupabaseSession = (request: NextRequest) => {
-  return request.cookies.getAll().find((c) => c.name.includes('auth-token'));
-};
 
 export const proxy = (request: NextRequest) => {
   const { pathname } = request.nextUrl;
@@ -21,14 +18,8 @@ export const proxy = (request: NextRequest) => {
     '/api/auth/reset',
   ];
 
-  const PUBLIC_ROUTES = [
-    '/auth/login',
-    '/auth/register',
-    '/auth/forgot-password',
-  ];
-
   const isResetAllowed = RESET_ALLOWED_ROUTES.some((r) => pathname.includes(r));
-  const isPublic = PUBLIC_ROUTES.some((r) => pathname.includes(r));
+  const isPublic = pathname.includes('/auth');
   const isAccountRoute = pathname.includes('/account');
 
   const userToken = getSupabaseSession(request);
@@ -57,7 +48,7 @@ export const proxy = (request: NextRequest) => {
     return NextResponse.redirect(url);
   }
 
-  if (isPublic && userToken) {
+  if (isPublic && userToken && !resetRequired) {
     const url = request.nextUrl.clone();
     const locale = url.pathname.split('/')[1] || routing.defaultLocale;
     url.pathname = `/${locale}/account`;

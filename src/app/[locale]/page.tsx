@@ -1,8 +1,8 @@
 import { Amenities } from '@/components/common/Amenities';
 import { HeroSlider } from '@/components/home/HeroSlider';
-import { LocationMap } from '@/components/home/LocationMap';
 import { Divider } from '@/components/common/Divider';
 import { HOTEL_AMENITIES } from '@/constants/amenities.constants';
+import { MapAndFeedback } from '@/components/home/MapAndFeedback';
 
 export default async function Home() {
   return (
@@ -12,7 +12,7 @@ export default async function Home() {
       </main>
       <Amenities items={HOTEL_AMENITIES} animated container="section" />
       <Divider />
-      <LocationMap />
+      <MapAndFeedback />
     </div>
   );
 }

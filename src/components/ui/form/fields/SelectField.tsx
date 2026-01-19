@@ -70,7 +70,7 @@ export const SelectField = ({
                 <SelectValue placeholder={tPlaceholder(labelKey) as string} />
               </SelectTrigger>
 
-              <SelectContent className="bg-primary-700 border-primary-500 max-h-[300px] overflow-y-auto border">
+              <SelectContent className="bg-primary-700 border-primary-500 text-primary-200 max-h-[300px] overflow-y-auto border">
                 {options.map((opt) => (
                   <SelectItem key={opt.value} value={opt.value}>
                     {opt.label}

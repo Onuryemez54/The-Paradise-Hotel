@@ -201,6 +201,8 @@ export const CustomButton = (props: CustomButtonProps) => {
         return t(ButtonKey.SENDING);
       case ButtonKey.RESEND_RESET_PASSWORD:
         return t(ButtonKey.SENDING);
+      case ButtonKey.SEND:
+        return t(ButtonKey.SENDING);
       case ButtonKey.SAVE:
         return t(ButtonKey.SAVING);
       case ButtonKey.UPDATE_PASSWORD:

@@ -41,6 +41,7 @@ export enum TitleKey {
   CARD = 'CARD',
   DETAIL = 'DETAIL',
   UPDATE_PROFILE = 'UPDATE_PROFILE',
+  FEEDBACK = 'FEEDBACK',
 }
 
 export enum SubTitleKey {
@@ -63,6 +64,7 @@ export enum SubTitleKey {
   RESET_PASSWORD = 'RESET_PASSWORD',
   DETAIL = 'DETAIL',
   UPDATE_PROFILE = 'UPDATE_PROFILE',
+  FEEDBACK = 'FEEDBACK',
 }
 
 export enum ButtonKey {
@@ -96,6 +98,7 @@ export enum ButtonKey {
   CONNECTING = 'CONNECTING',
   SAVING = 'SAVING',
   UPDATING = 'UPDATING',
+  SEND = 'SEND',
 }
 
 export enum ListItemKey {
@@ -220,7 +223,23 @@ export enum FormKey {
   OBSERVATIONS = 'OBSERVATIONS',
   NUM_GUESTS = 'NUM_GUESTS',
   ADD_BREAKFAST = 'ADD_BREAKFAST',
+  TOPIC = 'TOPIC',
+  MESSAGE = 'MESSAGE',
 }
+
+export const FeedbackTopicKey = {
+  GENERAL: 'GENERAL',
+  COMPLIMENTS: 'COMPLIMENTS',
+  COMPLAINTS: 'COMPLAINTS',
+  SUGGESTIONS: 'SUGGESTIONS',
+  FACILITIES: 'FACILITIES',
+  ROOM_EXPERIENCE: 'ROOM_EXPERIENCE',
+  CUSTOMER_SERVICE: 'CUSTOMER_SERVICE',
+  OTHER: 'OTHER',
+} as const;
+
+export type FeedbackTopicKey =
+  (typeof FeedbackTopicKey)[keyof typeof FeedbackTopicKey];
 
 export enum ErrorKey {
   TITLE = 'ERROR',
@@ -279,6 +298,8 @@ export enum ErrorKey {
   FORM_PASSWORD = 'FORM_PASSWORD',
   FORM_PASSWORD_MISMATCH = 'FORM_PASSWORD_MISMATCH',
   FORM_NAME = 'FORM_NAME',
+  FORM_MESSAGE_MIN_LENGTH = 'FORM_MESSAGE_MIN_LENGTH',
+  FORM_MESSAGE_MAX_LENGTH = 'FORM_MESSAGE_MAX_LENGTH',
   FORM_NATIONAL_ID = 'FORM_NATIONAL_ID',
   FORM_OBSERVATION = 'FORM_OBSERVATION',
   MIN_2 = 'MIN_2',
@@ -301,6 +322,7 @@ export enum ErrorKey {
   PROFILE_IMAGE_UPLOAD_FAILED = 'PROFILE_IMAGE_UPLOAD_FAILED',
 
   // Generic
+  TOO_MANY_REQUESTS = 'TOO_MANY_REQUESTS',
   UNKNOWN = 'UNKNOWN',
   INTERNAL_ERROR = 'INTERNAL_ERROR',
 }
@@ -319,6 +341,8 @@ export enum SuccessKey {
   BOOKING_DELETED = 'BOOKING_DELETED',
   // Profile
   PROFILE_UPDATED = 'PROFILE_UPDATED',
+  // Feedback
+  FEEDBACK_SENT = 'FEEDBACK_SENT',
 }
 
 export enum LoadingKey {

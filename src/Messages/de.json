@@ -35,7 +35,8 @@
     "RESET_PASSWORD": "Prüfen Sie Ihre E-Mails zum Zurücksetzen des Passworts",
     "UPDATE_PROFILE": "Profil aktualisieren",
     "AUTH_ERROR": "E-Mail-Verifizierung fehlgeschlagen",
-    "GENERAL_ERROR": "Ein Fehler ist aufgetreten"
+    "GENERAL_ERROR": "Ein Fehler ist aufgetreten",
+    "FEEDBACK": "Wir schätzen Ihr Feedback"
   },
   "SUB_TITLE": {
     "ROOMS": "Gemütliche und raffinierte Zimmer, tief im mystischen Schwarzwald gelegen. Wachen Sie mit dem sanften Schein des Morgennebels auf, der durch die Kiefern zieht, atmen Sie die frische Waldluft ein und lauschen Sie nichts als den Klängen der Natur. Jedes unserer acht Boutique-Zimmer ist als Ihr privater Rückzugsort konzipiert – warm, elegant und vollkommen abgeschieden. Verbringen Sie Ihre Tage auf alten Waldpfaden, entspannen Sie am Feuer oder genießen Sie die friedliche Stille von Ihrem Balkon aus.",
@@ -62,7 +63,8 @@
     "LOGIN_MESSAGE": "Bitte wählen Sie eine der folgenden Optionen.",
     "VERIFY_EMAIL": "Wir haben einen Verifizierungslink an Ihre E-Mail gesendet. Klicken Sie auf den Link, um Ihr Konto zu verifizieren.",
     "RESET_PASSWORD": "Wir haben einen Link zum Zurücksetzen des Passworts gesendet. Klicken Sie auf den Link, um ein neues Passwort zu erstellen.",
-    "UPDATE_PROFILE": "Halten Sie Ihre Informationen auf dem neuesten Stand."
+    "UPDATE_PROFILE": "Halten Sie Ihre Informationen auf dem neuesten Stand.",
+    "FEEDBACK": "Ihr Feedback hilft uns, unsere Dienstleistungen zu verbessern. Bitte teilen Sie uns Ihre Gedanken und Erfahrungen mit."
   },
   "BUTTON": {
     "EXPLORE": "Luxuszimmer entdecken",
@@ -93,7 +95,8 @@
     "SENDING": "Sende...",
     "CONNECTING": "Verbinde...",
     "SAVING": "Speichere...",
-    "UPDATING": "Aktualisiere..."
+    "UPDATING": "Aktualisiere...",
+    "SEND": "Senden"
   },
   "LIST_ITEM": {
     "TAGLINE": "Luxuriöses Wald-Retreat – Smaragdhain-Tal, Schwarzwald",
@@ -209,7 +212,9 @@
       "NATIONALITY": "Nationalität",
       "OBSERVATIONS": "Anmerkungen",
       "NUM_GUESTS": "Anzahl der Gäste",
-      "ADD_BREAKFAST": "Frühstück für <highlight>{price}</highlight> pro Nacht hinzufügen"
+      "ADD_BREAKFAST": "Frühstück für <highlight>{price}</highlight> pro Nacht hinzufügen",
+      "TOPIC": "Thema",
+      "MESSAGE": "Ihre Nachricht"
     },
     "PLACEHOLDER": {
       "NAME": "Geben Sie Ihren Namen ein",
@@ -220,8 +225,20 @@
       "NATIONAL_ID": "Geben Sie Ihre Ausweisnummer ein",
       "NATIONALITY": "Wählen Sie Ihre Nationalität",
       "OBSERVATIONS": "Haben Sie spezielle Wünsche?",
-      "NUM_GUESTS": "Anzahl der Gäste wählen"
+      "NUM_GUESTS": "Anzahl der Gäste wählen",
+      "TOPIC": "Thema auswählen",
+      "MESSAGE": "Bitte schreiben Sie hier Ihre Nachricht"
     }
+  },
+  "FEEDBACK_TOPIC": {
+    "GENERAL": "Allgemein",
+    "COMPLIMENTS": "Lob",
+    "COMPLAINTS": "Beschwerden",
+    "SUGGESTIONS": "Vorschläge",
+    "FACILITIES": "Einrichtungen",
+    "ROOM_EXPERIENCE": "Zimmererfahrung",
+    "CUSTOMER_SERVICE": "Kundendienst",
+    "OTHER": "Andere"
   },
   "ERROR": {
     "AUTH_REQUIRED": "Bitte melden Sie sich an.",
@@ -285,8 +302,11 @@
     "FORM_NAME": "Name muss mindestens 2 Zeichen lang sein.",
     "FORM_NATIONAL_ID": "Bitte gültige Ausweisnummer eingeben.",
     "FORM_OBSERVATION": "Anmerkungen max. 500 Zeichen.",
+    "FORM_MESSAGE_MIN_LENGTH": "Nachricht muss mindestens 10 Zeichen lang sein.",
+    "FORM_MESSAGE_MAX_LENGTH": "Nachricht darf maximal 500 Zeichen lang sein.",
     "MIN_2": "Wert muss mindestens 2 sein.",
 
+    "TOO_MANY_REQUESTS": "Zu viele Anfragen. Bitte verlangsamen Sie und versuchen Sie es später erneut.",
     "UNKNOWN": "Etwas ist schiefgelaufen.",
     "INTERNAL_ERROR": "Technisches Problem. Bitte versuchen Sie es gleich erneut."
   },
@@ -301,7 +321,9 @@
     "BOOKING_UPDATED": "Buchung erfolgreich aktualisiert.",
     "BOOKING_DELETED": "Buchung erfolgreich gelöscht.",
 
-    "PROFILE_UPDATED": "Profil erfolgreich aktualisiert."
+    "PROFILE_UPDATED": "Profil erfolgreich aktualisiert.",
+
+    "FEEDBACK_SENT": "Vielen Dank! Ihr Feedback ist uns sehr wichtig."
   },
   "LOADING": {
     "DEFAULT": "Lädt...",

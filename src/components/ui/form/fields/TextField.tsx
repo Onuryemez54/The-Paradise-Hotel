@@ -24,6 +24,7 @@ interface TextFieldProps {
   variant?: FormVariant;
   disabled?: boolean;
   autoComplete?: string;
+  readOnly?: boolean;
 }
 
 export const TextField = ({
@@ -33,6 +34,7 @@ export const TextField = ({
   variant = 'auth',
   disabled = false,
   autoComplete,
+  readOnly = false,
 }: TextFieldProps) => {
   const tField = useTranslations('FORM.FIELD');
   const tPlaceholder = useTranslations('FORM.PLACEHOLDER');
@@ -57,6 +59,7 @@ export const TextField = ({
                 inputClasses[variant],
                 fieldState.error && errorInputClasses[variant]
               )}
+              readOnly={readOnly}
             />
           </FormControl>
           <TranslatedFormMessage variant={variant} />

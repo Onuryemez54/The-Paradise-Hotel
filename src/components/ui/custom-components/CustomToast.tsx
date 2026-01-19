@@ -85,7 +85,7 @@ export const CustomToast = ({
           {toastIcon[type]}
         </div>
 
-        <p className="flex-1 text-xs font-semibold sm:text-sm 2xl:text-base">
+        <p className="3xl:text-base flex-1 text-xs font-semibold md:text-sm">
           {message}
         </p>
 

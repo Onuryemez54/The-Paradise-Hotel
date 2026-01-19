@@ -6,15 +6,18 @@ export const inputClasses: Record<FormVariant, string> = {
     border-primary-500
     bg-primary-800
     text-primary-100
+    text-sm md:text-base 3xl:text-lg
     focus:ring-primary-400
     placeholder:text-primary-300
     disabled:cursor-not-allowed
     disabled:opacity-60
+    px-3 py-2
   `,
   booking: `
     border-primary-600
     bg-primary-700/70
-    text-primary-50
+    text-primary-100
+    text-sm md:text-base 3xl:text-lg
     focus:ring-primary-300
     placeholder:text-primary-300
   `,
@@ -79,6 +82,7 @@ export const textareaClasses: Record<FormVariant, string> = {
     border-primary-500
     bg-primary-800
     text-primary-100
+    text-sm md:text-base 3xl:text-lg
     focus:ring-primary-400
     placeholder:text-primary-300
     disabled:cursor-not-allowed 
@@ -87,7 +91,8 @@ export const textareaClasses: Record<FormVariant, string> = {
   booking: `
     border-primary-600  
     bg-primary-700/70
-    text-primary-50
+    text-primary-100
+    text-sm md:text-base 3xl:text-lg
     focus:ring-primary-300
     placeholder:text-primary-300
   `,

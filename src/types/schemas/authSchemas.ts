@@ -16,7 +16,10 @@ export type LoginInput = z.infer<typeof loginSchema>;
 export const registerSchema = z
   .object({
     fullName: z.string().min(2, { message: ErrorKey.FORM_NAME }),
-    email: z.string().email({ message: ErrorKey.FORM_EMAIL }),
+    email: z
+      .string()
+      .min(1, { message: ErrorKey.FORM_EMAIL_REQUIRED })
+      .email({ message: ErrorKey.FORM_EMAIL }),
     password: z.string().min(6, { message: ErrorKey.FORM_PASSWORD }),
     confirmPassword: z.string().min(6, {
       message: ErrorKey.FORM_PASSWORD,

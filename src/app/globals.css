@@ -87,6 +87,10 @@
   --color-toast-warning-bg: var(--color-toast-warning-bg);
   --color-toast-warning-border: var(--color-toast-warning-border);
   --color-toast-warning-foreground: var(--color-toast-warning-foreground);
+
+  --color-rdp-accent-color: var(--color-rdp-accent-color);
+  --color-rdp-background-color: var(--color-rdp-background-color);
+  --color-rdp-accent-background-color: var(--color-rdp-accent-background-color);
 }
 
 :root {
@@ -165,6 +169,10 @@
     --color-toast-warning-bg: #663e00;
     --color-toast-warning-border: #b27c00;
     --color-toast-warning-foreground: #ffedcc;
+
+    --color-rdp-accent-color: var(--color-accent-500);
+    --color-rdp-background-color: var(--color-accent-600);
+    --color-rdp-accent-background-color: var(--color-accent-700);
   }
 
   &.light {
@@ -241,36 +249,60 @@
     --color-toast-warning-bg: #fffae5;
     --color-toast-warning-border: #facc15;
     --color-toast-warning-foreground: #7c5700;
+
+    --color-rdp-accent-color: var(--color-primary-500);
+    --color-rdp-background-color: var(--color-primary-600);
+    --color-rdp-accent-background-color: var(--color-primary-600);
   }
 }
 
 .rdp {
-  --rdbp-font-family: var(--font-body) !important;
-  --rdp-cell-size: clamp(28px, 3vw, 42px) !important;
-  --rdp-accent-color: theme(--color-accent-500) !important;
-  --rdp-background-color: theme(--color-accent-600) !important;
+  --rdp-font-family: var(--font-body) !important;
+  --rdp-cell-size: clamp(26px, 3.2vw, 40px) !important;
+  --rdp-accent-color: theme(--color-rdp-accent-color) !important;
+  --rdp-background-color: theme(--color-rdp-background-color) !important;
   margin: 0 !important;
-  --rdp-accent-background-color: theme(--color-accent-700) !important;
+
+  --rdp-accent-background-color: theme(
+    --color-rdp-accent-background-color
+  ) !important;
+}
+
+.rdp .rdp-caption {
+  font-size: clamp(0.85rem, 1.6vw, 1.1rem);
+  gap: 0.25rem;
+}
+
+.rdp .rdp-dropdown {
+  background-color: theme(--color-primary-700) !important;
+  border: 1px solid theme(--color-primary-400) !important;
+}
+
+.rdp .rdp-dropdown_month,
+.rdp .rdp-dropdown_year {
+  font-size: clamp(0.75rem, 1.3vw, 1rem);
+  font-weight: 600;
 }
 
 .rdp select {
   outline: none !important;
   box-shadow: none !important;
-  border-color: theme(--color-primary-300) !important;
+  border: 1px solid theme(--color-primary-300) !important;
   background-color: theme(--color-primary-600) !important;
-  color: theme(--color-primary-50) !important;
-  border-radius: 4px !important;
+  color: theme(--color-primary-200) !important;
+  border-radius: 6px !important;
   font-weight: 400 !important;
   cursor: pointer !important;
-  border: 1px solid theme(--color-primary-300) !important;
   transition: 0.2s ease !important;
-  padding: 4px 8px !important;
+
+  padding: clamp(2px, 0.5vw, 6px) clamp(6px, 1vw, 10px) !important;
+  font-size: clamp(0.7rem, 1.2vw, 0.9rem);
 }
 
 .rdp select option:checked {
   background-color: theme(--color-accent-500) !important;
-  color: theme(--color-primary-50) !important;
-  font-weight: 700;
+  color: theme(--color-primary-200) !important;
+  font-weight: 600;
 }
 
 .rdp select option:active {
@@ -279,16 +311,13 @@
   cursor: pointer;
 }
 
-.rdp .rdp-caption {
-  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
-}
-
 .rdp .rdp-weekday {
-  font-size: clamp(0.7rem, 1.2vw, 1rem);
+  font-size: clamp(0.65rem, 1.1vw, 0.9rem);
+  opacity: 0.8;
 }
 
 .rdp .rdp-day {
-  font-size: clamp(0.75rem, 1.4vw, 1.1rem);
+  font-size: clamp(0.7rem, 1.3vw, 1rem);
 }
 
 ::-webkit-scrollbar {

@@ -35,7 +35,8 @@
     "RESET_PASSWORD": "Check your email to reset your password",
     "UPDATE_PROFILE": "Update Your Profile",
     "AUTH_ERROR": "Email Verification Failed",
-    "GENERAL_ERROR": "An Error Occurred"
+    "GENERAL_ERROR": "An Error Occurred",
+    "FEEDBACK": "We Value Your Feedback"
   },
   "SUB_TITLE": {
     "ROOMS": "Cozy yet refined rooms, tucked deep inside Germany's mystical Black Forest. Wake up to the soft glow of morning mist drifting through the pines, breathe in the crisp forest air, and listen to nothing but the sound of nature around you. Each of our eight boutique rooms is designed to feel like your own private hideaway—warm, elegant, and perfectly secluded. Spend your days wandering through ancient woodland trails, relaxing by the fire, or simply enjoying the peaceful silence from your balcony. At night, unwind in the comfort of your room as the forest grows quiet and the stars appear above the treetops.",
@@ -62,7 +63,8 @@
     "LOGIN_MESSAGE": "Please select one of the options below.",
     "VERIFY_EMAIL": "We've sent a verification link to your email. Click the link to verify your account and log in automatically.",
     "RESET_PASSWORD": "We've sent a password reset link to your email. Click the link to create a new password and regain access to your account.",
-    "UPDATE_PROFILE": "Keep your information up to date."
+    "UPDATE_PROFILE": "Keep your information up to date.",
+    "FEEDBACK": "Your feedback helps us improve our services. Please share your thoughts and experiences with us."
   },
   "BUTTON": {
     "EXPLORE": "Explore Luxury Rooms",
@@ -93,7 +95,8 @@
     "SENDING": "Sending...",
     "CONNECTING": "Connecting...",
     "SAVING": "Saving...",
-    "UPDATING": "Updating..."
+    "UPDATING": "Updating...",
+    "SEND": "Send"
   },
   "LIST_ITEM": {
     "TAGLINE": "Luxury Forest Retreat – Emerald Grove Valley, Black Forest",
@@ -209,7 +212,9 @@
       "NATIONALITY": "Nationality",
       "OBSERVATIONS": "Observations",
       "NUM_GUESTS": "Number of Guests",
-      "ADD_BREAKFAST": "Add breakfast for <highlight>{price}</highlight> per night"
+      "ADD_BREAKFAST": "Add breakfast for <highlight>{price}</highlight> per night",
+      "TOPIC": "Topic",
+      "MESSAGE": "Your Message"
     },
     "PLACEHOLDER": {
       "NAME": "Enter your full name",
@@ -220,8 +225,20 @@
       "NATIONAL_ID": "Enter your national ID",
       "NATIONALITY": "Select your nationality",
       "OBSERVATIONS": "Any special requests or observations?",
-      "NUM_GUESTS": "Select number of guests"
+      "NUM_GUESTS": "Select number of guests",
+      "TOPIC": "Select a topic",
+      "MESSAGE": "Please write your message here"
     }
+  },
+  "FEEDBACK_TOPIC": {
+    "GENERAL": "General",
+    "COMPLIMENTS": "Compliments",
+    "COMPLAINTS": "Complaints",
+    "SUGGESTIONS": "Suggestions",
+    "FACILITIES": "Facilities",
+    "ROOM_EXPERIENCE": "Room Experience",
+    "CUSTOMER_SERVICE": "Customer Service",
+    "OTHER": "Other"
   },
   "ERROR": {
     "AUTH_REQUIRED": "Please log in to continue.",
@@ -285,8 +302,11 @@
     "FORM_NAME": "Name must be at least 2 characters long.",
     "FORM_NATIONAL_ID": "Please enter a valid national ID.",
     "FORM_OBSERVATION": "Observations must be at most 500 characters long.",
+    "FORM_MESSAGE_MIN_LENGTH": "Message must be at least 10 characters long.",
+    "FORM_MESSAGE_MAX_LENGTH": "Message must be at most 500 characters long.",
     "MIN_2": "Value must be at least 2.",
 
+    "TOO_MANY_REQUESTS": "Too many requests. Please slow down and try again later.",
     "UNKNOWN": "Something went wrong. Please try again later.",
     "INTERNAL_ERROR": "We’re having a technical issue. Please try again shortly."
   },
@@ -301,7 +321,9 @@
     "BOOKING_UPDATED": "Your booking has been updated successfully.",
     "BOOKING_DELETED": "Your booking has been deleted successfully.",
 
-    "PROFILE_UPDATED": "Your profile has been updated successfully."
+    "PROFILE_UPDATED": "Your profile has been updated successfully.",
+
+    "FEEDBACK_SENT": "Thank you! Your feedback means a lot to us"
   },
   "LOADING": {
     "DEFAULT": "Loading...",

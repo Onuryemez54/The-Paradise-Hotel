@@ -35,7 +35,8 @@
     "RESET_PASSWORD": "Şifrenizi sıfırlamak için e-postanızı kontrol edin",
     "UPDATE_PROFILE": "Profilinizi Güncelleyin",
     "AUTH_ERROR": "E-posta Doğrulaması Başarısız",
-    "GENERAL_ERROR": "Bir Hata Oluştu"
+    "GENERAL_ERROR": "Bir Hata Oluştu",
+    "FEEDBACK": "Görüşlerinize Değer Veriyoruz"
   },
   "SUB_TITLE": {
     "ROOMS": "Almanya'nın mistik Kara Ormanları'nın derinliklerinde gizlenmiş, konforlu ve seçkin odalar. Çam ağaçlarının arasından süzülen sabah sisinin yumuşak parıltısıyla uyanın, taze orman havasını içinize çekin ve doğanın sesinden başka hiçbir şey duymayın. Sekiz butik odamızın her biri; sıcak, zarif ve tamamen izole edilmiş özel bir sığınak hissi verecek şekilde tasarlanmıştır. Günlerinizi antik orman yollarında yürüyerek, şömine başında dinlenerek veya balkonunuzdan huzurlu sessizliğin tadını çıkararak geçirin. Gece olduğunda, orman sessizleşirken ve yıldızlar ağaç tepelerinin üzerinde belirirken odanızın konforunda gevşeyin.",
@@ -62,7 +63,8 @@
     "LOGIN_MESSAGE": "Lütfen aşağıdaki seçeneklerden birini seçin.",
     "VERIFY_EMAIL": "E-posta adresinize bir doğrulama bağlantısı gönderdik. Hesabınızı doğrulamak ve otomatik olarak giriş yapmak için bağlantıya tıklayın.",
     "RESET_PASSWORD": "E-posta adresinize bir şifre sıfırlama bağlantısı gönderdik. Yeni bir şifre oluşturmak ve hesabınıza tekrar erişim sağlamak için bağlantıya tıklayın.",
-    "UPDATE_PROFILE": "Bilgilerinizi güncel tutun."
+    "UPDATE_PROFILE": "Bilgilerinizi güncel tutun.",
+    "FEEDBACK": "Görüşleriniz hizmetlerimizi geliştirmemize yardımcı olur. Lütfen düşüncelerinizi ve deneyimlerinizi bizimle paylaşın."
   },
   "BUTTON": {
     "EXPLORE": "Lüks Odaları Keşfedin",
@@ -93,7 +95,8 @@
     "SENDING": "Gönderiliyor...",
     "CONNECTING": "Bağlanılıyor...",
     "SAVING": "Kaydediliyor...",
-    "UPDATING": "Güncelleniyor..."
+    "UPDATING": "Güncelleniyor...",
+    "SEND": "Gönder"
   },
   "LIST_ITEM": {
     "TAGLINE": "Lüks Orman İnzivası – Emerald Grove Vadisi, Kara Orman",
@@ -209,7 +212,9 @@
       "NATIONALITY": "Uyruk",
       "OBSERVATIONS": "Notlar/Gözlemler",
       "NUM_GUESTS": "Kişi Sayısı",
-      "ADD_BREAKFAST": "Gecelik <highlight>{price}</highlight> karşılığında kahvaltı ekle"
+      "ADD_BREAKFAST": "Gecelik <highlight>{price}</highlight> karşılığında kahvaltı ekle",
+      "TOPIC": "Konu",
+      "MESSAGE": "Mesajınız"
     },
     "PLACEHOLDER": {
       "NAME": "Tam isminizi girin",
@@ -220,8 +225,20 @@
       "NATIONAL_ID": "Kimlik numaranızı girin",
       "NATIONALITY": "Uyruğunuzu seçin",
       "OBSERVATIONS": "Herhangi bir özel isteğiniz veya belirtmek istediğiniz bir şey var mı?",
-      "NUM_GUESTS": "Kişi sayısını seçin"
+      "NUM_GUESTS": "Kişi sayısını seçin",
+      "TOPIC": "Bir konu seçin",
+      "MESSAGE": "Lütfen mesajınızı buraya yazın"
     }
+  },
+  "FEEDBACK_TOPIC": {
+    "GENERAL": "Genel",
+    "COMPLIMENTS": "Tebrikler",
+    "COMPLAINTS": "Şikayetler",
+    "SUGGESTIONS": "Öneriler",
+    "FACILITIES": "Tesisler",
+    "ROOM_EXPERIENCE": "Oda Deneyimi",
+    "CUSTOMER_SERVICE": "Müşteri Hizmetleri",
+    "OTHER": "Diğer"
   },
   "ERROR": {
     "AUTH_REQUIRED": "Devam etmek için lütfen giriş yapın.",
@@ -285,7 +302,11 @@
     "FORM_NAME": "İsim en az 2 karakter uzunluğunda olmalıdır.",
     "FORM_NATIONAL_ID": "Lütfen geçerli bir kimlik numarası girin.",
     "FORM_OBSERVATION": "Notlar en fazla 500 karakter olabilir.",
+    "FORM_MESSAGE_MIN_LENGTH": "Mesaj en az 10 karakter uzunluğunda olmalıdır.",
+    "FORM_MESSAGE_MAX_LENGTH": "Mesaj en fazla 500 karakter uzunluğunda olabilir.",
     "MIN_2": "Değer en az 2 olmalıdır.",
+
+    "TOO_MANY_REQUESTS": "Çok fazla istek yapıldı. Lütfen yavaşlayın ve daha sonra tekrar deneyin.",
     "UNKNOWN": "Bir şeyler yanlış gitti. Lütfen daha sonra tekrar deneyin.",
     "INTERNAL_ERROR": "Teknik bir sorun yaşıyoruz. Lütfen kısa süre sonra tekrar deneyin."
   },
@@ -300,7 +321,9 @@
     "BOOKING_UPDATED": "Rezervasyonunuz başarıyla güncellendi.",
     "BOOKING_DELETED": "Rezervasyonunuz başarıyla silindi.",
 
-    "PROFILE_UPDATED": "Profiliniz başarıyla güncellendi."
+    "PROFILE_UPDATED": "Profiliniz başarıyla güncellendi.",
+
+    "FEEDBACK_SENT": "Teşekkür ederiz! Görüşleriniz bizim için çok değerli."
   },
   "LOADING": {
     "DEFAULT": "Yükleniyor...",

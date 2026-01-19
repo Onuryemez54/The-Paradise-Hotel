@@ -15,6 +15,9 @@ export const requestPasswordReset = async ({ email }: { email: string }) => {
 
   if (error) {
     console.error('Error resending password reset email:', error.message);
+    if (error.message.includes('security purposes')) {
+      throw new Error(ErrorKey.TOO_MANY_REQUESTS);
+    }
     throw new Error(ErrorKey.RESET_PASSWORD_FAILED);
   }
 
