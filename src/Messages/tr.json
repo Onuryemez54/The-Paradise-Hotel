@@ -2,7 +2,7 @@
   "BRAND": {
     "PREFIX": "",
     "NAME": "Paradise",
-    "SUFFIX": "Hotel"
+    "SUFFIX": "Otel"
   },
   "NAV": {
     "HOME": "Ana Sayfa",
@@ -42,14 +42,14 @@
   "SUB_TITLE": {
     "ROOMS": "Almanya'nın mistik Kara Ormanları'nın derinliklerinde gizlenmiş, konforlu ve seçkin odalar. Çam ağaçlarının arasından süzülen sabah sisinin yumuşak parıltısıyla uyanın, taze orman havasını içinize çekin ve doğanın sesinden başka hiçbir şey duymayın. Sekiz butik odamızın her biri; sıcak, zarif ve tamamen izole edilmiş özel bir sığınak hissi verecek şekilde tasarlanmıştır. Günlerinizi antik orman yollarında yürüyerek, şömine başında dinlenerek veya balkonunuzdan huzurlu sessizliğin tadını çıkararak geçirin. Gece olduğunda, orman sessizleşirken ve yıldızlar ağaç tepelerinin üzerinde belirirken odanızın konforunda gevşeyin.",
     "ABOUT": [
-      "Paradise Hotel, Almanya'nın mistik Kara Ormanlar'ından esinlenen kurgusal bir yer olan Emerald Grove Vadisi'nin derinliklerinde gizlenmiş, {count} odalı özel bir lüks dinlenme tesisidir. Yüksek çam ağaçları, sabah sisi ve el değmemiş doğa ile çevrili olan otel, konukların dünyadan kopup kendileriyle yeniden bağ kurabilecekleri samimi bir sığınak sunar.",
+      "Paradise Otel, Almanya'nın mistik Kara Ormanlar'ından esinlenen kurgusal bir yer olan Emerald Grove Vadisi'nin derinliklerinde gizlenmiş, {count} odalı özel bir lüks dinlenme tesisidir. Yüksek çam ağaçları, sabah sisi ve el değmemiş doğa ile çevrili olan otel, konukların dünyadan kopup kendileriyle yeniden bağ kurabilecekleri samimi bir sığınak sunar.",
       "Mimari; doğal taş, sıcak ahşap ve geniş panoramik pencereleri harmanlayarak modern lüks ile dışarıdaki vahşi orman arasında bir uyum yaratır. Sadece sekiz özel odasıyla Paradise Hotel, her konuk için mahremiyet, sessizlik ve gerçekten kişiselleştirilmiş bir deneyim sağlar.",
       "Burası çiftler, yazarlar, doğa severler ve huzur, taze hava ve orman büyüsü arayan herkes için bir yerdir."
     ],
     "STORY": [
-      "1974'ten beri Emerald Grove Vadisi'nin el değmemiş güzelliğinde yer alan Paradise Hotel, tek bir amaçla tasarlandı: konukların yavaşlayabileceği, nefes alabileceği ve doğayla yeniden bağ kurabileceği huzurlu bir sığınak yaratmak.",
+      "1974'ten beri Emerald Grove Vadisi'nin el değmemiş güzelliğinde yer alan Paradise Otel, tek bir amaçla tasarlandı: konukların yavaşlayabileceği, nefes alabileceği ve doğayla yeniden bağ kurabileceği huzurlu bir sığınak yaratmak.",
       "Kadim çamlar ve yumuşak sabah sisiyle çevrili otelimiz, her biri ormanın doğal cazibesini vurgulamak için tasarlanmış sadece sekiz özel oda sunmaktadır. Panoramik cam pencerelerden el yapımı ahşap iç mekanlara kadar her detay; konfor, sürdürülebilirlik ve otantik orman yaşamına olan bağlılığımızı yansıtır.",
-      "İster romantik bir kaçamak, ister yaratıcı bir inziva veya sadece dinlenmek için sessiz bir yer arıyor olun; Paradise Hotel, Kara Orman'ın kalbinde unutulmaz bir deneyim vaat ediyor."
+      "İster romantik bir kaçamak, ister yaratıcı bir inziva veya sadece dinlenmek için sessiz bir yer arıyor olun; Paradise Otel, Kara Orman'ın kalbinde unutulmaz bir deneyim vaat ediyor."
     ],
     "DASHBOARD": "Rezervasyon geçmişinizi buradan görüntüleyin. Deneyiminizi geliştirmek için kişisel bilgilerinizi ve ayarlarınızı yönetin.",
     "SETTINGS": "Aşağıdaki bilgileri sağlamanız giriş işlemlerinizi daha hızlı ve sorunsuz hale getirecektir. Yakında görüşmek üzere!",
@@ -58,7 +58,7 @@
     "EDIT": "Tarihi ve formu müsait olduğunuz başka bir zamana göre düzenleyebilirsiniz.",
     "DATE": "Müsaitlik durumunu ve toplam fiyatı kontrol etmek için aşağıdan seyahat tarihlerinizi seçin.",
     "LOCATION": "Almanya'nın mistik <strong>Kara Orman</strong> bölgesindeki huzurlu <strong>Emerald Grove Vadisi</strong>'nin derinliklerinde yer almaktadır.",
-    "FACILITIES": "Paradise Hotel'de konaklamanızı daha da keyifli hale getirmek için sunduğumuz çeşitli olanaklar ve hizmetleri keşfedin.",
+    "FACILITIES": "Paradise Otel'de konaklamanızı daha da keyifli hale getirmek için sunduğumuz çeşitli olanaklar ve hizmetleri keşfedin.",
     "SELECT_DATES": "Lütfen giriş ve çıkış tarihlerinizi seçin.",
     "NOT_FOUND": "Üzgünüz, aradığınız sayfa mevcut değil.",
     "LOGIN_MESSAGE": "Lütfen aşağıdaki seçeneklerden birini seçin.",
@@ -74,6 +74,7 @@
     "REGISTER": "Kayıt Ol",
     "LOGOUT": "Çıkış Yap",
     "VIEW": "Detaylar ve Rezervasyon",
+    "MORE_ABOUT_US": "Hakkımızda Daha Fazlası",
     "BOOKINGS": "Rezervasyonlarım",
     "NEW": "Yeni Rezervasyon",
     "EDIT": "Profili Düzenle",
@@ -154,7 +155,7 @@
       "TypeA": "Doğanın kucağında huzur ve samimiyet arayan çiftler için tasarlandı. Çam ormanına bakan özel balkonlu geniş süitler. Özellikler: king yatak, şömine, panoramik cam duvar, yağmur duşu. Kişisel sığınağınızda dinlenirken çam ağaçlarının kokusunun ve kuş seslerinin tadını çıkarın.",
       "TypeB": "Küçük aileler veya yakın arkadaşlar için mükemmel. Bu geniş oda, modern konforu doğal malzemelerle birleştiriyor: ahşap dokular, yumuşak aydınlatma ve ormana bakan geniş pencereler. Bir adet çift kişilik yatak, bir adet tek kişilik yatak, özel teras ve lüks bir yağmur duşu içerir.",
       "TypeC": "Mahremiyetten ödün vermeden birlikte kalmayı seven gruplar veya geniş aileler için ideal. Dağ evi tarzındaki bu oda, iki ayrı yatak odası, şömineli ortak bir yaşam alanı ve tam donanımlı küçük bir mutfak sunar. Büyük pencereler ve orman manzaralı veranda, günün her saatinde doğayla bağ kurmanızı sağlar.",
-      "TypeD": "Paradise Hotel'in göz bebeği — geniş aileler, gruplar veya kurumsal inzivalar için lüks bir orman villası. Beş yatak odası, özel havuz, açık hava jakuzisi, panoramik cam duvarlı geniş salon ve ağaçlarla çevrili büyük bir teras içerir. Kutlamalar, dinlenme ve doğanın lüksünde unutulmaz anlar için mükemmeldir."
+      "TypeD": "Paradise Otel'in göz bebeği — geniş aileler, gruplar veya kurumsal inzivalar için lüks bir orman villası. Beş yatak odası, özel havuz, açık hava jakuzisi, panoramik cam duvarlı geniş salon ve ağaçlarla çevrili büyük bir teras içerir. Kutlamalar, dinlenme ve doğanın lüksünde unutulmaz anlar için mükemmeldir."
     }
   },
   "BADGE": {
@@ -213,6 +214,11 @@
     "STAYED_FROM": "Konaklama başlangıcı",
     "TO": "bitişi"
   },
+  "HOME_DESC": {
+    "STARS": "Yıldız",
+    "ROOMS": "Seçkin Oda",
+    "DESC": "Almanya'nın mistik Kara Ormanı'nda saklı olan Paradise Otel, lüks odalarıyla harika bir dinlenme yeridir. Orman sisine, temiz havaya ve saf huzura uyanın. Rahatlamak, romantizm yaşamak ve yenilenmek için mükemmel bir kaçış noktası."
+  },
   "FORM": {
     "FIELD": {
       "NAME": "Tam İsim",
@@ -262,6 +268,7 @@
     "RESEND_RESET_PASSWORD_FAILED": "Şifre sıfırlama e-postası tekrar gönderilemedi. Lütfen daha sonra deneyin.",
     "PASSWORD_UPDATE_FAILED": "Şifre güncellenemedi. Lütfen tekrar deneyin.",
     "INVALID_EMAIL": "E-posta adresi geçerli değil.",
+    "EMAIL_NOT_VERIFIED": "E-posta adresi doğrulanmamış. Lütfen e-postanızı kontrol edin.",
     "EMAIL_VERIFICATION_FAILED": "E-posta doğrulaması başarısız. Bağlantı geçersiz veya süresi dolmuş olabilir.",
     "RESET_RESTRICTED": "Google hesapları için şifre sıfırlamaya izin verilmez.",
     "EMAIL_ALREADY_VERIFIED": "E-posta zaten doğrulanmış.",

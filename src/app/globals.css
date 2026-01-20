@@ -261,9 +261,10 @@
   opacity: 0.5;
 }
 
-.facilities-swiper.swiper-pagination-bullet-active {
+.facilities-swiper .swiper-pagination-bullet-active {
   background-color: var(--color-btn-primary-hover-bg) !important;
   opacity: 1;
+  scale: 1.2;
 }
 
 .rdp {

@@ -36,42 +36,42 @@ export const ROOM_AMENITIES: AmenityItem[] = [
 
 export const HOTEL_AMENITIES_GALLERY: Facility[] = [
   {
-    src: '/amenities/fitness.webp',
+    src: '/facilities/fitness.webp',
     title: FacilityTitleKey.FITNESS_CENTER,
     description: FacilityDescKey.FITNESS_CENTER,
   },
   {
-    src: '/amenities/pool.webp',
+    src: '/facilities/pool.webp',
     title: FacilityTitleKey.SWIMMING_POOL,
     description: FacilityDescKey.SWIMMING_POOL,
   },
   {
-    src: '/amenities/bar.webp',
+    src: '/facilities/bar.webp',
     title: FacilityTitleKey.HOTEL_BAR,
     description: FacilityDescKey.HOTEL_BAR,
   },
   {
-    src: '/amenities/restaurant.webp',
+    src: '/facilities/restaurant.webp',
     title: FacilityTitleKey.RESTAURANT,
     description: FacilityDescKey.RESTAURANT,
   },
   {
-    src: '/amenities/lib.webp',
+    src: '/facilities/lib.webp',
     title: FacilityTitleKey.LIBRARY,
     description: FacilityDescKey.LIBRARY,
   },
   {
-    src: '/amenities/kid.webp',
+    src: '/facilities/kid.webp',
     title: FacilityTitleKey.KIDS_AREA,
     description: FacilityDescKey.KIDS_AREA,
   },
   {
-    src: '/amenities/outdoor-1.webp',
+    src: '/facilities/outdoor-1.webp',
     title: FacilityTitleKey.OUTDOOR_AREA,
     description: FacilityDescKey.OUTDOOR_AREA,
   },
   {
-    src: '/amenities/outdoor-2.webp',
+    src: '/facilities/outdoor-2.webp',
     title: FacilityTitleKey.FIRE_PIT,
     description: FacilityDescKey.FIRE_PIT,
   },

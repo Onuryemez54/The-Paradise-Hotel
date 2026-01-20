@@ -74,6 +74,7 @@
     "REGISTER": "Register",
     "LOGOUT": "Logout",
     "VIEW": "Details & Reservation",
+    "MORE_ABOUT_US": "More About Us",
     "BOOKINGS": "My Bookings",
     "NEW": "New Booking",
     "EDIT": "Edit Profile",
@@ -197,6 +198,11 @@
     "OUTDOOR_AREA": "Explore our beautifully landscaped outdoor areas, perfect for leisurely walks and relaxation.",
     "FIRE_PIT": "Gather around the fire pit in the evenings for warmth and storytelling under the stars."
   },
+  "HOME_DESC": {
+    "STARS": "Stars",
+    "ROOMS": "Exclusive Rooms",
+    "DESC": "Hidden in Germany's mystical Black Forest, Paradise Hotel is a wonderful retreat with luxurious rooms. Wake up to forest mist, fresh air and pure tranquility. The perfect escape for relaxing, romance and rejuvenation."
+  },
   "BOOKING": {
     "NIGHTS_IN": "{count} nights in",
     "TOTAL_PRICE": "Total price:",
@@ -262,6 +268,7 @@
     "RESEND_RESET_PASSWORD_FAILED": "Failed to resend password reset email. Please try again later.",
     "PASSWORD_UPDATE_FAILED": "Failed to update password. Please try again.",
     "INVALID_EMAIL": "The email address is not valid.",
+    "EMAIL_NOT_VERIFIED": "Email is not verified. Please verify your email to proceed.",
     "EMAIL_VERIFICATION_FAILED": "Email verification failed. The link may be invalid or expired.",
     "RESET_RESTRICTED": "Password reset is not allowed for google accounts.",
     "EMAIL_ALREADY_VERIFIED": "Email is already verified.",

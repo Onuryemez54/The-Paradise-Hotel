@@ -9,7 +9,7 @@ export async function Footer() {
       <div className="mx-auto max-w-7xl px-6 md:px-8">
         <div className="flex flex-col items-center justify-between gap-6 text-center sm:flex-row sm:items-start md:gap-0 md:text-left">
           <ul className="flex flex-col items-center gap-3 md:items-start">
-            <BrandLogo showText>
+            <BrandLogo>
               <BrandName variant="footer" />
             </BrandLogo>
             <CustomListItem i18nKey={ListItemKey.TAGLINE} variant="small" />

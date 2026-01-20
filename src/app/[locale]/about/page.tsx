@@ -1,6 +1,5 @@
 import Image from 'next/image';
-import about1 from '@/../public/about/about-1.webp';
-import about2 from '@/../public/about/about-2.webp';
+
 import { ScrollReveal } from '@/components/common/animation/ScrollReveal';
 import { FadeLeftToRight } from '@/components/common/animation/FadeLeftToRight';
 import { FadeRightToLeft } from '@/components/common/animation/FadeRightToLeft';
@@ -57,9 +56,8 @@ const AboutPage = async () => {
       <div className="hidden md:col-span-2 md:grid">
         <FadeRightToLeft delay={0.2}>
           <Image
-            src={about1}
+            src="/about/about-1.webp"
             alt="Family sitting around a fire pit in front of cabin"
-            placeholder="blur"
             width={400}
             height={400}
             className="rounded-full"
@@ -70,9 +68,8 @@ const AboutPage = async () => {
       <div className="hidden md:col-span-2 md:grid">
         <ScrollReveal delay={0.2}>
           <Image
-            src={about2}
+            src="/about/about-2.webp"
             alt="Family that manages The Paradise Hotel"
-            placeholder="blur"
             width={600}
             height={600}
             className="rounded-2xl"

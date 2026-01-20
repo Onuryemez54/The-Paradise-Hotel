@@ -27,13 +27,14 @@ type Variant =
   | 'underlined';
 
 type Href =
+  | '/'
+  | '/about'
   | '/auth/login'
   | '/auth/register'
   | '/auth/forgot-password'
   | '/rooms'
   | '/account/bookings'
   | '/account/settings'
-  | '/'
   | `/rooms/${string}`;
 
 type I18nKey = ButtonKey;

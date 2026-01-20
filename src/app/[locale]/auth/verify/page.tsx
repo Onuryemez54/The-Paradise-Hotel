@@ -20,7 +20,7 @@ const VerifyEmailPage = async ({ searchParams }: VerifyEmailPageProps) => {
   return (
     <FadeUp>
       <div className="flex h-screen flex-col items-center justify-start text-center">
-        <Link href="/" className="mb-4 text-blue-500">
+        <Link href="/" className="text-primary-400 mb-4">
           <HomeIcon size={48} />
         </Link>
         <CustomTitle variant="section" i18nKey={keyTitle} />

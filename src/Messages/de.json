@@ -74,6 +74,7 @@
     "REGISTER": "Registrieren",
     "LOGOUT": "Abmelden",
     "VIEW": "Details & Reservierung",
+    "MORE_ABOUT_US": "Mehr über uns",
     "BOOKINGS": "Meine Buchungen",
     "NEW": "Neue Buchung",
     "EDIT": "Profil bearbeiten",
@@ -197,6 +198,11 @@
     "OUTDOOR_AREA": "Erkunden Sie unsere wunderschön gestalteten Außenbereiche, die sich perfekt für entspannte Spaziergänge und Erholung eignen.",
     "FIRE_PIT": "Versammeln Sie sich abends um die Feuerstelle für Wärme und Geschichten unter den Sternen."
   },
+  "HOME_DESC": {
+    "STARS": "Sterne",
+    "ROOMS": "Exklusive Zimmer",
+    "DESC": "Versteckt im mystischen Schwarzwald Deutschlands ist das Paradise Hotel ein wunderbarer Rückzugsort mit luxuriösen Zimmern. Erwachen Sie zum Waldnebel, frischer Luft und reiner Ruhe. Die perfekte Flucht für Entspannung, Romantik und Erneuerung."
+  },
   "BOOKING": {
     "NIGHTS_IN": "{count} Nächte in",
     "TOTAL_PRICE": "Gesamtpreis:",
@@ -262,6 +268,7 @@
     "RESEND_RESET_PASSWORD_FAILED": "Passwort-Zurücksetzen-E-Mail konnte nicht gesendet werden.",
     "PASSWORD_UPDATE_FAILED": "Passwort-Update fehlgeschlagen.",
     "INVALID_EMAIL": "Die E-Mail-Adresse ist ungültig.",
+    "EMAIL_NOT_VERIFIED": "E-Mail ist nicht verifiziert. Bitte überprüfen Sie Ihre E-Mails.",
     "EMAIL_VERIFICATION_FAILED": "E-Mail-Verifizierung fehlgeschlagen.",
     "RESET_RESTRICTED": "Passwort-Reset für Google-Konten nicht möglich.",
     "EMAIL_ALREADY_VERIFIED": "E-Mail ist bereits verifiziert.",

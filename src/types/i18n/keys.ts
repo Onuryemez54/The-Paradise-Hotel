@@ -77,6 +77,7 @@ export enum ButtonKey {
   REGISTER = 'REGISTER',
   LOGOUT = 'LOGOUT',
   VIEW = 'VIEW',
+  MORE_ABOUT_US = 'MORE_ABOUT_US',
   BOOKINGS = 'BOOKINGS',
   NEW = 'NEW',
   EDIT = 'EDIT',
@@ -209,6 +210,13 @@ export enum FacilityDescKey {
   KIDS_AREA = 'KIDS_AREA',
   OUTDOOR_AREA = 'OUTDOOR_AREA',
   FIRE_PIT = 'FIRE_PIT',
+}
+
+export enum HomeDescKey {
+  TITLE = 'HOME_DESC',
+  STARS = 'STARS',
+  ROOMS = 'ROOMS',
+  DESC = 'DESC',
 }
 
 export enum BookingKey {

@@ -2,10 +2,12 @@
 import { CustomAuthModal } from '@/components/auth/CustomAuthModal';
 import { ResetPasswordForm } from '@/components/auth/ResetPasswordForm';
 
-export default function ResetPasswordPage() {
+const ResetPasswordPage = () => {
   return (
     <CustomAuthModal mode="reset">
       <ResetPasswordForm />
     </CustomAuthModal>
   );
-}
+};
+
+export default ResetPasswordPage;
