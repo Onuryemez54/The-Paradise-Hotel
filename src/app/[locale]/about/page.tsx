@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import about1 from '../../../../public/about-1.jpg';
-import about2 from '../../../../public/about-2.jpg';
+import about1 from '@/../public/about/about-1.webp';
+import about2 from '@/../public/about/about-2.webp';
 import { ScrollReveal } from '@/components/common/animation/ScrollReveal';
 import { FadeLeftToRight } from '@/components/common/animation/FadeLeftToRight';
 import { FadeRightToLeft } from '@/components/common/animation/FadeRightToLeft';
@@ -60,6 +60,8 @@ const AboutPage = async () => {
             src={about1}
             alt="Family sitting around a fire pit in front of cabin"
             placeholder="blur"
+            width={400}
+            height={400}
             className="rounded-full"
           />
         </FadeRightToLeft>
@@ -71,7 +73,9 @@ const AboutPage = async () => {
             src={about2}
             alt="Family that manages The Paradise Hotel"
             placeholder="blur"
-            className="rounded-xl"
+            width={600}
+            height={600}
+            className="rounded-2xl"
           />
         </ScrollReveal>
       </div>

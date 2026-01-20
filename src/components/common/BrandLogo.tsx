@@ -9,7 +9,8 @@ interface BrandLogoProps {
 }
 export const BrandLogo = ({ setIsOpen, children }: BrandLogoProps) => {
   const { theme } = useTheme();
-  const logoSrc = theme === 'dark' ? '/logo-dark.png' : '/logo-light.png';
+  const logoSrc =
+    theme === 'dark' ? '/icons/logo-dark.png' : '/icons/logo-light.png';
 
   return (
     <Link href="/" className="flex items-center gap-4">
@@ -18,7 +19,7 @@ export const BrandLogo = ({ setIsOpen, children }: BrandLogoProps) => {
         height="50"
         width="50"
         alt="The Paradise Hotel logo"
-        className="rounded-full opacity-80"
+        className="rounded-full opacity-70"
         onClick={() => setIsOpen && setIsOpen(false)}
       />
       {children && children}

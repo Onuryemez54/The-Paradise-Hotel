@@ -6,7 +6,7 @@ import { ButtonKey, TitleKey } from '@/types/i18n/keys';
 import { CustomTitle } from '../ui/custom-components/CustomTitle';
 import { CustomButton } from '../ui/custom-components/CustomButton';
 
-const images = ['/bg-3.png', '/bg-2.png', '/bg.png'];
+const images = ['/bg/bg.webp', '/bg/bg-2.webp', '/bg/outdoor-2.webp'];
 
 export const HeroSlider = () => {
   const [index, setIndex] = useState(0);
@@ -42,6 +42,15 @@ export const HeroSlider = () => {
           </motion.div>
         ))}
         <div className="from-primary-900/70 absolute inset-0 bg-linear-to-b to-transparent" />
+        <div
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-20 backdrop-blur-sm"
+          style={{
+            maskImage:
+              'linear-gradient(to top, black 0%, black 40%, transparent 100%)',
+            WebkitMaskImage:
+              'linear-gradient(to top, black 0%, black 40%, transparent 100%)',
+          }}
+        />
       </div>
       <div className="px-6 py-16">
         <motion.div

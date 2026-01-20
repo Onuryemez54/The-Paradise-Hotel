@@ -8,7 +8,7 @@ import { Divider } from '@/components/common/Divider';
 import { BrandName } from '@/components/common/BrandName';
 import { CustomListItem } from '@/components/ui/custom-components/CustomListItem';
 import { ArrowDown } from 'lucide-react';
-import { Amenities } from '@/components/common/Amenities';
+import { Amenities } from '@/components/rooms/Amenities';
 import { ROOM_AMENITIES } from '@/constants/amenities.constants';
 import { RoomType } from '@/types/rooms/room';
 import {

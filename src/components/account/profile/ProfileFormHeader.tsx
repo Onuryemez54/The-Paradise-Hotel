@@ -28,7 +28,7 @@ export const ProfileFormHeader = ({
   return (
     <div className="flex flex-col items-center gap-4 text-center">
       <UserImage
-        image={previewUrl || image || '/default-avatar.png'}
+        image={previewUrl || image || '/icons/default-user.png'}
         size="large"
         borderColor="primary-300"
       />

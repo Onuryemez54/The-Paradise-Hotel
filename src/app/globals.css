@@ -256,6 +256,16 @@
   }
 }
 
+.facilities-swiper .swiper-pagination-bullet {
+  background-color: var(--color-btn-primary-bg) !important;
+  opacity: 0.5;
+}
+
+.facilities-swiper.swiper-pagination-bullet-active {
+  background-color: var(--color-btn-primary-hover-bg) !important;
+  opacity: 1;
+}
+
 .rdp {
   --rdp-font-family: var(--font-body) !important;
   --rdp-cell-size: clamp(26px, 3.2vw, 40px) !important;

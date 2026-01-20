@@ -14,7 +14,7 @@ interface UserProfileProps {
   setNavOpen?: (isOpen: boolean) => void;
 }
 
-const DEFAULT_AVATAR = '/default-user.jpg';
+const DEFAULT_AVATAR = '/icons/default-user.png';
 
 export const UserProfile = ({ user, setNavOpen }: UserProfileProps) => {
   const [isOpen, setIsOpen] = useState(false);

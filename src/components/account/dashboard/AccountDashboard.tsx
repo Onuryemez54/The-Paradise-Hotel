@@ -24,7 +24,7 @@ export const AccountDashboard = async () => {
           </CustomTitle>
           <div className="flex items-center gap-3">
             <UserImage
-              image={currentUser.image || '/default-user.jpg'}
+              image={currentUser.image || '/icons/default-user.png'}
               size="medium"
               borderColor="accent-border"
             />

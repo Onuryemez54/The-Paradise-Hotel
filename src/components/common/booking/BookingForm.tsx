@@ -322,7 +322,7 @@ export const BookingForm = ({
           <Badge variant="primary" i18nKey={BadgeKey.LOGGED_IN} />
           <div className="flex items-center gap-4">
             <UserImage
-              image={user.image ?? '/default-avatar.png'}
+              image={user.image ?? '/icons/default-user.png'}
               borderColor="primary-400"
             />
             <h2 className="text-primary-300 hidden font-semibold sm:flex">

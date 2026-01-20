@@ -1,42 +1,23 @@
 import clsx from 'clsx';
 import { getTranslations } from 'next-intl/server';
 import { CustomTitle } from '../ui/custom-components/CustomTitle';
-import { ScrollReveal } from './animation/ScrollReveal';
+import { ScrollReveal } from '../common/animation/ScrollReveal';
 import { AmenityItem } from '@/types/ui/amenitiesTypes';
 import { AmenitiesKey, TitleKey } from '@/types/i18n/keys';
 
-type ConteinerType = 'section' | 'div';
 interface AmenitiesProps {
   items: AmenityItem[];
-  animated?: boolean;
-  container?: ConteinerType;
 }
 
-const containerStyles: Record<ConteinerType, string> = {
-  section: 'px-6 md:px-20',
-  div: 'flex flex-col gap-2',
-};
-
-export const Amenities = async ({
-  items,
-  animated = false,
-  container = 'div',
-}: AmenitiesProps) => {
+export const Amenities = async ({ items }: AmenitiesProps) => {
   const t = await getTranslations(AmenitiesKey.TITLE);
-  const Wrapper = container;
-  const CardDiv = 'div';
   const cardDivClass =
-    container === 'div'
-      ? 'mx-auto mt-2 grid grid-cols-2 gap-2 sm:w-full md:grid-cols-3 md:gap-6 lg:grid-cols-4'
-      : 'grid grid-cols-2 gap-5 md:grid-cols-3 md:gap-8 lg:grid-cols-4 lg:gap-10';
-  const itemClassName =
-    container === 'div'
-      ? 'bg-primary-600/50 hover:bg-primary-600'
-      : 'justify-center bg-transparent shadow hover:shadow-lg';
+    'mx-auto mt-2 grid grid-cols-2 gap-2 sm:w-full md:grid-cols-3 md:gap-6 lg:grid-cols-4';
+  const itemClassName = 'bg-primary-600/50 hover:bg-primary-600';
 
   const content = (
-    <CardDiv className={cardDivClass}>
-      {items.map(({ icon: Icon, key }, i) => {
+    <div className={cardDivClass}>
+      {items.map(({ icon: Icon, key }) => {
         const card = (
           <div
             className={clsx(
@@ -51,19 +32,13 @@ export const Amenities = async ({
           </div>
         );
 
-        return animated ? (
-          <ScrollReveal key={key} delay={i * 0.1}>
-            {card}
-          </ScrollReveal>
-        ) : (
-          <div key={key}>{card}</div>
-        );
+        return <div key={key}>{card}</div>;
       })}
-    </CardDiv>
+    </div>
   );
 
   return (
-    <Wrapper className={containerStyles[container]}>
+    <div className="flex flex-col gap-2">
       <ScrollReveal delay={0.1}>
         <CustomTitle
           variant="subheading"
@@ -72,6 +47,6 @@ export const Amenities = async ({
         />
       </ScrollReveal>
       <ScrollReveal delay={0.2}>{content}</ScrollReveal>
-    </Wrapper>
+    </div>
   );
 };
