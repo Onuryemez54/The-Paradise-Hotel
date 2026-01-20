@@ -6,7 +6,7 @@ import { ButtonKey, TitleKey } from '@/types/i18n/keys';
 import { CustomTitle } from '../ui/custom-components/CustomTitle';
 import { CustomButton } from '../ui/custom-components/CustomButton';
 
-const images = ['/bg/bg.webp', '/bg/bg-2.webp', '/bg/outdoor-2.webp'];
+const images = ['/bg/bg.webp', '/bg/bg-2.webp', '/facilities/outdoor-2.webp'];
 
 export const HeroSlider = () => {
   const [index, setIndex] = useState(0);

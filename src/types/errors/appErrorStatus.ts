@@ -1,13 +1,17 @@
 import { ErrorKey } from '../i18n/keys';
 
 export const appErrorStatusMap: Record<ErrorKey, number> = {
+  // Title (UI-only, backend status)
+  [ErrorKey.TITLE]: 500,
+
   // Auth
   [ErrorKey.AUTH_REQUIRED]: 401,
   [ErrorKey.LOGIN_FAILED]: 401,
   [ErrorKey.REGISTER_FAILED]: 400,
   [ErrorKey.OAUTH_FAILED]: 401,
-  [ErrorKey.RESET_MAIL_FAILED]: 500,
-  [ErrorKey.RESEND_FAILED]: 500,
+  [ErrorKey.RESET_PASSWORD_FAILED]: 500,
+  [ErrorKey.RESEND_VERIFY_EMAIL_FAILED]: 500,
+  [ErrorKey.RESEND_RESET_PASSWORD_FAILED]: 500,
   [ErrorKey.PASSWORD_UPDATE_FAILED]: 500,
   [ErrorKey.INVALID_EMAIL]: 400,
   [ErrorKey.EMAIL_NOT_VERIFIED]: 403,
@@ -20,24 +24,36 @@ export const appErrorStatusMap: Record<ErrorKey, number> = {
   [ErrorKey.NO_TOKEN]: 400,
   [ErrorKey.INVALID_LINK]: 400,
   [ErrorKey.SESSION_FAILED]: 500,
+  [ErrorKey.SESSION_EXPIRED]: 401,
   [ErrorKey.SAME_PASSWORD]: 400,
 
   [ErrorKey.USER_NOT_FOUND]: 404,
   [ErrorKey.USER_EXISTS]: 409,
   [ErrorKey.USER_EXISTS_UNVERIFIED]: 409,
   [ErrorKey.USER_EXISTS_OAUTH]: 409,
-  // room
+
+  // Room
+  [ErrorKey.ROOMS_FETCH_FAILED]: 500,
+  [ErrorKey.ROOM_FETCH_FAILED]: 500,
+  [ErrorKey.ROOM_NOT_FOUND]: 404,
   [ErrorKey.ROOM_TYPE_INVALID]: 400,
 
   // Booking
+  [ErrorKey.BOOKINGS_FETCH_FAILED]: 500,
   [ErrorKey.BOOKING_OVERLAP]: 409,
   [ErrorKey.BOOKING_NOT_FOUND]: 404,
   [ErrorKey.BOOKING_FORBIDDEN]: 403,
   [ErrorKey.BOOKING_CREATE_FAILED]: 500,
   [ErrorKey.BOOKING_UPDATE_FAILED]: 500,
   [ErrorKey.BOOKING_DELETE_FAILED]: 500,
+  [ErrorKey.BOOKING_DELETE_FORBIDDEN]: 403,
+  [ErrorKey.INVALID_BOOKING_DATES]: 400,
+  [ErrorKey.INVALID_SELECTED_RANGE]: 400,
+  [ErrorKey.INVALID_SELECTED_GUEST_NUMBER]: 400,
+  [ErrorKey.INVALID_RANGE_AND_GUEST]: 400,
 
   // Form
+  [ErrorKey.REQUIRED]: 400,
   [ErrorKey.FORM_INVALID]: 400,
   [ErrorKey.FORM_MISSING]: 400,
   [ErrorKey.FORM_INVALID_NUMBER]: 400,
@@ -47,20 +63,27 @@ export const appErrorStatusMap: Record<ErrorKey, number> = {
   [ErrorKey.FORM_PASSWORD]: 400,
   [ErrorKey.FORM_PASSWORD_MISMATCH]: 400,
   [ErrorKey.FORM_NAME]: 400,
+  [ErrorKey.FORM_MESSAGE_MIN_LENGTH]: 400,
+  [ErrorKey.FORM_MESSAGE_MAX_LENGTH]: 400,
   [ErrorKey.FORM_NATIONAL_ID]: 400,
   [ErrorKey.FORM_OBSERVATION]: 400,
   [ErrorKey.MIN_2]: 400,
 
-  // Data
-  [ErrorKey.ROOMS_FETCH_FAILED]: 500,
-  [ErrorKey.BOOKINGS_FETCH_FAILED]: 500,
+  // Data Fetching
+  [ErrorKey.SETTINGS_FETCH_FAILED]: 500,
+  [ErrorKey.SETTINGS_NOT_FOUND]: 404,
+
+  // External APIs
   [ErrorKey.COUNTRIES_FETCH_FAILED]: 500,
   [ErrorKey.EXCHANGE_RATE_FAILED]: 502,
 
   // Profile
   [ErrorKey.PROFILE_UPDATE_FAILED]: 500,
+  [ErrorKey.PROFILE_UPDATE_AUTH_FAILED]: 403,
+  [ErrorKey.PROFILE_IMAGE_UPLOAD_FAILED]: 500,
 
   // Generic
+  [ErrorKey.TOO_MANY_REQUESTS]: 429,
   [ErrorKey.UNKNOWN]: 500,
   [ErrorKey.INTERNAL_ERROR]: 500,
 };

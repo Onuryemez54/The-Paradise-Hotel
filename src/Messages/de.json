@@ -287,6 +287,8 @@
     "USER_EXISTS_OAUTH": "Bitte melden Sie sich über Google an.",
 
     "ROOMS_FETCH_FAILED": "Zimmer konnten nicht geladen werden.",
+    "ROOM_FETCH_FAILED": "Zimmerdetails konnten nicht geladen werden.",
+    "ROOM_NOT_FOUND": "Das Zimmer konnte nicht gefunden werden.",
     "ROOM_TYPE_INVALID": "Ungültiger Zimmertyp.",
 
     "BOOKINGS_FETCH_FAILED": "Buchungen konnten nicht geladen werden.",
@@ -301,13 +303,6 @@
     "INVALID_SELECTED_RANGE": "Der ausgewählte Datumsbereich ist für dieses Zimmer nicht verfügbar. Bitte wählen Sie einen gültigen Datumsbereich.",
     "INVALID_SELECTED_GUEST_NUMBER": "Die ausgewählte Gästeanzahl gilt nicht für dieses Zimmer. Die Gästeanzahl wird auf die maximale Kapazität dieses Zimmers gesetzt.",
     "INVALID_RANGE_AND_GUEST": "Der ausgewählte Datumsbereich ist nicht verfügbar und die Gästeanzahl überschreitet die Kapazität des Zimmers. Bitte wählen Sie einen gültigen Datumsbereich und eine gültige Gästeanzahl.",
-
-    "COUNTRIES_FETCH_FAILED": "Länderliste konnte nicht geladen werden.",
-    "EXCHANGE_RATE_FAILED": "Wechselkurse konnten nicht geladen werden.",
-
-    "PROFILE_UPDATE_FAILED": "Profil konnte nicht aktualisiert werden.",
-    "PROFILE_UPDATE_AUTH_FAILED": "Authentifizierung für Profilaktualisierung fehlgeschlagen. Bitte melden Sie sich erneut an.",
-    "PROFILE_IMAGE_UPLOAD_FAILED": "Profilbild konnte nicht hochgeladen werden. Bitte versuchen Sie es erneut.",
 
     "REQUIRED": "Dieses Feld ist erforderlich.",
     "FORM_INVALID": "Das Formular ist ungültig.",
@@ -324,6 +319,16 @@
     "FORM_MESSAGE_MIN_LENGTH": "Nachricht muss mindestens 10 Zeichen lang sein.",
     "FORM_MESSAGE_MAX_LENGTH": "Nachricht darf maximal 500 Zeichen lang sein.",
     "MIN_2": "Wert muss mindestens 2 sein.",
+
+    "SETTINGS_FETCH_FAILED": "Profileinstellungen konnten nicht geladen werden.",
+    "SETTINGS_NOT_FOUND": "Profileinstellungen konnten nicht gefunden werden.",
+
+    "COUNTRIES_FETCH_FAILED": "Länderliste konnte nicht geladen werden.",
+    "EXCHANGE_RATE_FAILED": "Wechselkurse konnten nicht geladen werden.",
+
+    "PROFILE_UPDATE_FAILED": "Profil konnte nicht aktualisiert werden.",
+    "PROFILE_UPDATE_AUTH_FAILED": "Authentifizierung für Profilaktualisierung fehlgeschlagen. Bitte melden Sie sich erneut an.",
+    "PROFILE_IMAGE_UPLOAD_FAILED": "Profilbild konnte nicht hochgeladen werden. Bitte versuchen Sie es erneut.",
 
     "TOO_MANY_REQUESTS": "Zu viele Anfragen. Bitte verlangsamen Sie und versuchen Sie es später erneut.",
     "UNKNOWN": "Etwas ist schiefgelaufen.",
@@ -350,12 +355,14 @@
     "ROOMS": "Zimmer werden geladen...",
     "ROOM": "Zimmerdetails werden geladen...",
     "ROOM_BOOK_DETAILS": "Buchungsdetails werden geladen...",
-    "COUNTRIES": "Länder werden geladen...",
-    "EXCHANGE_RATES": "Wechselkurse werden geladen...",
+
     "ACCOUNT": "Kontodetails werden geladen...",
     "DASHBOARD": "Dashboard wird geladen...",
     "SETTINGS": "Profileinstellungen werden geladen...",
     "BOOKINGS": "Buchungen werden geladen...",
-    "BOOK": "Wird geladen..."
+    "BOOK": "Wird geladen...",
+
+    "COUNTRIES": "Länder werden geladen...",
+    "EXCHANGE_RATES": "Wechselkurse werden geladen..."
   }
 }

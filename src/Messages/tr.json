@@ -287,6 +287,8 @@
     "USER_EXISTS_OAUTH": "Lütfen Google hesabınızı kullanarak giriş yapın.",
 
     "ROOMS_FETCH_FAILED": "Odalar şu anda yüklenemedi.",
+    "ROOM_FETCH_FAILED": "Oda detayları şu anda yüklenemedi.",
+    "ROOM_NOT_FOUND": "Oda bulunamadı.",
     "ROOM_TYPE_INVALID": "Seçilen oda tipi geçersiz.",
 
     "BOOKINGS_FETCH_FAILED": "Rezervasyonlar şu anda yüklenemedi.",
@@ -301,13 +303,6 @@
     "INVALID_SELECTED_RANGE": "Seçilen tarih aralığı bu oda için uygun değil. Lütfen geçerli bir tarih aralığı seçin.",
     "INVALID_SELECTED_GUEST_NUMBER": "Seçilen kişi sayısı bu oda için geçerli değil. Kişi sayısı bu odanın maksimum kapasitesine ayarlandı.",
     "INVALID_RANGE_AND_GUEST": "Seçilen tarih aralığı müsait değil ve misafir sayısı odanın kapasitesini aşıyor. Lütfen geçerli bir tarih aralığı ve kişi sayısı seçin.",
-
-    "COUNTRIES_FETCH_FAILED": "Ülke listesi yüklenemedi.",
-    "EXCHANGE_RATE_FAILED": "Döviz kurları yüklenemedi.",
-
-    "PROFILE_UPDATE_FAILED": "Profiliniz güncellenemedi. Lütfen tekrar deneyin.",
-    "PROFILE_UPDATE_AUTH_FAILED": "Profil güncellemesi için kimlik doğrulama başarısız. Lütfen tekrar giriş yapın.",
-    "PROFILE_IMAGE_UPLOAD_FAILED": "Profil resmi yüklenemedi. Lütfen tekrar deneyin.",
 
     "REQUIRED": "Bu alan zorunludur.",
     "FORM_INVALID": "Gönderilen form geçersiz.",
@@ -324,6 +319,16 @@
     "FORM_MESSAGE_MIN_LENGTH": "Mesaj en az 10 karakter uzunluğunda olmalıdır.",
     "FORM_MESSAGE_MAX_LENGTH": "Mesaj en fazla 500 karakter uzunluğunda olabilir.",
     "MIN_2": "Değer en az 2 olmalıdır.",
+
+    "SETTINGS_FETCH_FAILED": "Ayarlar yüklenemedi. Lütfen daha sonra tekrar deneyin.",
+    "SETTINGS_NOT_FOUND": "Ayarlar bulunamadı.",
+
+    "COUNTRIES_FETCH_FAILED": "Ülke listesi yüklenemedi.",
+    "EXCHANGE_RATE_FAILED": "Döviz kurları yüklenemedi.",
+
+    "PROFILE_UPDATE_FAILED": "Profiliniz güncellenemedi. Lütfen tekrar deneyin.",
+    "PROFILE_UPDATE_AUTH_FAILED": "Profil güncellemesi için kimlik doğrulama başarısız. Lütfen tekrar giriş yapın.",
+    "PROFILE_IMAGE_UPLOAD_FAILED": "Profil resmi yüklenemedi. Lütfen tekrar deneyin.",
 
     "TOO_MANY_REQUESTS": "Çok fazla istek yapıldı. Lütfen yavaşlayın ve daha sonra tekrar deneyin.",
     "UNKNOWN": "Bir şeyler yanlış gitti. Lütfen daha sonra tekrar deneyin.",
@@ -350,12 +355,14 @@
     "ROOMS": "Odalar Yükleniyor...",
     "ROOM": "Oda Detayları Yükleniyor...",
     "ROOM_BOOK_DETAILS": "Oda Rezervasyon Detayları Yükleniyor...",
-    "COUNTRIES": "Ülkeler Yükleniyor...",
-    "EXCHANGE_RATES": "Döviz Kurları Yükleniyor...",
+
     "ACCOUNT": "Hesap Detaylarınız Yükleniyor...",
     "DASHBOARD": "Hesap Paneliniz Yükleniyor...",
     "SETTINGS": "Profil Ayarlarınız Yükleniyor...",
     "BOOKINGS": "Rezervasyonlarınız Yükleniyor...",
-    "BOOK": "Rezervasyonunuz Yükleniyor..."
+    "BOOK": "Rezervasyonunuz Yükleniyor...",
+
+    "COUNTRIES": "Ülkeler Yükleniyor...",
+    "EXCHANGE_RATES": "Döviz Kurları Yükleniyor..."
   }
 }
