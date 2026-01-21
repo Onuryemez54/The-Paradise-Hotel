@@ -5,14 +5,16 @@ import {
 import { UserBookingsList } from './UserBookingsList';
 import { AccountDiv } from '../AccountDiv';
 import { CustomListItem } from '@/components/ui/custom-components/CustomListItem';
-import { ButtonKey, ListItemKey } from '@/types/i18n/keys';
+import { ButtonKey, ErrorKey, ListItemKey } from '@/types/i18n/keys';
 import { CustomButton } from '@/components/ui/custom-components/CustomButton';
 import { ArrowRight } from 'lucide-react';
 import { FadeLeftToRight } from '@/components/common/animation/FadeLeftToRight';
+import { AppError } from '@/lib/errors/AppError';
 
 export const UserBookings = async () => {
   const currentUser = await getCurrentUser();
-  if (!currentUser) return null;
+  if (!currentUser) throw new AppError(ErrorKey.AUTH_REQUIRED);
+
   const bookings = await getBookingsListByUserId(currentUser.id);
 
   const content =

@@ -82,7 +82,7 @@ export const UpdateProfileForm = ({
       const supabase = createClient();
       await supabase.auth.refreshSession();
 
-      toast.success(tS(SuccessKey.PROFILE_UPDATED));
+      toast.success(tS(SuccessKey.PROFILE_UPDATED), 2000, true);
       router.refresh();
     } catch (err) {
       handleAppError({ err, t: tE, toast });

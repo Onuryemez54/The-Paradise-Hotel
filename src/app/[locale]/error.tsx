@@ -12,7 +12,7 @@ type ErrorWithMeta = Error & {
   digest?: string;
 };
 
-export default function Error({ error }: { error: ErrorWithMeta }) {
+const Error = ({ error }: { error: ErrorWithMeta }) => {
   const t = useTranslations(ErrorKey.TITLE);
 
   const errorKey: ErrorKey =
@@ -47,4 +47,6 @@ export default function Error({ error }: { error: ErrorWithMeta }) {
       </main>
     </FadeUp>
   );
-}
+};
+
+export default Error;

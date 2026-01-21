@@ -44,7 +44,7 @@ export async function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export default async function LocaleLayout({ children, params }: LayoutProps) {
+const LocaleLayout = async ({ children, params }: LayoutProps) => {
   const { locale } = await params;
   const rates = await getExchangeRates();
 
@@ -71,4 +71,6 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
       </ToastProvider>
     </NextIntlClientProvider>
   );
-}
+};
+
+export default LocaleLayout;

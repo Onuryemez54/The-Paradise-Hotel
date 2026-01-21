@@ -16,14 +16,16 @@ export const HotelDesc = async () => {
           <div className="flex flex-col items-start gap-10">
             <div className="flex gap-10">
               <div className="space-y-3">
-                <div className="text-primary-300 text-5xl font-bold">5</div>
+                <div className="text-primary-300 text-3xl font-bold md:text-5xl">
+                  5
+                </div>
                 <div className="text-accent-400 text-xs font-medium tracking-widest uppercase">
                   {t(HomeDescKey.STARS)}
                 </div>
               </div>
 
               <div className="space-y-3">
-                <div className="text-primary-300 text-5xl font-bold">
+                <div className="text-primary-300 text-3xl font-bold md:text-5xl">
                   {roomCount}
                 </div>
                 <div className="text-accent-400 text-xs font-medium tracking-widest uppercase">

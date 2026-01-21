@@ -5,7 +5,7 @@ import { MapAndFeedback } from '@/components/home/MapAndFeedback';
 import { FacilitiesShowcase } from '@/components/home/FacilitiesShowcase';
 import { HotelDesc } from '@/components/home/HotelDesc';
 
-export default async function Home() {
+const Home = () => {
   return (
     <div className="flex flex-col gap-10">
       <main className="mt-24 -mb-50 h-screen w-full">
@@ -18,4 +18,6 @@ export default async function Home() {
       <MapAndFeedback />
     </div>
   );
-}
+};
+
+export default Home;

@@ -1,17 +1,19 @@
 import { CustomButton } from '../../ui/custom-components/CustomButton';
 import { CustomTitle } from '../../ui/custom-components/CustomTitle';
 import { DashboardCard } from './DashboardCard ';
-import { ButtonKey, TitleKey } from '@/types/i18n/keys';
+import { ButtonKey, ErrorKey, TitleKey } from '@/types/i18n/keys';
 import { UserImage } from '@/components/common/UserImage';
 import {
   getCurrentUser,
   getDashboardBookingsByUserId,
 } from '@/lib/actions/prisma-actions/db-acitons';
 import { AccountDiv } from '../AccountDiv';
+import { AppError } from '@/lib/errors/AppError';
 
 export const AccountDashboard = async () => {
   const currentUser = await getCurrentUser();
-  if (!currentUser) return null;
+  if (!currentUser) throw new AppError(ErrorKey.AUTH_REQUIRED);
+
   const bookings = await getDashboardBookingsByUserId(currentUser.id);
   return (
     <AccountDiv mode="dashboard">

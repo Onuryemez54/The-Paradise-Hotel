@@ -5,7 +5,7 @@ import { CustomTitle } from '@/components/ui/custom-components/CustomTitle';
 import { ButtonKey, SubTitleKey, TitleKey } from '@/types/i18n/keys';
 import { Home } from 'lucide-react';
 
-export default function NotFoundPage() {
+const NotFoundPage = () => {
   return (
     <FadeUp>
       <div className="flex flex-col items-center gap-4 px-4 py-24 text-center">
@@ -32,4 +32,6 @@ export default function NotFoundPage() {
       </div>
     </FadeUp>
   );
-}
+};
+
+export default NotFoundPage;

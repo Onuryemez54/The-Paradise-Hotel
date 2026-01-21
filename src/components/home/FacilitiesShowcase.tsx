@@ -1,7 +1,8 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useTheme } from '@/context/ThemeContext';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import type { Swiper as SwiperType } from 'swiper';
 import { Autoplay, Pagination } from 'swiper/modules';
 import Image from 'next/image';
 import Lightbox from 'yet-another-react-lightbox';
@@ -23,10 +24,28 @@ type FacilitiesShowcaseProps = {
 export const FacilitiesShowcase = ({ items }: FacilitiesShowcaseProps) => {
   const { theme } = useTheme();
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const swiperRef = useRef<SwiperType | null>(null);
 
   const isDark = theme === 'dark';
   const imageClass = `border-accent-border/60 rounded-3xl border-2 object-cover shadow-2xl transition-transform duration-700 group-hover:scale-110 ${isDark ? 'brightness-90 contrast-110' : 'brightness-95 contrast-105'}`;
   const overlayClass = `absolute inset-0 opacity-50 transition-opacity duration-500 group-hover:opacity-100 ${isDark ? 'bg-black/20' : 'bg-white/20'}`;
+
+  useEffect(() => {
+    const swiperInstance = swiperRef.current;
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        swiperInstance?.autoplay.stop();
+      } else {
+        swiperInstance?.autoplay.start();
+      }
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, []);
 
   return (
     <HomeWrapper>
@@ -78,6 +97,9 @@ export const FacilitiesShowcase = ({ items }: FacilitiesShowcaseProps) => {
             spaceBetween={12}
             slidesPerView={1}
             className="facilities-swiper w-full"
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
           >
             {items.map((item, i) => (
               <SwiperSlide key={i} className="w-full!">

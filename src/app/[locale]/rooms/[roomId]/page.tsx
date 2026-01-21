@@ -11,8 +11,9 @@ import { Suspense } from 'react';
 import { AppLocale } from '@/i18n/routing';
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { LoadingKey, RoomKey } from '@/types/i18n/keys';
+import { ErrorKey, LoadingKey, RoomKey } from '@/types/i18n/keys';
 import { notFound } from 'next/navigation';
+import { AppError } from '@/lib/errors/AppError';
 
 interface RoomPageProps {
   params: Promise<{
@@ -43,7 +44,7 @@ export const generateStaticParams = async () => {
 const RoomPage = async ({ params }: RoomPageProps) => {
   const { roomId } = await params;
   if (!roomId) {
-    notFound();
+    throw new AppError(ErrorKey.ROOM_NOT_FOUND);
   }
   const room = await getRoomDetailById(BigInt(roomId));
 
