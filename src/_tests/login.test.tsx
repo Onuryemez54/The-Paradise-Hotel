@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, test, vi } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { push } from '@/test/mocks/nextNavigation';
 import { loginAction } from '@/lib/actions/auth-actions/login-action';
 import { toastError, toastSuccess } from '@/test/mocks/toast';
@@ -48,7 +48,9 @@ describe('Login flow', () => {
     await user.type(passwordInput, '123456');
     await user.click(submitButton);
 
-    expect(toastSuccess).toHaveBeenCalledWith('LOGGED_IN');
+    await waitFor(() => {
+      expect(toastSuccess).toHaveBeenCalledWith('LOGGED_IN');
+    });
   });
 
   test('shows error message when login fails', async () => {
@@ -62,7 +64,10 @@ describe('Login flow', () => {
     await user.type(passwordInput, 'wrongpass');
     await user.click(submitButton);
 
-    expect(toastError).toHaveBeenCalledWith('USER_NOT_FOUND');
+    await waitFor(() => {
+      expect(toastError).toHaveBeenCalledWith('USER_NOT_FOUND');
+    });
+
     expect(await screen.findByText(/invalid_credentials/i)).toBeInTheDocument();
   });
 });

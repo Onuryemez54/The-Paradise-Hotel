@@ -10,8 +10,6 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
-
-      // 🔥 NEXT 16 + NEXT-INTL FIX
       'next/navigation': 'next/navigation.js',
     },
   },

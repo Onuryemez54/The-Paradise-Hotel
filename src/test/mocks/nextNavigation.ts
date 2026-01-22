@@ -1,5 +1,9 @@
 import { vi } from 'vitest';
 
+export const redirectMock = vi.fn(() => {
+  throw new Error('NEXT_REDIRECT');
+});
+
 export const push = vi.fn();
 
 export const routerMock = {
@@ -11,6 +15,8 @@ export const routerMock = {
 
 vi.mock('next/navigation', () => ({
   useRouter: () => routerMock,
-  usePathname: () => '/en/auth/login',
+  usePathname: () => '/en/auth/register',
   useSearchParams: () => new URLSearchParams(),
+
+  redirect: redirectMock,
 }));
