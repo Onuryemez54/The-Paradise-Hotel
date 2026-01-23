@@ -77,7 +77,7 @@ export const BookingDatePicker = ({
         title={isEditMode ? ButtonKey.CHANGE : ButtonKey.CLEAR}
         aria-label="Reset Date Selection"
         className={cn(
-          'text-primary-300 hover:text-accent-500 absolute right-2 bottom-2 cursor-pointer transition-all duration-300 hover:-translate-x-1',
+          'text-primary-300 hover:text-accent-500 absolute right-2 bottom-2 cursor-pointer transition-all duration-300 hover:-translate-x-1 disabled:cursor-not-allowed',
           !range?.from || !range?.to
             ? 'pointer-events-none cursor-not-allowed opacity-50'
             : ''

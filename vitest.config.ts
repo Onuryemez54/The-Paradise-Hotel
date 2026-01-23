@@ -7,6 +7,11 @@ export default defineConfig({
     globals: true,
     setupFiles: './src/test/setup.ts',
   },
+
+  css: {
+    postcss: {},
+  },
+
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
