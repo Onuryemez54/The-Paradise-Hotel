@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
-import { push } from '@/test/mocks/nextNavigation';
+import { routerMock } from '@/test/mocks/nextNavigation';
 import { loginAction } from '@/lib/actions/auth-actions/login-action';
 import { toastError, toastSuccess } from '@/test/mocks/toast';
 import userEvent from '@testing-library/user-event';
@@ -34,7 +34,7 @@ describe('Login flow', () => {
       password: '123456',
     });
 
-    expect(push).toHaveBeenCalledWith('/account');
+    expect(routerMock.push).toHaveBeenCalledWith('/account');
   });
 
   test('shows success message when login succeeds', async () => {

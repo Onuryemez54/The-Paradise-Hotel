@@ -2,7 +2,7 @@
 import { useToast } from '@/context/ToastContext';
 import { useReservation } from '@/context/ReservationContext';
 import { useTranslations } from 'next-intl';
-import { startTransition, useEffect, useMemo, useRef, useState } from 'react';
+import { startTransition, useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { usePrice } from '@/hooks/usePrice';
@@ -24,7 +24,7 @@ import { SelectField } from '../../ui/form/fields/SelectField';
 import { TextareaField } from '../../ui/form/fields/TextareaField';
 import { CustomButton } from '../../ui/custom-components/CustomButton';
 import { CheckboxField } from '../../ui/form/fields/CheckboxField';
-import { editBookingAction } from '@/lib/actions/booking-actions/edit-booking.action';
+import { editBookingAction } from '@/lib/actions/booking-actions/edit-booking-action';
 import { createBookingAction } from '@/lib/actions/booking-actions/create-booking-action';
 import { isRangeOverlapping } from '@/utils/booking-helpers/isRangeOverlapping';
 import { BookingRange } from '@/utils/booking-helpers/types';

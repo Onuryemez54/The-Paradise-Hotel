@@ -1,8 +1,9 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
 import { DateSelector } from '@/components/common/booking/DateSelector';
-import userEvent from '@testing-library/user-event';
 import { toastWarning } from '@/test/mocks/toast';
+import { DateRange } from '@/context/ReservationContext';
+import userEvent from '@testing-library/user-event';
 
 const setRangeMock = vi.fn();
 const resetRangeMock = vi.fn();
@@ -12,11 +13,7 @@ const evaluateRoomChangeMock = vi.fn();
 
 vi.mock('react-day-picker', () => {
   return {
-    DayPicker: ({
-      onSelect,
-    }: {
-      onSelect: (range: { from: Date; to: Date }) => void;
-    }) => {
+    DayPicker: ({ onSelect }: { onSelect: (range: DateRange) => void }) => {
       return (
         <button
           data-testid="fake-daypicker"
@@ -102,8 +99,8 @@ describe('When range is undefined , DateSelector', () => {
   });
 
   it('hydrates range from DB when in edit mode', async () => {
-    const startDate = new Date(2026, 0, 5);
-    const endDate = new Date(2026, 0, 12);
+    const startDate = new Date(2026, 2, 5);
+    const endDate = new Date(2026, 2, 12);
 
     render(
       <DateSelector
@@ -154,7 +151,7 @@ describe('When range is defined , DateSelector', () => {
       />
     );
     const resetButton = screen.getByRole('button', {
-      name: /reset date selection/i,
+      name: /reset/i,
     });
     expect(resetButton).toBeInTheDocument();
     expect(resetButton).toBeEnabled();

@@ -4,10 +4,8 @@ export const redirectMock = vi.fn(() => {
   throw new Error('NEXT_REDIRECT');
 });
 
-export const push = vi.fn();
-
 export const routerMock = {
-  push,
+  push: vi.fn(),
   replace: vi.fn(),
   refresh: vi.fn(),
   prefetch: vi.fn(),
