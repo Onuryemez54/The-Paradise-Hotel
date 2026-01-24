@@ -19,7 +19,7 @@ export const proxy = (request: NextRequest) => {
   ];
 
   const isResetAllowed = RESET_ALLOWED_ROUTES.some((r) => pathname.includes(r));
-  const isPublic = pathname.includes('/auth');
+  const isAuthRoute = pathname.includes('/auth');
   const isAccountRoute = pathname.includes('/account');
 
   const userToken = getSupabaseSession(request);
@@ -31,13 +31,6 @@ export const proxy = (request: NextRequest) => {
     url.searchParams.set('status', 'PASSWORD_RESET_REQUIRED');
     const response = NextResponse.redirect(url);
 
-    cookies
-      .getAll()
-      .filter((c) => c.name.includes('auth-token'))
-      .forEach((c) => response.cookies.delete(c.name));
-
-    response.cookies.delete('reset_required');
-
     return response;
   }
 
@@ -48,7 +41,7 @@ export const proxy = (request: NextRequest) => {
     return NextResponse.redirect(url);
   }
 
-  if (isPublic && userToken && !resetRequired) {
+  if (isAuthRoute && userToken && !resetRequired) {
     const url = request.nextUrl.clone();
     const locale = url.pathname.split('/')[1] || routing.defaultLocale;
     url.pathname = `/${locale}/account`;

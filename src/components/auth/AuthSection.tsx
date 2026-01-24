@@ -1,6 +1,5 @@
 'use client';
 import { UserProfile } from './UserProfile';
-import Image from 'next/image';
 import { AuthenticationLinks } from './AuthhenticationLinks';
 import { useAuth } from '@/context/AuthContext';
 
@@ -9,33 +8,17 @@ interface AuthSectionProps {
 }
 
 export const AuthSection = ({ setIsOpen }: AuthSectionProps) => {
-  const { currentUser, isLoading } = useAuth();
+  const { user, currentUser, isLoading } = useAuth();
 
-  return (
-    <>
-      {currentUser ? (
-        isLoading ? (
-          <Image
-            width={40}
-            height={40}
-            className="border-primary-300 cursor-pointer rounded-full border-2"
-            src={'/default-user.jpg'}
-            alt={'User Avatar'}
-          />
-        ) : (
-          <UserProfile user={currentUser} setNavOpen={setIsOpen} />
-        )
-      ) : isLoading ? (
-        <Image
-          width={40}
-          height={40}
-          className="border-primary-300 cursor-pointer rounded-full border-2"
-          src={'/default-user.jpg'}
-          alt={'User Avatar'}
-        />
-      ) : (
-        <AuthenticationLinks />
-      )}
-    </>
-  );
+  if (!user) {
+    return <AuthenticationLinks />;
+  }
+
+  if (isLoading || !currentUser) {
+    return (
+      <div className="border-primary-300 h-10 w-10 animate-pulse rounded-full border-2 bg-gray-200" />
+    );
+  }
+
+  return <UserProfile user={currentUser} setNavOpen={setIsOpen} />;
 };

@@ -1,18 +1,19 @@
 'use client';
 import {
-  useEffect,
-  useState,
   createContext,
   useContext,
+  useState,
+  useEffect,
   ReactNode,
+  useRef,
 } from 'react';
 import type { User } from '@supabase/supabase-js';
-import { createClient } from '@/db/supabase/client';
-import { useRouter } from 'next/navigation';
+import { createClient as createClientBrowser } from '@/db/supabase/client';
 import type { User as DbUser } from '@prisma/client';
 import { getCurrentUser } from '@/lib/actions/prisma-actions/db-acitons';
-import { logout } from '@/lib/actions/auth-actions/logout-action';
+import { logout as logoutAction } from '@/lib/actions/auth-actions/logout-action';
 import { useReservation } from './ReservationContext';
+import { useRouter } from 'next/navigation';
 
 interface AuthContextValue {
   user: User | null;
@@ -23,64 +24,75 @@ interface AuthContextValue {
 
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 
-export const AuthProvider = ({ children }: { children: ReactNode }) => {
+interface AuthProviderProps {
+  children: ReactNode;
+  initialUser: User | null;
+}
+
+export const AuthProvider = ({ children, initialUser }: AuthProviderProps) => {
   const router = useRouter();
-  const [user, setUser] = useState<User | null>(null);
-  const [currentUser, setCurrentUser] = useState<DbUser | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
   const { resetAll } = useReservation();
 
-  const supabase = createClient();
+  const [user, setUser] = useState<User | null>(initialUser);
+  const [currentUser, setCurrentUser] = useState<DbUser | null>(null);
 
-  const hydrateUser = async (supabaseUser: User | null) => {
-    if (!supabaseUser) {
-      setUser(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const supabaseRef = useRef(createClientBrowser());
+  const supabase = supabaseRef.current;
+
+  useEffect(() => {
+    if (!user) {
       setCurrentUser(null);
       return;
     }
 
-    setUser(supabaseUser);
-
-    const dbUser = await getCurrentUser();
-    setCurrentUser(dbUser || null);
-  };
-
-  useEffect(() => {
-    let isMounted = true;
-
-    const init = async () => {
+    const fetchProfile = async () => {
       setIsLoading(true);
 
-      const {
-        data: { session },
-      } = await supabase.auth.getSession();
-
-      if (!isMounted) return;
-
-      await hydrateUser(session?.user ?? null);
-      setIsLoading(false);
-    };
-
-    init();
-
-    const { data: subscription } = supabase.auth.onAuthStateChange(
-      async (_event, session) => {
-        await hydrateUser(session?.user ?? null);
+      try {
+        const dbUser = await getCurrentUser();
+        setCurrentUser(dbUser || null);
+      } catch (error) {
+        console.error('[fetchProfile]', error);
+      } finally {
+        setIsLoading(false);
       }
-    );
-
-    return () => {
-      isMounted = false;
-      subscription.subscription.unsubscribe();
     };
-  }, []);
+
+    fetchProfile();
+  }, [user]);
+
+  useEffect(() => {
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange(async (_event, session) => {
+      const supUser = session?.user ?? null;
+      setUser(supUser);
+      if (!supUser) {
+        setCurrentUser(null);
+      }
+      setIsLoading(true);
+      if (supUser) {
+        const dbUser = await getCurrentUser();
+        setCurrentUser(dbUser || null);
+      }
+      setIsLoading(false);
+    });
+
+    return () => subscription.unsubscribe();
+  }, [supabase]);
 
   const handleLogout = async () => {
     try {
-      await logout();
+      await logoutAction();
+
+      setUser(null);
+      setCurrentUser(null);
+      resetAll();
+
       router.refresh();
       router.push('/');
-      resetAll();
     } catch (error) {
       console.error('[logout]', error);
     }

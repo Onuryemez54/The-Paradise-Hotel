@@ -15,17 +15,20 @@ export async function GET(request: Request) {
 
   const { data, error } = await supabase.auth.exchangeCodeForSession(code);
 
-  if (!data.user) {
-    if (error?.code === 'validation_failed') {
+  if (!data?.user) {
+    if (
+      error?.code === 'validation_failed' ||
+      error?.message?.toLowerCase().includes('expired')
+    ) {
       redirect(`/auth/resend-reset?status=${ErrorKey.INVALID_LINK}`);
-    } else {
-      redirect(`/auth/resend-reset?status=${ErrorKey.SESSION_FAILED}`);
     }
+
+    redirect(`/auth/resend-reset?status=${ErrorKey.SESSION_FAILED}`);
   }
 
   const cookieStore = await cookies();
   cookieStore.set('reset_required', 'true', {
-    maxAge: 60 * 15,
+    maxAge: 60 * 60,
     httpOnly: true,
     secure: true,
     path: '/',

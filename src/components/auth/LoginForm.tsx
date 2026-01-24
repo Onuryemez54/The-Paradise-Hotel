@@ -24,10 +24,12 @@ import { ArrowRight } from 'lucide-react';
 import { useStatusToast } from '@/hooks/useStatusToast';
 import { useSearchParams } from 'next/navigation';
 import { logout } from '@/lib/actions/auth-actions/logout-action';
+import { useAuth } from '@/context/AuthContext';
 
 export const LoginForm = () => {
   const router = useRouter();
   const toast = useToast();
+  const { handleLogout } = useAuth();
   const params = useSearchParams();
   const status = params.get('status');
 
@@ -42,7 +44,7 @@ export const LoginForm = () => {
     t: tE,
     toast,
     redirectTo: '/auth/login',
-    onStatusLogout: () => logout(),
+    onStatusLogout: () => handleLogout(),
   });
 
   const form = useForm<LoginInput>({

@@ -29,7 +29,7 @@ export const updatePasswordAction = async ({
     throw new Error(ErrorKey.RESET_RESTRICTED);
   }
 
-  //  after password update, remove the resetting password cookie
+  //  after password update, remove the resetting if password cookie exists
   if (cookieStore.has('reset_required')) cookieStore.delete('reset_required');
 
   redirect(`/account?status=${SuccessKey.PASSWORD_UPDATED}`);
