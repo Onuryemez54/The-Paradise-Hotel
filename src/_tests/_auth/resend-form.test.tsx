@@ -116,5 +116,7 @@ describe('ResendForm', () => {
     await waitFor(() => {
       expect(screen.getByText(/please_login/i)).toBeInTheDocument();
     });
+
+    expect(screen.getByRole('link', { name: /login/i })).toBeInTheDocument();
   });
 });

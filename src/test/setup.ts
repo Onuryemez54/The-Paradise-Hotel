@@ -3,10 +3,9 @@ import '@testing-library/jest-dom';
 import './mocks/nextNavigation';
 import './mocks/nextIntl';
 import './mocks/nextIntlNavigation';
+import './mocks/handleAppError';
 import './mocks/toast';
 import './mocks/auth';
-import './mocks/handleAppError';
-import './mocks/supabase';
 import './mocks/resizeObserver';
 
 import { beforeAll, afterEach, afterAll } from 'vitest';

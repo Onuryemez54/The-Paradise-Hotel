@@ -21,12 +21,13 @@ export const useStatusToast = ({
   onStatusLogout,
 }: Params) => {
   const router = useRouter();
-  const hasShownToast = useRef(false);
+  const lastStatusRef = useRef<string | null>(null);
 
   useEffect(() => {
-    if (!status || hasShownToast.current) return;
+    if (!status) return;
+    if (lastStatusRef.current === status) return;
 
-    hasShownToast.current = true;
+    lastStatusRef.current = status;
 
     const code = status as ErrorKey | SuccessKey;
     const severity = getSeverityByCode(code);

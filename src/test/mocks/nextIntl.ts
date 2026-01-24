@@ -1,5 +1,7 @@
 import { vi } from 'vitest';
 
+export const useLocaleMock = vi.fn(() => 'en');
+
 vi.mock('next-intl', () => ({
   useTranslations: () => {
     const t = (key: string, values?: any) => key;
@@ -12,7 +14,7 @@ vi.mock('next-intl', () => ({
 
     return t;
   },
-  useLocale: () => 'en',
+  useLocale: () => useLocaleMock(),
 }));
 
 vi.mock('use-intl', () => ({
@@ -24,5 +26,5 @@ vi.mock('use-intl', () => ({
 
     return t;
   },
-  useLocale: () => 'en',
+  useLocale: () => useLocaleMock(),
 }));

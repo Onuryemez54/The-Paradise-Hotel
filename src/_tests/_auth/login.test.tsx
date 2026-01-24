@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, test, vi } from 'vitest';
+import { beforeEach, describe, expect, MockedFunction, test, vi } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
 import { routerMock } from '@/test/mocks/nextNavigation';
 import { loginAction } from '@/lib/actions/auth-actions/login-action';
@@ -10,6 +10,8 @@ vi.mock('@/lib/actions/auth-actions/login-action', () => ({
   loginAction: vi.fn(),
 }));
 
+const mockedLoginAction = loginAction as MockedFunction<typeof loginAction>;
+
 describe('Login flow', () => {
   const user = userEvent.setup();
 
@@ -19,7 +21,7 @@ describe('Login flow', () => {
   });
 
   test('successful login redirects to /account', async () => {
-    (loginAction as any).mockResolvedValueOnce(undefined);
+    mockedLoginAction.mockResolvedValueOnce(undefined);
 
     const emailInput = screen.getByRole('textbox', { name: /email/i });
     const passwordInput = screen.getByPlaceholderText(/password/i);
@@ -38,7 +40,7 @@ describe('Login flow', () => {
   });
 
   test('shows success message when login succeeds', async () => {
-    (loginAction as any).mockResolvedValueOnce(undefined);
+    mockedLoginAction.mockResolvedValueOnce(undefined);
 
     const emailInput = screen.getByRole('textbox', { name: /email/i });
     const passwordInput = screen.getByPlaceholderText(/password/i);
@@ -54,7 +56,7 @@ describe('Login flow', () => {
   });
 
   test('shows error message when login fails', async () => {
-    (loginAction as any).mockRejectedValueOnce(new Error('USER_NOT_FOUND'));
+    mockedLoginAction.mockRejectedValueOnce(new Error('USER_NOT_FOUND'));
 
     const emailInput = screen.getByRole('textbox', { name: /email/i });
     const passwordInput = screen.getByPlaceholderText(/password/i);
@@ -69,5 +71,15 @@ describe('Login flow', () => {
     });
 
     expect(await screen.findByText(/invalid_credentials/i)).toBeInTheDocument();
+  });
+
+  test('shows no account message and register link', async () => {
+    const noAccountText = screen.getByText(/no_account/i);
+    expect(noAccountText).toBeInTheDocument();
+
+    const noAccountLink = screen.getByRole('link', { name: /register/i });
+    expect(noAccountLink).toBeInTheDocument();
+
+    expect(noAccountLink).toHaveAttribute('href', '/auth/register');
   });
 });

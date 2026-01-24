@@ -1,12 +1,5 @@
 import { ErrorKey, SuccessKey } from '../i18n/keys';
 
-export enum AppToastSeverity {
-  ERROR = 'error',
-  INFO = 'info',
-  WARNING = 'warning',
-  SUCCESS = 'success',
-}
-
 export const INFO_ERROR_CODES: ErrorKey[] = [
   ErrorKey.EMAIL_ALREADY_VERIFIED,
   ErrorKey.USER_EXISTS,
@@ -28,7 +21,7 @@ export const WARNING_ERROR_CODES: ErrorKey[] = [
   // Verification / reset flows
   ErrorKey.EMAIL_VERIFICATION_FAILED,
 
-  // Booking (user input kaynaklı)
+  // Booking
   ErrorKey.BOOKING_OVERLAP,
   ErrorKey.INVALID_BOOKING_DATES,
   ErrorKey.INVALID_SELECTED_RANGE,
@@ -68,7 +61,7 @@ export const ERROR_ERROR_CODES: ErrorKey[] = [
   ErrorKey.USER_NOT_FOUND,
 
   // User conflicts
-  ErrorKey.USER_EXISTS, // istersen bunu INFO’da da tutabilirsin, ama backend error sayılır
+  ErrorKey.USER_EXISTS,
 
   // Room
   ErrorKey.ROOMS_FETCH_FAILED,

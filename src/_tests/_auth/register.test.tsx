@@ -70,4 +70,14 @@ describe('Register flow', () => {
       expect(toastError).toHaveBeenCalledWith('REGISTER_FAILED');
     });
   });
+
+  test('shows have account message and register link', async () => {
+    const haveAccountText = screen.getByText(/have_account/i);
+    expect(haveAccountText).toBeInTheDocument();
+
+    const haveAccountLink = screen.getByRole('link', { name: /login/i });
+    expect(haveAccountLink).toBeInTheDocument();
+
+    expect(haveAccountLink).toHaveAttribute('href', '/auth/login');
+  });
 });
