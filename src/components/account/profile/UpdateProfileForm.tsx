@@ -95,12 +95,14 @@ export const UpdateProfileForm = ({
     <Form form={form} onSubmit={onSubmit}>
       <ProfileFormHeader image={image} onFileSelect={setProfileImage} />
       <TextField
+        testId="full-name-input"
         name="fullName"
         labelKey={FormKey.NAME}
         autoComplete="name"
         disabled={isPending}
       />
       <TextField
+        testId="email-input"
         name="email"
         labelKey={FormKey.EMAIL}
         disabled
@@ -120,6 +122,7 @@ export const UpdateProfileForm = ({
           )}
         </div>
         <SelectField
+          testId="nationality-select"
           disabled={isPending}
           name="nationality"
           labelKey={FormKey.NATIONALITY}
@@ -130,6 +133,7 @@ export const UpdateProfileForm = ({
         />
       </div>
       <TextField
+        testId="national-id-input"
         name="nationalID"
         labelKey={FormKey.NATIONAL_ID}
         autoComplete="national-id"

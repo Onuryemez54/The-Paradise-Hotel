@@ -20,26 +20,24 @@ model Booking {
   hasBreakfast Boolean  @default(false)
   isPaid       Boolean  @default(false)
   observations String?
-
-  roomId BigInt
-  room   Room   @relation(fields: [roomId], references: [id])
-
-  userId String? @db.Uuid
-  user   User?   @relation(fields: [userId], references: [id])
+  roomId       BigInt
+  userId       String?  @db.Uuid
+  room         Room     @relation(fields: [roomId], references: [id])
+  user         User?    @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
 
   @@map("bookings")
 }
 
 model Room {
-  id           BigInt   @id @default(autoincrement())
-  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  id           BigInt    @id @default(autoincrement())
+  createdAt    DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
   maxCapacity  Int
   regularPrice Float
   discount     Float?
   image        String?
-  type         String?  @default("")
-
-  bookings Booking[]
+  type         String?   @default("")
+  is_test_room Boolean?  @default(false)
+  bookings     Booking[]
 
   @@map("rooms")
 }
@@ -65,9 +63,8 @@ model User {
   countryFlag   String?
   emailVerified DateTime?
   isAdmin       Boolean   @default(false)
-
-  bookings Booking[]
+  is_test_user  Boolean?  @default(false)
+  bookings      Booking[]
 
   @@map("users")
 }
-

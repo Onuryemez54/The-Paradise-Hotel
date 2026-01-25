@@ -29,6 +29,9 @@ export const getRoomsForList = unstable_cache(
   async () => {
     try {
       const rooms = await db.room.findMany({
+        where: {
+          is_test_room: false,
+        },
         select: {
           id: true,
           image: true,

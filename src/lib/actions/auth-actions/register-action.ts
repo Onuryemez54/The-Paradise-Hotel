@@ -27,6 +27,7 @@ export const registerAction = async ({
   });
 
   if (error || !signupData.user) {
+    console.error('Register Action Error:', error?.message);
     throw new Error(ErrorKey.REGISTER_FAILED);
   }
 

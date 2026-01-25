@@ -13,7 +13,7 @@ export const UpdateProfile = async () => {
   if (!currentUser) throw new AppError(ErrorKey.AUTH_REQUIRED);
 
   return (
-    <AccountDiv mode="settings">
+    <AccountDiv mode="settings" testId="settings-form">
       <UpdateProfileForm user={currentUser} countries={countries} />
     </AccountDiv>
   );

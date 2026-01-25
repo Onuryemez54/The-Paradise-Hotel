@@ -47,7 +47,10 @@ export const DateRangeDisplay = ({
     : formatDistanceFromNow(start, dateLocale);
 
   return (
-    <p className="text-primary-200 3xl:text-lg text-xs lg:text-sm">
+    <p
+      data-testid="booking-dates"
+      className="text-primary-200 3xl:text-lg text-xs lg:text-sm"
+    >
       <span className="hidden lg:inline">{startLong}</span>
       <span className="inline lg:hidden">{startShort}</span>
 

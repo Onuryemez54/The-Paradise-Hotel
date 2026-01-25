@@ -46,18 +46,21 @@ export const AccountDashboard = async () => {
           </div>
           <div className="flex flex-row items-center justify-center gap-2 md:flex-col">
             <CustomButton
+              as="link"
               variant="ghost"
               href="/account/bookings"
               className="border-primary-400 hover:bg-primary-400"
               i18nKey={ButtonKey.BOOKINGS}
             />
             <CustomButton
+              as="link"
               variant="ghost"
               href="/rooms"
               className="border-accent-400 hover:bg-accent-400"
               i18nKey={ButtonKey.NEW}
             />
             <CustomButton
+              as="link"
               variant="ghost"
               href="/account/settings"
               className="border-primary-400 hover:bg-primary-400"

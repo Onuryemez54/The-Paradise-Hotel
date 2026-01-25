@@ -20,6 +20,7 @@ export const DeleteBookingButton = ({
 
   return (
     <button
+      data-testid="booking-delete"
       onClick={handleDelete}
       className={cn(
         isPending && 'cursor-not-allowed opacity-70',

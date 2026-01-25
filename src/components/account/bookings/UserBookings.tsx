@@ -20,7 +20,7 @@ export const UserBookings = async () => {
   const content =
     bookings.length === 0 ? (
       <FadeLeftToRight>
-        <div className="flex gap-2">
+        <div className="flex gap-2" data-testid="empty-bookings">
           <CustomListItem i18nKey={ListItemKey.NO_BOOKINGS} />
           <CustomButton
             variant="underlined"
@@ -32,7 +32,7 @@ export const UserBookings = async () => {
         </div>
       </FadeLeftToRight>
     ) : (
-      <AccountDiv mode="bookings">
+      <AccountDiv mode="bookings" testId="bookings-list">
         <UserBookingsList bookings={bookings} />
       </AccountDiv>
     );

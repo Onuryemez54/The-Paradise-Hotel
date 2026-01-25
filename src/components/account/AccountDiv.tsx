@@ -10,6 +10,7 @@ type Mode =
   | 'updatePassword';
 interface AccountDivProps {
   children: ReactNode;
+  testId?: string;
   mode: Mode;
 }
 
@@ -25,6 +26,10 @@ const modeStyles: Record<Mode, string> = {
   updatePassword: `px-8 py-2 ${baseClass}`,
 };
 
-export const AccountDiv = ({ children, mode }: AccountDivProps) => {
-  return <div className={cn(modeStyles[mode])}>{children}</div>;
+export const AccountDiv = ({ children, mode, testId }: AccountDivProps) => {
+  return (
+    <div data-testid={testId} className={cn(modeStyles[mode])}>
+      {children}
+    </div>
+  );
 };

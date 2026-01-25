@@ -39,7 +39,10 @@ export const BookingCard = ({ booking, onDelete }: BookingCardProps) => {
   const isPastBooking = isPast(new Date(endDate));
 
   return (
-    <div className="border-border flex rounded-2xl border p-1 md:p-2">
+    <div
+      data-testid="booking-row"
+      className="border-border flex rounded-2xl border p-1 md:p-2"
+    >
       <div className="relative hidden aspect-square h-42 lg:block">
         <Image
           src={image || ''}
@@ -52,7 +55,10 @@ export const BookingCard = ({ booking, onDelete }: BookingCardProps) => {
       </div>
 
       <div className="flex grow flex-col gap-1 px-2 py-1 sm:gap-4 sm:px-4 sm:py-2 lg:gap-6">
-        <div className="flex items-center justify-between">
+        <div
+          data-testid="booking-title"
+          className="flex items-center justify-between"
+        >
           <BookingNightsTitle nights={numNights} roomType={roomType} />
           {isPastBooking ? (
             <Badge variant="secondary" i18nKey={BadgeKey.PAST} />
@@ -65,14 +71,17 @@ export const BookingCard = ({ booking, onDelete }: BookingCardProps) => {
 
         <div className="flex flex-col items-start justify-between gap-2 lg:flex-row lg:items-center">
           <div className="flex items-center gap-2 md:gap-3">
-            <div className="text-accent-400 text-sm font-semibold sm:text-base lg:text-lg xl:text-xl">
+            <div
+              data-testid="booking-price"
+              className="text-accent-400 text-sm font-semibold sm:text-base lg:text-lg xl:text-xl"
+            >
               {isLoading ? (
                 <Loader size={14} className="animate-spin" />
               ) : (
                 formatPrice()
               )}
             </div>
-            <div className="flex items-center">
+            <div data-testid="booking-guests" className="flex items-center">
               <CustomListItem
                 numGuests={numGuests}
                 variant="small"
@@ -84,7 +93,10 @@ export const BookingCard = ({ booking, onDelete }: BookingCardProps) => {
               />
             </div>
           </div>
-          <div className="text-primary-200 ml-0 lg:ml-2">
+          <div
+            data-testid="booking-created"
+            className="text-primary-200 ml-0 lg:ml-2"
+          >
             <CustomListItem
               variant="small"
               i18nKey={ListItemKey.BOOKED}
@@ -98,7 +110,10 @@ export const BookingCard = ({ booking, onDelete }: BookingCardProps) => {
         {!isPastBooking ? (
           <p className="flex flex-col items-center justify-center gap-1 p-2">
             <Link href={`/account/bookings/edit/${id}`}>
-              <Edit className="text-primary-200 hover:text-accent-400 h-4 w-4 transition-all duration-300 hover:rotate-45 md:h-5 md:w-5" />
+              <Edit
+                data-testid="booking-edit"
+                className="text-primary-200 hover:text-accent-400 h-4 w-4 transition-all duration-300 hover:rotate-45 md:h-5 md:w-5"
+              />
             </Link>
             <span className="border-border/30 my-3 w-full border-b sm:my-4 lg:my-6" />
 

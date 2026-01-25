@@ -34,6 +34,7 @@ interface SelectFieldProps {
   options: Option[];
   variant?: FormVariant;
   disabled?: boolean;
+  testId?: string;
 }
 
 export const SelectField = ({
@@ -42,6 +43,7 @@ export const SelectField = ({
   options,
   variant = 'auth',
   disabled = false,
+  testId,
 }: SelectFieldProps) => {
   const tField = useTranslations('FORM.FIELD');
   const tPlaceholder = useTranslations('FORM.PLACEHOLDER');
@@ -66,6 +68,7 @@ export const SelectField = ({
                   inputClasses[variant],
                   fieldState.error && errorInputClasses[variant]
                 )}
+                data-testid={testId}
               >
                 <SelectValue placeholder={tPlaceholder(labelKey) as string} />
               </SelectTrigger>
