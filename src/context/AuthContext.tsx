@@ -6,6 +6,7 @@ import {
   useEffect,
   ReactNode,
   useRef,
+  useCallback,
 } from 'react';
 import type { User } from '@supabase/supabase-js';
 import { createClient as createClientBrowser } from '@/db/supabase/client';
@@ -13,7 +14,6 @@ import type { User as DbUser } from '@prisma/client';
 import { getCurrentUser } from '@/lib/actions/prisma-actions/db-acitons';
 import { logout as logoutAction } from '@/lib/actions/auth-actions/logout-action';
 import { useReservation } from './ReservationContext';
-import { useRouter } from 'next/navigation';
 
 interface AuthContextValue {
   user: User | null;
@@ -30,7 +30,6 @@ interface AuthProviderProps {
 }
 
 export const AuthProvider = ({ children, initialUser }: AuthProviderProps) => {
-  const router = useRouter();
   const { resetAll } = useReservation();
 
   const [user, setUser] = useState<User | null>(initialUser);
@@ -83,20 +82,17 @@ export const AuthProvider = ({ children, initialUser }: AuthProviderProps) => {
     return () => subscription.unsubscribe();
   }, [supabase]);
 
-  const handleLogout = async () => {
+  const handleLogout = useCallback(async () => {
     try {
       await logoutAction();
-
+    } catch (error) {
+      console.error('[logout]', error);
+    } finally {
       setUser(null);
       setCurrentUser(null);
       resetAll();
-
-      router.refresh();
-      router.push('/');
-    } catch (error) {
-      console.error('[logout]', error);
     }
-  };
+  }, [logoutAction, resetAll]);
 
   return (
     <AuthContext.Provider

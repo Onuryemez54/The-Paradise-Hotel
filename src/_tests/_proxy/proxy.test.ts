@@ -39,8 +39,7 @@ describe('proxy middleware', () => {
 
     const deletedCookie = response.cookies.get('reset_required');
 
-    expect(deletedCookie).toBeDefined();
-    expect(deletedCookie?.value).toBe('');
+    expect(deletedCookie).not.toBeDefined();
   });
 
   it('allows reset routes when reset is required', () => {

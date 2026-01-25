@@ -10,6 +10,7 @@ import Link from 'next/link';
 import { useToast } from '@/context/ToastContext';
 import { handleAppError } from '@/lib/errors/helpers/handleAppError';
 import { ButtonKey, ErrorKey, SuccessKey } from '@/types/i18n/keys';
+import { useRouter } from 'next/navigation';
 
 type Variant =
   | 'primary'
@@ -114,6 +115,7 @@ const variantStyles: Record<Variant, string> = {
 };
 
 export const CustomButton = (props: CustomButtonProps) => {
+  const router = useRouter();
   const toast = useToast();
   const t = useTranslations(ButtonKey.TITLE);
   const tE = useTranslations(ErrorKey.TITLE);
@@ -136,6 +138,8 @@ export const CustomButton = (props: CustomButtonProps) => {
       if (props.variant === 'logout') {
         await handleLogout();
         props.onAction?.();
+        router.push('/');
+        router.refresh();
         toast.success(tS(SuccessKey.LOGOUT));
         return;
       } else if (props.variant === 'google') {

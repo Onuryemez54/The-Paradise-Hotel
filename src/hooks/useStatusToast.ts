@@ -10,7 +10,7 @@ type Params = {
   t: (key: ErrorKey | SuccessKey) => string;
   toast: ToastContextValue;
   redirectTo: string;
-  onStatusLogout?: () => void;
+  onStatusLogout?: () => Promise<void>;
 };
 
 export const useStatusToast = ({
@@ -29,14 +29,20 @@ export const useStatusToast = ({
 
     lastStatusRef.current = status;
 
-    const code = status as ErrorKey | SuccessKey;
-    const severity = getSeverityByCode(code);
-    const message = t(code);
+    const run = async () => {
+      const code = status as ErrorKey | SuccessKey;
+      const severity = getSeverityByCode(code);
+      const message = t(code);
 
-    toast[severity](message);
+      toast[severity](message);
 
-    onStatusLogout?.();
+      if (onStatusLogout) {
+        await onStatusLogout();
+      }
 
-    router.replace(redirectTo, { scroll: false });
+      router.replace(redirectTo, { scroll: false });
+    };
+
+    run();
   }, [status, toast, t, redirectTo, onStatusLogout]);
 };

@@ -44,7 +44,7 @@ export const LoginForm = () => {
     t: tE,
     toast,
     redirectTo: '/auth/login',
-    onStatusLogout: () => handleLogout(),
+    onStatusLogout: handleLogout,
   });
 
   const form = useForm<LoginInput>({
