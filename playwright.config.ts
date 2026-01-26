@@ -1,4 +1,7 @@
 import { defineConfig } from '@playwright/test';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 const baseURL = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
 

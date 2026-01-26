@@ -1,6 +1,6 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
+# =========================
+# DEPENDENCIES
+# =========================
 /node_modules
 /.pnp
 .pnp.*
@@ -10,50 +10,72 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
-
-# next.js
+# =========================
+# NEXT.JS / BUILD
+# =========================
 /.next/
 /out/
+/build
 .turbo/
 
-# production
-/build
+# =========================
+# TESTING
+# =========================
+/coverage
 
-# misc
-.DS_Store
-*.pem
-
-# Playwright
+# Playwright artefacts
 /test-results/
 /playwright-report/
 /blob-report/
+/**/trace.zip
+
+# Auth storage files
 /e2e/_user/
 /**/user.json
-/**/trace.zip
 
 # Videos & screenshots
 /**/*.png
 /**/*.webm
 
-# debug
+# =========================
+# ENV / SECRETS
+# =========================
+.env
+.env.local
+.env.*.local
+
+# =========================
+# DEBUG / LOGS
+# =========================
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# =========================
+# OS / EDITOR
+# =========================
+.DS_Store
+.vscode/*
+!.vscode/launch.json
+!.vscode/settings.json
 
-# vercel
+# =========================
+# VERCEL
+# =========================
 .vercel
 
-# typescript
+# =========================
+# TYPESCRIPT
+# =========================
 *.tsbuildinfo
-next-env.d.ts
 
-# prisma
+# =========================
+# PRISMA
+# =========================
 /src/generated/prisma
 
-
+# =========================
+# MISC
+# =========================
+*.pem
