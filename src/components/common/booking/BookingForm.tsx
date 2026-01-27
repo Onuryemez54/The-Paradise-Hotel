@@ -330,8 +330,14 @@ export const BookingForm = ({
             </h2>
           </div>
         </header>
-        <Form form={form} onSubmit={onSubmit} className="px-2 py-4">
+        <Form
+          testId="booking-form"
+          form={form}
+          onSubmit={onSubmit}
+          className="px-2 py-4"
+        >
           <SelectField
+            testId="booking-num-guests"
             name="numGuests"
             labelKey={FormKey.NUM_GUESTS}
             options={Array.from({ length: maxCapacity }, (_, i) => ({
@@ -343,6 +349,7 @@ export const BookingForm = ({
           />
 
           <TextareaField
+            testId="booking-observations"
             name="observations"
             labelKey={FormKey.OBSERVATIONS}
             placeholderKey={FormKey.OBSERVATIONS}
@@ -351,6 +358,7 @@ export const BookingForm = ({
           />
 
           <CheckboxField
+            testId="booking-breakfast-included"
             name="breakfastIncluded"
             labelKey={FormKey.ADD_BREAKFAST}
             labelValues={{ price: formatPrice() }}
@@ -360,6 +368,7 @@ export const BookingForm = ({
 
           <div className="flex justify-end">
             <CustomButton
+              testId="booking-submit"
               type={canSubmit ? 'submit' : 'button'}
               variant={canSubmit ? 'primary' : 'secondary'}
               disabled={!canSubmit}

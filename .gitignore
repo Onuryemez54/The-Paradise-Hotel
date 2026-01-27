@@ -30,7 +30,7 @@
 /**/trace.zip
 
 # Auth storage files
-/e2e/_user/
+/e2e/.auth/
 /**/user.json
 
 # Videos & screenshots

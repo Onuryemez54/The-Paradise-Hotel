@@ -30,7 +30,10 @@ export const RoomList = async ({ filter }: RoomListProps) => {
 
   return (
     <FadeUp delay={0.2}>
-      <div className="3xl:grid-cols-4 3xl:gap-10 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-6 xl:gap-8">
+      <div
+        data-testid="rooms-list"
+        className="3xl:grid-cols-4 3xl:gap-10 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-6 xl:gap-8"
+      >
         {displayedRooms.map((room) => (
           <RoomCard room={room} key={room.id} />
         ))}

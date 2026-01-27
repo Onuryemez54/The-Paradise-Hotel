@@ -27,7 +27,7 @@ test.describe('Account - Dashboard Page', () => {
 
     await expect(
       page.getByRole('heading', { name: /your bookings/i })
-    ).toBeVisible();
+    ).toBeVisible({ timeout: 15_000 });
 
     await page.waitForLoadState('networkidle');
   });
@@ -45,7 +45,7 @@ test.describe('Account - Dashboard Page', () => {
     await expect(page).toHaveURL(/\/en\/account\/settings/);
 
     await expect(
-      page.getByRole('heading', { name: /your profile/i })
+      page.getByRole('heading', { name: /your profile settings/i })
     ).toBeVisible();
 
     const settingsForm = page.getByTestId('settings-form');

@@ -9,6 +9,7 @@ type RHFFormProps<T extends FieldValues> = {
   onSubmit: (values: T) => void;
   children: ReactNode;
   className?: string;
+  testId?: string;
 };
 
 export function Form<T extends FieldValues>(props: RHFFormProps<T>) {
@@ -17,6 +18,7 @@ export function Form<T extends FieldValues>(props: RHFFormProps<T>) {
   return (
     <ShadcnForm {...form}>
       <form
+        data-testid={props.testId}
         noValidate
         onSubmit={form.handleSubmit(onSubmit)}
         className={cn('flex flex-col gap-3', props.className)}

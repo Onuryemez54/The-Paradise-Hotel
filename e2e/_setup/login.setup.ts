@@ -18,7 +18,7 @@ test('login and save storage state', async ({ page }) => {
   });
 
   await page.context().storageState({
-    path: 'e2e/_user/user.json',
+    path: 'e2e/.auth/user.json',
   });
 
   expect(await page.title()).toBeTruthy();

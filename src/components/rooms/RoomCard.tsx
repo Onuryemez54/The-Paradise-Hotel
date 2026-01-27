@@ -21,7 +21,10 @@ export const RoomCard = async ({ room }: RoomCardProps) => {
 
   return (
     <ScrollReveal>
-      <div className="font-body border-accent-border/70 bg-primary-600 hover:border-accent-border hover:shadow-primary-500 cursor-pointer overflow-hidden rounded-xl border transition-all duration-300 hover:shadow-md">
+      <div
+        data-testid="room-card"
+        className="font-body border-accent-border/70 bg-primary-600 hover:border-accent-border hover:shadow-primary-500 cursor-pointer overflow-hidden rounded-xl border transition-all duration-300 hover:shadow-md"
+      >
         <div className="relative h-64 w-full md:h-72">
           <Image
             src={image || ''}

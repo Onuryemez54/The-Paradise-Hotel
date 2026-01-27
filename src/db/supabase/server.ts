@@ -14,12 +14,17 @@ export const createClient = async () => {
         setAll(cookiesToSet) {
           try {
             cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, options)
+              cookieStore.set(name, value, {
+                ...options,
+
+                path: '/',
+                httpOnly: true,
+                sameSite: 'lax',
+                secure: process.env.NODE_ENV === 'production',
+              })
             );
-          } catch {
-            throw new Error(
-              'Failed to set cookies in the server-side Supabase client.'
-            );
+          } catch (error) {
+            console.warn('Supabase cookie set skipped:', error);
           }
         },
       },

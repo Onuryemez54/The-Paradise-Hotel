@@ -49,7 +49,10 @@ const RoomPage = async ({ params }: RoomPageProps) => {
   const room = await getRoomDetailById(BigInt(roomId));
 
   return (
-    <div className="mx-auto mt-2 max-w-6xl space-y-10">
+    <div
+      data-testid="room-detail-page"
+      className="mx-auto mt-2 max-w-6xl space-y-10"
+    >
       <RoomDetail room={room} />
       <Divider />
       <Suspense

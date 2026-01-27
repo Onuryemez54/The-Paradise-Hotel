@@ -39,7 +39,7 @@ export const BookingDatePicker = ({
   const dateLocale = localeMap[locale as keyof typeof localeMap] ?? enUS;
 
   return (
-    <div className="relative">
+    <div data-testid="booking-date-picker" className="relative">
       <DayPicker
         mode="range"
         selected={range}

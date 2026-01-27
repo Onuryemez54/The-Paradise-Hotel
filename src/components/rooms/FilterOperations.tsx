@@ -23,7 +23,10 @@ export const FilterOperations = ({
   }
 
   return (
-    <div className="border-primary-800 bg-primary-800 font-body flex border">
+    <div
+      data-testid="rooms-filter"
+      className="border-primary-800 bg-primary-800 font-body flex border"
+    >
       {options.map((option) => (
         <button
           className={cn(

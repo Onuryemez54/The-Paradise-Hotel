@@ -24,6 +24,7 @@ interface CheckboxFieldProps {
   labelValues?: Record<string, string | number>;
   variant?: FormVariant;
   disabled?: boolean;
+  testId?: string;
 }
 
 export const CheckboxField = ({
@@ -32,6 +33,7 @@ export const CheckboxField = ({
   variant = 'auth',
   disabled = false,
   labelValues,
+  testId,
 }: CheckboxFieldProps) => {
   const tField = useTranslations('FORM.FIELD');
 
@@ -60,6 +62,7 @@ export const CheckboxField = ({
                 onCheckedChange={field.onChange}
                 disabled={disabled}
                 className="data-[state=checked]:bg-primary-600 dark:data-[state=checked]:border-accent-600 dark:data-[state=checked]:bg-accent-400 data-[state=checked]:text-gray-100"
+                data-testid={testId}
               />
 
               <span

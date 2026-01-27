@@ -32,6 +32,7 @@ export const BookingSummary = ({
 
   return (
     <div
+      data-testid="booking-summary"
       className={cn(
         'flex flex-col items-center justify-center gap-2 xl:gap-4',
         !bookingId
@@ -62,7 +63,10 @@ export const BookingSummary = ({
           {t(BookingKey.TOTAL_PRICE)}
         </span>
 
-        <span className="text-accent-400 px-1 text-lg font-bold sm:text-xl lg:text-2xl 2xl:text-3xl">
+        <span
+          data-testid="total-price"
+          className="text-accent-400 px-1 text-lg font-bold sm:text-xl lg:text-2xl 2xl:text-3xl"
+        >
           {isLoading ? (
             <Loader size={14} className="animate-spin" />
           ) : (

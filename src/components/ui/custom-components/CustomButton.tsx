@@ -53,6 +53,7 @@ type BaseProps = {
   mode?: 'nav' | 'account';
   onAction?: () => void;
   icon?: ReactNode;
+  testId?: string;
 };
 
 type ButtonProps = BaseProps &
@@ -219,6 +220,7 @@ export const CustomButton = (props: CustomButtonProps) => {
 
   return (
     <button
+      data-testid={props.testId}
       type={props.type ?? 'button'}
       disabled={props.disabled || isPending || props.isLoading}
       onClick={handleClick}

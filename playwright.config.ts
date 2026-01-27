@@ -23,9 +23,9 @@ export default defineConfig({
     },
     {
       name: 'authenticated',
-      testMatch: /(_auth|_booking)\/.*\.spec\.ts/,
+      testMatch: /(_account|_bookings|_rooms)\/.*\.spec\.ts/,
       use: {
-        storageState: 'e2e/_user/user.json',
+        storageState: 'e2e/.auth/user.json',
       },
       dependencies: ['setup'],
       testIgnore: ['**/auth-redirect.spec.ts'],

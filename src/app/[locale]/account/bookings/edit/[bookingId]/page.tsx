@@ -23,7 +23,7 @@ const EditBookingPage = async ({ params }: EditBookingPageProps) => {
       <CustomTitle variant="account" i18nKey={TitleKey.EDIT} className="mb-0" />
       <CustomSubTitle variant="account" i18nKey={SubTitleKey.EDIT} />
       <Suspense fallback={<LoadingSpinner label={LoadingKey.BOOK} />}>
-        <AccountDiv mode="edit">
+        <AccountDiv mode="edit" testId="booking-edit-client">
           <EditBooking bookingId={bookingId} />
         </AccountDiv>
       </Suspense>

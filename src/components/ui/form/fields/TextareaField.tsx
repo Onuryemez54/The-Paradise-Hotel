@@ -25,6 +25,7 @@ interface TextareaFieldProps {
   rows?: number;
   variant?: FormVariant;
   disabled?: boolean;
+  testId?: string;
 }
 
 export const TextareaField = ({
@@ -34,6 +35,7 @@ export const TextareaField = ({
   rows = 4,
   variant = 'auth',
   disabled = false,
+  testId,
 }: TextareaFieldProps) => {
   const tField = useTranslations('FORM.FIELD');
   const tPlaceholder = useTranslations('FORM.PLACEHOLDER');
@@ -49,6 +51,7 @@ export const TextareaField = ({
 
           <FormControl>
             <Textarea
+              data-testid={testId}
               {...field}
               rows={rows}
               disabled={disabled}

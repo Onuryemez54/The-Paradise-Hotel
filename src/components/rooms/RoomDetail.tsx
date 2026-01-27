@@ -33,7 +33,10 @@ export const RoomDetail = async ({ room }: RoomDetailProps) => {
     <section className="flex flex-col gap-6">
       <div className="grid grid-cols-1 gap-10 md:grid-cols-[3fr_4fr]">
         <FadeLeftToRight>
-          <div className="border-accent-600/80 shadow-accent-900/30 relative overflow-hidden rounded-2xl border-4 shadow-lg">
+          <div
+            data-testid="room-image"
+            className="border-accent-600/80 shadow-accent-900/30 relative overflow-hidden rounded-2xl border-4 shadow-lg"
+          >
             {image && (
               <Image
                 priority
