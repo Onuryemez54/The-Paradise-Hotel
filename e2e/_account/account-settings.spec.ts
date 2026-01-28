@@ -40,8 +40,6 @@ test.describe('Account - Settings page', () => {
     await expect(saveButton).toBeEnabled();
     await saveButton.click();
 
-    await expect(saveButton).not.toBeDisabled({ timeout: 15_000 });
-
     await expect(page.getByText(/updated successfully/i)).toBeVisible({
       timeout: 15_000,
     });

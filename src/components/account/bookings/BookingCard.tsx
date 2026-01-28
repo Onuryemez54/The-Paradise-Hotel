@@ -40,6 +40,7 @@ export const BookingCard = ({ booking, onDelete }: BookingCardProps) => {
 
   return (
     <div
+      data-booking-id={booking.id}
       data-testid="booking-row"
       className="border-border flex rounded-2xl border p-1 md:p-2"
     >

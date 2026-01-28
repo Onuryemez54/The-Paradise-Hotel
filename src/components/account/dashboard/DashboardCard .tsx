@@ -107,7 +107,12 @@ export const DashboardCard = async ({
 
   return (
     <div className="text-primary-200 border-border from-primary-700 to-primary-950 rounded-2xl border bg-linear-to-br p-5 shadow-sm backdrop-blur-md">
-      <h2 className="mb-3 text-sm font-semibold lg:text-base">{titleKey}</h2>
+      <h2
+        data-testid="dashboard-card-title"
+        className="mb-3 text-sm font-semibold lg:text-base"
+      >
+        {titleKey}
+      </h2>
       <Divider m />
       {content}
     </div>

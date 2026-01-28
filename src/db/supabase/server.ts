@@ -24,7 +24,7 @@ export const createClient = async () => {
               })
             );
           } catch (error) {
-            console.warn('Supabase cookie set skipped:', error);
+            console.error('Error setting cookies:', error);
           }
         },
       },

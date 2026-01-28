@@ -1,9 +1,10 @@
-import { type NextRequest } from 'next/server';
+import { createClient } from '@/db/supabase/server';
 
-export const getSupabaseSession = (request: NextRequest) => {
-  return request.cookies
-    .getAll()
-    .find(
-      (c) => c.name.includes('auth-token') && !c.name.includes('code-verifier')
-    );
+export const getSupabaseSession = async () => {
+  const supabase = await createClient();
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+
+  return session;
 };

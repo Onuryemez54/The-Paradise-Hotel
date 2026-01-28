@@ -64,6 +64,10 @@ test.describe('Account - My Bookings page', () => {
 
     await deleteButton.click();
 
+    await expect(page.getByText(/deleted successfully/i)).toBeVisible({
+      timeout: 3_000,
+    });
+
     const finalCount = await rows.count();
     expect(finalCount).toBe(initialCount - 1);
   });

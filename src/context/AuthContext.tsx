@@ -7,6 +7,7 @@ import {
   ReactNode,
   useRef,
   useCallback,
+  useMemo,
 } from 'react';
 import type { User } from '@supabase/supabase-js';
 import { createClient as createClientBrowser } from '@/db/supabase/client';
@@ -20,6 +21,7 @@ interface AuthContextValue {
   currentUser: DbUser | null;
   isLoading: boolean;
   handleLogout: () => Promise<void>;
+  refreshCurrentUser: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
@@ -27,85 +29,92 @@ const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 interface AuthProviderProps {
   children: ReactNode;
   initialUser: User | null;
+  initialCurrentUser: DbUser | null;
 }
 
-export const AuthProvider = ({ children, initialUser }: AuthProviderProps) => {
+export const AuthProvider = ({
+  children,
+  initialUser,
+  initialCurrentUser,
+}: AuthProviderProps) => {
   const { resetAll } = useReservation();
 
   const [user, setUser] = useState<User | null>(initialUser);
-  const [currentUser, setCurrentUser] = useState<DbUser | null>(null);
-
+  const [currentUser, setCurrentUser] = useState<DbUser | null>(
+    initialCurrentUser
+  );
   const [isLoading, setIsLoading] = useState(false);
 
   const supabaseRef = useRef(createClientBrowser());
   const supabase = supabaseRef.current;
 
-  useEffect(() => {
-    if (!user) {
-      setCurrentUser(null);
-      return;
-    }
-
-    const fetchProfile = async () => {
-      setIsLoading(true);
-
-      try {
-        const dbUser = await getCurrentUser();
-        setCurrentUser(dbUser || null);
-      } catch (error) {
-        console.error('[fetchProfile]', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchProfile();
-  }, [user]);
+  const isInitialSync = useRef(true);
 
   useEffect(() => {
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange(async (_event, session) => {
-      const supUser = session?.user ?? null;
-      setUser(supUser);
-      if (!supUser) {
+    } = supabase.auth.onAuthStateChange(async (event, session) => {
+      if (isInitialSync.current) {
+        isInitialSync.current = false;
+        return;
+      }
+
+      if (event === 'SIGNED_OUT') {
+        setUser(null);
         setCurrentUser(null);
+        resetAll();
+        return;
       }
-      setIsLoading(true);
-      if (supUser) {
-        const dbUser = await getCurrentUser();
-        setCurrentUser(dbUser || null);
+
+      if (event === 'SIGNED_IN' && session?.user) {
+        setIsLoading(true);
+        setUser(session.user);
+        try {
+          const dbUser = await getCurrentUser();
+          setCurrentUser(dbUser || null);
+        } finally {
+          setIsLoading(false);
+        }
       }
-      setIsLoading(false);
     });
 
     return () => subscription.unsubscribe();
-  }, [supabase]);
+  }, [supabase, resetAll]);
+
+  const refreshCurrentUser = useCallback(async () => {
+    if (!user) return;
+
+    setIsLoading(true);
+    try {
+      const dbUser = await getCurrentUser();
+      setCurrentUser(dbUser || null);
+    } finally {
+      setIsLoading(false);
+    }
+  }, [user]);
 
   const handleLogout = useCallback(async () => {
     try {
       await logoutAction();
-    } catch (error) {
-      console.error('[logout]', error);
     } finally {
       setUser(null);
       setCurrentUser(null);
       resetAll();
     }
-  }, [logoutAction, resetAll]);
+  }, [resetAll]);
 
-  return (
-    <AuthContext.Provider
-      value={{
-        user,
-        currentUser,
-        isLoading,
-        handleLogout,
-      }}
-    >
-      {children}
-    </AuthContext.Provider>
+  const value = useMemo(
+    () => ({
+      user,
+      currentUser,
+      isLoading,
+      handleLogout,
+      refreshCurrentUser,
+    }),
+    [user, currentUser, isLoading, handleLogout, refreshCurrentUser]
   );
+
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
 export const useAuth = () => {

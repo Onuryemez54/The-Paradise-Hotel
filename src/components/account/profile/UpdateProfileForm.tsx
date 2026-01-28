@@ -5,7 +5,6 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { createClient } from '@/db/supabase/client';
 import {
   UpdateSettingsInput,
   updateSettingsSchema,
@@ -28,6 +27,7 @@ import { SelectField } from '../../ui/form/fields/SelectField';
 import { CustomListItem } from '../../ui/custom-components/CustomListItem';
 import Image from 'next/image';
 import { User } from '@prisma/client';
+import { useAuth } from '@/context/AuthContext';
 
 interface UpdateProfileFormProps {
   user: User;
@@ -40,6 +40,7 @@ export const UpdateProfileForm = ({
 }: UpdateProfileFormProps) => {
   const router = useRouter();
   const toast = useToast();
+  const { refreshCurrentUser } = useAuth();
 
   const tE = useTranslations(ErrorKey.TITLE);
   const tS = useTranslations(SuccessKey.TITLE);
@@ -78,9 +79,7 @@ export const UpdateProfileForm = ({
 
       await updateProfileAction(formData);
 
-      // Refresh supabase session
-      const supabase = createClient();
-      await supabase.auth.refreshSession();
+      await refreshCurrentUser();
 
       toast.success(tS(SuccessKey.PROFILE_UPDATED), 2000, true);
       router.refresh();

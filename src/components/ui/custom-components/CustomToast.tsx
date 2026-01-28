@@ -63,7 +63,6 @@ export const CustomToast = ({
 
   return (
     <div
-      data-testid="custom-toast"
       role="status"
       aria-live="polite"
       className={cn(

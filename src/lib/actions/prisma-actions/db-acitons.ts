@@ -4,24 +4,28 @@ import { createClient } from '@/db/supabase/server';
 import { BookingRange } from '@/utils/booking-helpers/types';
 import { ErrorKey } from '@/types/i18n/keys';
 import { unstable_cache } from 'next/cache';
+import { cache } from 'react';
 
 // --- AUTH ---
 // CURRENT USER
-export const getCurrentUser = async () => {
+export const getCurrentUser = cache(async () => {
   const supabase = await createClient();
 
   const {
-    data: { user },
-  } = await supabase.auth.getUser();
+    data: { session },
+    error,
+  } = await supabase.auth.getSession();
 
-  if (!user) return null;
+  if (error || !session?.user) {
+    return null;
+  }
 
   const currentUser = await db.user.findUnique({
-    where: { id: user.id },
+    where: { id: session.user.id },
   });
 
   return currentUser;
-};
+});
 
 // --- ROOMS ---
 // getRoomsForList is cached for 1 hour

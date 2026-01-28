@@ -5,7 +5,7 @@ import { getSupabaseSession } from './lib/actions/helpers/getSupabaseSession';
 
 const intlMiddleware = createMiddleware(routing);
 
-export const proxy = (request: NextRequest) => {
+export const proxy = async (request: NextRequest) => {
   const { pathname } = request.nextUrl;
   const cookies = request.cookies;
 
@@ -22,7 +22,8 @@ export const proxy = (request: NextRequest) => {
   const isAuthRoute = pathname.includes('/auth');
   const isAccountRoute = pathname.includes('/account');
 
-  const userToken = getSupabaseSession(request);
+  const session = await getSupabaseSession();
+  const isAuthenticated = !!session?.user;
 
   if (resetRequired && !isResetAllowed) {
     const url = request.nextUrl.clone();
@@ -34,14 +35,14 @@ export const proxy = (request: NextRequest) => {
     return response;
   }
 
-  if (isAccountRoute && !userToken) {
+  if (isAccountRoute && !isAuthenticated) {
     const url = request.nextUrl.clone();
     const locale = url.pathname.split('/')[1] || routing.defaultLocale;
     url.pathname = `/${locale}/auth/login`;
     return NextResponse.redirect(url);
   }
 
-  if (isAuthRoute && userToken && !resetRequired) {
+  if (isAuthRoute && isAuthenticated && !resetRequired) {
     const url = request.nextUrl.clone();
     const locale = url.pathname.split('/')[1] || routing.defaultLocale;
     url.pathname = `/${locale}/account`;

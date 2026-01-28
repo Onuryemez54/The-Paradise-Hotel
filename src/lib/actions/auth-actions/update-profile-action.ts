@@ -4,6 +4,7 @@ import { createClient } from '@/db/supabase/server';
 import { db } from '@/db/prisma';
 import { revalidatePath } from 'next/cache';
 import { ErrorKey } from '@/types/i18n/keys';
+import sharp from 'sharp';
 
 export const updateProfileAction = async (formData: FormData) => {
   const supabase = await createClient();
@@ -24,14 +25,21 @@ export const updateProfileAction = async (formData: FormData) => {
 
   // Upload new profile image if provided
   if (imageFile && imageFile.size > 0) {
-    const fileName = `avatar-${currentUser.id}-${crypto.randomUUID()}.jpg`;
+    const buffer = Buffer.from(await imageFile.arrayBuffer());
+
+    const webpBuffer = await sharp(buffer)
+      .resize(512, 512, { fit: 'cover' })
+      .webp({ quality: 80 })
+      .toBuffer();
+
+    const fileName = `avatar-${currentUser.id}.webp`;
 
     const { error: uploadError } = await supabase.storage
       .from('avatars')
-      .upload(fileName, imageFile, {
+      .upload(fileName, webpBuffer, {
+        upsert: true,
+        contentType: 'image/webp',
         cacheControl: '3600',
-        upsert: false,
-        contentType: imageFile.type,
       });
 
     if (uploadError) throw new Error(ErrorKey.PROFILE_IMAGE_UPLOAD_FAILED);
@@ -40,7 +48,7 @@ export const updateProfileAction = async (formData: FormData) => {
       .from('avatars')
       .getPublicUrl(fileName);
 
-    imageUrl = publicUrlData.publicUrl;
+    imageUrl = `${publicUrlData.publicUrl}?v=${Date.now()}`;
   }
 
   // Update user profile in Supabase Auth
@@ -66,4 +74,5 @@ export const updateProfileAction = async (formData: FormData) => {
   });
 
   revalidatePath('/account/settings');
+  revalidatePath('/');
 };

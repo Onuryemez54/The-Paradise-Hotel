@@ -6,10 +6,11 @@ test.describe('Account - Dashboard Page', () => {
 
     await expect(page).toHaveURL(/\/en\/account/);
 
-    await expect(page.getByText(/account/i)).toBeVisible();
-    await expect(page.getByText(/statistics/i)).toBeVisible({
-      timeout: 15_000,
-    });
+    const dasboardCardTitle = page.getByTestId('dashboard-card-title');
+    const firstCard = dasboardCardTitle.first();
+
+    await expect(page.getByRole('heading', { name: /account/i })).toBeVisible();
+    await expect(firstCard).toBeVisible({ timeout: 15_000 });
   });
 
   test('authenticated user can access bookings page by clicking bookings link', async ({

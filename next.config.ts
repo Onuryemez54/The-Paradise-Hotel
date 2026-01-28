@@ -6,13 +6,21 @@ const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
-      new URL(
-        'https://apygptauggadmeqtsrcb.supabase.co/storage/v1/object/public/room-images/**'
-      ),
-      new URL(
-        'https://apygptauggadmeqtsrcb.supabase.co/storage/v1/object/public/avatars/**'
-      ),
-      new URL('https://lh3.googleusercontent.com/**'),
+      {
+        protocol: 'https',
+        hostname: 'apygptauggadmeqtsrcb.supabase.co',
+        pathname: '/storage/v1/object/public/room-images/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'apygptauggadmeqtsrcb.supabase.co',
+        pathname: '/storage/v1/object/public/avatars/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+        pathname: '/**',
+      },
     ],
   },
 };
