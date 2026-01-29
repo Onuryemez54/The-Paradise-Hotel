@@ -14,6 +14,9 @@ export default defineConfig({
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
+    extraHTTPHeaders: {
+      'x-e2e-test': 'true',
+    },
   },
 
   projects: [

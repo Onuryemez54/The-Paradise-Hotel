@@ -1,0 +1,15 @@
+export const mockBookingData = {
+  startDate: new Date('2036-03-02'),
+  endDate: new Date('2036-03-10'),
+  numNights: 8,
+  numGuests: 4,
+  roomPrice: 190,
+  extrasPrice: 640,
+  totalPrice: 6720,
+  isPaid: false,
+  status: 'unconfirmed',
+  hasBreakfast: true,
+  observations: 'Please prepare a birthday cake.',
+  roomId: 6,
+  userId: process.env.E2E_TEST_USER_ID!,
+};

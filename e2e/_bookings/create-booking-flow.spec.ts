@@ -1,10 +1,19 @@
 import { test, expect } from '@playwright/test';
 import { selectRangeInNextMonth } from 'e2e/helpers/selectRangeInNextMonth';
 
-test.describe('Create booking flow', () => {
+test.describe('Create Booking Flow', () => {
+  test.describe.configure({ mode: 'serial' });
+
+  test.afterEach(async ({ request }) => {
+    await request.post('/api/e2e/cleanup-bookings', {
+      data: {
+        roomId: 1234,
+      },
+    });
+  });
+
   test('user can create a booking successfully', async ({ page }) => {
     await page.goto('/en/rooms/1234');
-    await page.waitForLoadState('networkidle');
 
     const datePicker = page.getByTestId('booking-date-picker');
     await expect(datePicker).toBeVisible({ timeout: 20_000 });
