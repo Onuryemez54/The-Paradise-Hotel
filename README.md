@@ -78,6 +78,12 @@ It showcases both **frontend excellence** and **backend data integrity**.
 
 ---
 
+## 📱 Responsive Mobile Experience
+
+|              Mobile View 1              |              Mobile View 2              |
+| :-------------------------------------: | :-------------------------------------: |
+| ![](./public/screenshots/mobile-1.webp) | ![](./public/screenshots/mobile-2.webp) |
+
 ### 🧪 Vitest & Playwright Testing
 
 | Vitest                                | Playwright E2E                     |
