@@ -72,15 +72,17 @@ It showcases both **frontend excellence** and **backend data integrity**.
 
 ## ✏️ Edit Booking Experience
 
-| Dark Theme | Light Theme |
-
-![Edit](| ![](./public/screenshots/edit-dark.webp) | ![](./public/screenshots/edit-light.webp) |)
+| Dark Theme                               | Light Theme                               |
+| ---------------------------------------- | ----------------------------------------- |
+| ![](./public/screenshots/edit-dark.webp) | ![](./public/screenshots/edit-light.webp) |
 
 ---
 
 ### 🧪 Vitest & Playwright Testing
 
-![Testing](| ![](./public/screenshots/vitest.webp) | ![](./public/screenshots/e2e.webp) |)
+| Vitest                                | Playwright E2E                     |
+| ------------------------------------- | ---------------------------------- |
+| ![](./public/screenshots/vitest.webp) | ![](./public/screenshots/e2e.webp) |
 
 ---
 
