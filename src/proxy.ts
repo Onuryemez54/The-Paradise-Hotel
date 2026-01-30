@@ -1,7 +1,7 @@
 import createMiddleware from 'next-intl/middleware';
 import { routing } from './i18n/routing';
 import { type NextRequest, NextResponse } from 'next/server';
-import { getSupabaseSession } from './lib/actions/helpers/getSupabaseSession';
+import { getSupabaseUser } from './lib/actions/helpers/getSupabaseUser';
 
 const intlMiddleware = createMiddleware(routing);
 
@@ -22,8 +22,8 @@ export const proxy = async (request: NextRequest) => {
   const isAuthRoute = pathname.includes('/auth');
   const isAccountRoute = pathname.includes('/account');
 
-  const session = await getSupabaseSession();
-  const isAuthenticated = !!session?.user;
+  const user = await getSupabaseUser();
+  const isAuthenticated = !!user;
 
   if (resetRequired && !isResetAllowed) {
     const url = request.nextUrl.clone();

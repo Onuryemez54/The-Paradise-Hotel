@@ -155,6 +155,15 @@ It showcases both **frontend excellence** and **backend data integrity**.
 
 ---
 
+### 📧 Custom Email Templates
+
+The application uses custom-built email templates specifically designed for this project.
+All transactional emails — including feedback notifications, email verification, and password reset emails — are styled and structured to match the application’s identity.
+
+Each email contains application-specific content, clear messaging, and user-related details, ensuring a consistent and professional communication experience.
+
+---
+
 ### 🧠 State & Validation
 
 - Context-based room state

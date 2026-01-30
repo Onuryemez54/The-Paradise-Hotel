@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { NextRequest, NextResponse } from 'next/server';
-import { getSupabaseSession } from '@/lib/actions/helpers/getSupabaseSession';
+import { getSupabaseUser } from '@/lib/actions/helpers/getSupabaseUser';
 import { proxy } from '@/proxy';
 
 vi.mock('next-intl/middleware', () => {
@@ -9,8 +9,8 @@ vi.mock('next-intl/middleware', () => {
   };
 });
 
-vi.mock('@/lib/actions/helpers/getSupabaseSession', () => ({
-  getSupabaseSession: vi.fn(),
+vi.mock('@/lib/actions/helpers/getSupabaseUser', () => ({
+  getSupabaseUser: vi.fn(),
 }));
 
 const createRequest = (url: string, cookies: Record<string, string> = {}) => {
@@ -29,7 +29,7 @@ beforeEach(() => {
 
 describe('proxy middleware', () => {
   it('redirects to login if reset is required and route is not allowed', async () => {
-    (getSupabaseSession as any).mockResolvedValue(null);
+    (getSupabaseUser as any).mockResolvedValue(null);
     const request = createRequest('http://localhost:3000/en/account', {
       reset_required: 'true',
       'code-verifier': 'token-45242',
@@ -49,7 +49,7 @@ describe('proxy middleware', () => {
   });
 
   it('allows reset routes when reset is required', async () => {
-    (getSupabaseSession as any).mockResolvedValue(null);
+    (getSupabaseUser as any).mockResolvedValue(null);
     const request = createRequest(
       'http://localhost:3000/en/auth/reset-password',
       { reset_required: 'true' }
@@ -62,7 +62,7 @@ describe('proxy middleware', () => {
   });
 
   it('redirects to login if account route and no auth token', async () => {
-    (getSupabaseSession as any).mockResolvedValue(null);
+    (getSupabaseUser as any).mockResolvedValue(null);
 
     const request = createRequest('http://localhost:3000/en/account');
 
@@ -74,7 +74,7 @@ describe('proxy middleware', () => {
   });
 
   it('redirects authenticated user away from auth routes to account', async () => {
-    (getSupabaseSession as any).mockResolvedValue({
+    (getSupabaseUser as any).mockResolvedValue({
       user: { id: '1' },
     });
     const request = createRequest('http://localhost:3000/en/auth/login', {
@@ -90,7 +90,7 @@ describe('proxy middleware', () => {
   });
 
   it('passes through normal routes without redirect', async () => {
-    (getSupabaseSession as any).mockResolvedValue(null);
+    (getSupabaseUser as any).mockResolvedValue(null);
     const request = createRequest('http://localhost:3000/en');
 
     const response = await proxy(request);

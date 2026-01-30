@@ -58,9 +58,9 @@ const AboutPage = async () => {
           <Image
             src="/about/about-1.webp"
             alt="Family sitting around a fire pit in front of cabin"
-            width={400}
-            height={400}
-            className="rounded-full"
+            width={600}
+            height={600}
+            className="rounded-3xl"
           />
         </FadeRightToLeft>
       </div>
@@ -72,7 +72,7 @@ const AboutPage = async () => {
             alt="Family that manages The Paradise Hotel"
             width={600}
             height={600}
-            className="rounded-2xl"
+            className="rounded-3xl"
           />
         </ScrollReveal>
       </div>

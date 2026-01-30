@@ -12,16 +12,16 @@ export const getCurrentUser = cache(async () => {
   const supabase = await createClient();
 
   const {
-    data: { session },
+    data: { user },
     error,
-  } = await supabase.auth.getSession();
+  } = await supabase.auth.getUser();
 
-  if (error || !session?.user) {
+  if (error || !user) {
     return null;
   }
 
   const currentUser = await db.user.findUnique({
-    where: { id: session.user.id },
+    where: { id: user.id },
   });
 
   return currentUser;
@@ -65,7 +65,11 @@ export type RoomListItem = Awaited<ReturnType<typeof getRoomsForList>>[number];
 export const getRoomCount = unstable_cache(
   async () => {
     try {
-      return await db.room.count();
+      return await db.room.count({
+        where: {
+          is_test_room: false,
+        },
+      });
     } catch (err) {
       console.error('getRoomCount error:', err);
       throw new Error(ErrorKey.ROOMS_FETCH_FAILED);

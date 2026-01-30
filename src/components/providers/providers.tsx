@@ -1,7 +1,7 @@
 import { AuthProvider } from '@/context/AuthContext';
 import { ReservationProvider } from '@/context/ReservationContext';
 import { ThemeProvider } from '@/context/ThemeContext';
-import { getSupabaseSession } from '@/lib/actions/helpers/getSupabaseSession';
+import { getSupabaseUser } from '@/lib/actions/helpers/getSupabaseUser';
 import { getCurrentUser } from '@/lib/actions/prisma-actions/db-acitons';
 import { ReactNode } from 'react';
 
@@ -10,9 +10,8 @@ interface ProvidersProps {
 }
 
 const Providers = async ({ children }: ProvidersProps) => {
-  const session = await getSupabaseSession();
-  const user = session?.user ? session.user : null;
-  const currentUser = user ? await getCurrentUser() : null;
+  const user = await getSupabaseUser();
+  const currentUser = await getCurrentUser();
 
   return (
     <ThemeProvider>
