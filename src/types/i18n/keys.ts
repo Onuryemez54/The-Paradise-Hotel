@@ -15,6 +15,7 @@ export enum NavKey {
   BOOKINGS = 'BOOKINGS',
   DASHBOARD = 'DASHBOARD',
   UPDATE_PASSWORD = 'UPDATE_PASSWORD',
+  EDIT_BOOKING = 'EDIT_BOOKING',
 }
 export enum TitleKey {
   TITLE = 'TITLE',

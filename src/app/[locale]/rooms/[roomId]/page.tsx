@@ -8,24 +8,25 @@ import {
   RoomListItem,
 } from '@/lib/actions/prisma-actions/db-acitons';
 import { Suspense } from 'react';
-import { AppLocale } from '@/i18n/routing';
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { ErrorKey, LoadingKey, RoomKey } from '@/types/i18n/keys';
-import { notFound } from 'next/navigation';
 import { AppError } from '@/lib/errors/AppError';
+import { getValidatedLocale } from '@/i18n/server';
 
-interface RoomPageProps {
+interface RoomPageMetadataProps {
   params: Promise<{
-    locale: AppLocale;
+    locale: string;
     roomId: string;
   }>;
 }
 
 export async function generateMetadata({
   params,
-}: RoomPageProps): Promise<Metadata> {
-  const { roomId, locale } = await params;
+}: RoomPageMetadataProps): Promise<Metadata> {
+  const { roomId } = await params;
+  const locale = await getValidatedLocale(params);
+
   const t = await getTranslations({
     locale,
     namespace: RoomKey.TITLE,
@@ -41,7 +42,11 @@ export const generateStaticParams = async () => {
   return ids;
 };
 
-const RoomPage = async ({ params }: RoomPageProps) => {
+const RoomPage = async ({
+  params,
+}: {
+  params: Promise<{ roomId: string }>;
+}) => {
   const { roomId } = await params;
   if (!roomId) {
     throw new AppError(ErrorKey.ROOM_NOT_FOUND);

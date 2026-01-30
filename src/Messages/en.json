@@ -12,7 +12,8 @@
     "SETTINGS": "Settings",
     "BOOKINGS": "Bookings",
     "DASHBOARD": "Dashboard",
-    "UPDATE_PASSWORD": "Update Password"
+    "UPDATE_PASSWORD": "Update Password",
+    "EDIT_BOOKING": "Edit Booking"
   },
   "TITLE": {
     "BRAND": "The Paradise Hotel",

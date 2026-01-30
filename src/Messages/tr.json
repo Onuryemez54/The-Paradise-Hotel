@@ -12,7 +12,8 @@
     "SETTINGS": "Ayarlar",
     "BOOKINGS": "Rezervasyonlar",
     "DASHBOARD": "Panel",
-    "UPDATE_PASSWORD": "Şifreyi Güncelle"
+    "UPDATE_PASSWORD": "Şifreyi Güncelle",
+    "EDIT_BOOKING": "Rezervasyonu Düzenle"
   },
   "TITLE": {
     "BRAND": "Paradise Otel",

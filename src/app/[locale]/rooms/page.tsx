@@ -13,23 +13,22 @@ import {
   SubTitleKey,
   TitleKey,
 } from '@/types/i18n/keys';
-import { AppLocale } from '@/i18n/routing';
 import { Metadata } from 'next';
 import { BookingReminder } from '@/components/rooms/BookingReminder';
+import { getValidatedLocale } from '@/i18n/server';
+import { MetadataProps } from '@/types/metadataPropsType';
 
 interface RoomsPageProps {
   searchParams: Promise<{
     capacity: string;
   }>;
-  params: Promise<{
-    locale: AppLocale;
-  }>;
 }
 
 export async function generateMetadata({
   params,
-}: RoomsPageProps): Promise<Metadata> {
-  const { locale } = await params;
+}: MetadataProps): Promise<Metadata> {
+  const locale = await getValidatedLocale(params);
+
   const t = await getTranslations({
     locale,
     namespace: NavKey.TITLE,

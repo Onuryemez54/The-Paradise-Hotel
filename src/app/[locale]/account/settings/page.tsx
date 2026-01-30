@@ -5,14 +5,16 @@ import { Suspense } from 'react';
 import { LoadingKey, NavKey, SubTitleKey, TitleKey } from '@/types/i18n/keys';
 import { AccountDiv } from '@/components/account/AccountDiv';
 import { UpdateProfile } from '@/components/account/profile/UpdateProfile';
-import { AccountMetadata } from '../page';
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
+import { getValidatedLocale } from '@/i18n/server';
+import { MetadataProps } from '@/types/metadataPropsType';
 
 export async function generateMetadata({
   params,
-}: AccountMetadata): Promise<Metadata> {
-  const { locale } = await params;
+}: MetadataProps): Promise<Metadata> {
+  const locale = await getValidatedLocale(params);
+
   const t = await getTranslations({
     locale,
     namespace: NavKey.TITLE,
@@ -23,7 +25,7 @@ export async function generateMetadata({
   };
 }
 
-const UserSettingsPage = async () => {
+const UserSettingsPage = () => {
   return (
     <AccountDiv mode="main">
       <CustomTitle variant="account" i18nKey={TitleKey.SETTINGS} />

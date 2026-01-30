@@ -48,10 +48,10 @@ export function ToastProvider({ children }: { children: ReactNode }) {
   );
 
   const value: ToastContextValue = {
-    success: (msg, d, p) => showToast('success', msg, d, p),
-    error: (msg, d) => showToast('error', msg, d),
-    info: (msg, d) => showToast('info', msg, d),
-    warning: (msg, d) => showToast('warning', msg, d),
+    success: (msg, d, p) => showToast(ToastType.SUCCESS, msg, d, p),
+    error: (msg, d) => showToast(ToastType.ERROR, msg, d),
+    info: (msg, d) => showToast(ToastType.INFO, msg, d),
+    warning: (msg, d) => showToast(ToastType.WARNING, msg, d),
   };
 
   return (

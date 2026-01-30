@@ -5,10 +5,7 @@ import {
   getTranslations,
   setRequestLocale,
 } from 'next-intl/server';
-import { hasLocale } from 'next-intl';
-import { notFound } from 'next/navigation';
-import { AppLocale, routing } from '@/i18n/routing';
-import '@/app/globals.css';
+import { routing } from '@/i18n/routing';
 import { Metadata } from 'next';
 import { NavbarSection } from '@/components/navbar/NavbarSection';
 import { Footer } from '@/components/footer/Footer';
@@ -16,20 +13,25 @@ import { ToastProvider } from '@/context/ToastContext';
 import { TitleKey } from '@/types/i18n/keys';
 import { getExchangeRates } from '@/lib/actions/exchange-rates-action/exchange-rates';
 import { PriceRatesProvider } from '@/context/PriceRatesContext';
+import { getValidatedLocale } from '@/i18n/server';
+import { MetadataProps } from '@/types/metadataPropsType';
+import '@/app/globals.css';
 
 interface LayoutProps {
   children: ReactNode;
-  params: Promise<{ locale: AppLocale }>;
+  params: Promise<{ locale: string }>;
 }
 
 export async function generateMetadata({
   params,
-}: LayoutProps): Promise<Metadata> {
-  const { locale } = await params;
+}: MetadataProps): Promise<Metadata> {
+  const locale = await getValidatedLocale(params);
+
   const t = await getTranslations({
     locale,
     namespace: TitleKey.TITLE,
   });
+
   return {
     title: {
       template: `%s / ${t(TitleKey.BRAND)}`,
@@ -45,15 +47,11 @@ export async function generateStaticParams() {
 }
 
 const LocaleLayout = async ({ children, params }: LayoutProps) => {
-  const { locale } = await params;
-  const rates = await getExchangeRates();
-
-  if (!hasLocale(routing.locales, locale)) {
-    notFound();
-  }
+  const locale = await getValidatedLocale(params);
 
   setRequestLocale(locale);
 
+  const rates = await getExchangeRates();
   const messages = await getMessages();
 
   return (

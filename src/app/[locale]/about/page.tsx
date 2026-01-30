@@ -1,5 +1,4 @@
 import Image from 'next/image';
-
 import { ScrollReveal } from '@/components/common/animation/ScrollReveal';
 import { FadeLeftToRight } from '@/components/common/animation/FadeLeftToRight';
 import { FadeRightToLeft } from '@/components/common/animation/FadeRightToLeft';
@@ -8,20 +7,16 @@ import { CustomTitle } from '@/components/ui/custom-components/CustomTitle';
 import { CustomButton } from '@/components/ui/custom-components/CustomButton';
 import { ButtonKey, NavKey, SubTitleKey, TitleKey } from '@/types/i18n/keys';
 import { getRoomCount } from '@/lib/actions/prisma-actions/db-acitons';
-import { AppLocale } from '@/i18n/routing';
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-
-interface MetadataProps {
-  params: Promise<{
-    locale: AppLocale;
-  }>;
-}
+import { getValidatedLocale } from '@/i18n/server';
+import { MetadataProps } from '@/types/metadataPropsType';
 
 export async function generateMetadata({
   params,
 }: MetadataProps): Promise<Metadata> {
-  const { locale } = await params;
+  const locale = await getValidatedLocale(params);
+
   const t = await getTranslations({
     locale,
     namespace: NavKey.TITLE,

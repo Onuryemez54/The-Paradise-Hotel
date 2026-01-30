@@ -4,22 +4,18 @@ import { LoadingSpinner } from '@/components/common/LoadingSpinner';
 import { Suspense } from 'react';
 import { VerifiedToast } from '@/components/account/dashboard/VerifiedToast';
 import { LoadingKey, NavKey, SubTitleKey, TitleKey } from '@/types/i18n/keys';
-import { AppLocale } from '@/i18n/routing';
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { AccountDiv } from '@/components/account/AccountDiv';
 import { AccountDashboard } from '@/components/account/dashboard/AccountDashboard';
-
-export interface AccountMetadata {
-  params: Promise<{
-    locale: AppLocale;
-  }>;
-}
+import { getValidatedLocale } from '@/i18n/server';
+import { MetadataProps } from '@/types/metadataPropsType';
 
 export async function generateMetadata({
   params,
-}: AccountMetadata): Promise<Metadata> {
-  const { locale } = await params;
+}: MetadataProps): Promise<Metadata> {
+  const locale = await getValidatedLocale(params);
+
   const t = await getTranslations({
     locale,
     namespace: NavKey.TITLE,
@@ -29,7 +25,7 @@ export async function generateMetadata({
     title: t(NavKey.PROFILE),
   };
 }
-const AccountPage = async () => {
+const AccountPage = () => {
   return (
     <AccountDiv mode="main">
       <CustomTitle variant="account" i18nKey={TitleKey.DASHBOARD} />
