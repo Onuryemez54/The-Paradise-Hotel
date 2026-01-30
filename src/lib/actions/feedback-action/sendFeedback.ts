@@ -28,8 +28,8 @@ export async function sendFeedback(data: FormData) {
 
   try {
     await resend.emails.send({
-      from: 'The Paradise Hotel <onboarding@resend.dev>',
-      to: ['onuryemez.is@gmail.com'],
+      from: 'The Paradise Hotel <support@paradisehotel.live>',
+      to: [process.env.FEEDBACK_RECEIVER_EMAIL!],
       replyTo: parsedData.email,
       subject: `[Feedback • ${prettyTopic}] Paradise Hotel`,
       html: feedbackEmailTemplate({
