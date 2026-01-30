@@ -14,6 +14,8 @@ A production-grade **full-stack hotel booking platform** built with **Next.js 16
 
 This project demonstrates real-world SaaS architecture with race-condition-safe booking creation, advanced middleware-based route protection, and enterprise-level error handling.
 
+🌐 **Live Demo:** https://paradisehotel.live
+
 ---
 
 ## 🚀 Project Summary
