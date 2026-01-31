@@ -72,6 +72,12 @@ It showcases both **frontend excellence** and **backend data integrity**.
 
 ---
 
+### 📧 Custom Feedback Email Templates
+
+![Feedback](./public/screenshots/feedback-mail.webp)
+
+---
+
 ## ✏️ Edit Booking Experience
 
 | Dark Theme                               | Light Theme                               |
@@ -85,6 +91,8 @@ It showcases both **frontend excellence** and **backend data integrity**.
 |              Mobile View 1              |              Mobile View 2              |
 | :-------------------------------------: | :-------------------------------------: |
 | ![](./public/screenshots/mobile-1.webp) | ![](./public/screenshots/mobile-2.webp) |
+
+---
 
 ### 🧪 Vitest & Playwright Testing
 
