@@ -13,6 +13,7 @@ import { getTranslations } from 'next-intl/server';
 import { ErrorKey, LoadingKey, RoomKey } from '@/types/i18n/keys';
 import { AppError } from '@/lib/errors/AppError';
 import { getValidatedLocale } from '@/i18n/server';
+import { PageContainer } from '@/components/common/PageContainer';
 
 interface RoomPageMetadataProps {
   params: Promise<{
@@ -54,18 +55,17 @@ const RoomPage = async ({
   const room = await getRoomDetailById(BigInt(roomId));
 
   return (
-    <div
-      data-testid="room-detail-page"
-      className="mx-auto mt-2 max-w-6xl space-y-10"
-    >
-      <RoomDetail room={room} />
-      <Divider />
-      <Suspense
-        fallback={<LoadingSpinner label={LoadingKey.ROOM_BOOK_DETAILS} />}
-      >
-        <RoomBooking roomId={room.id} />
-      </Suspense>
-    </div>
+    <PageContainer>
+      <div data-testid="room-detail-page" className="space-y-10">
+        <RoomDetail room={room} />
+        <Divider />
+        <Suspense
+          fallback={<LoadingSpinner label={LoadingKey.ROOM_BOOK_DETAILS} />}
+        >
+          <RoomBooking roomId={room.id} />
+        </Suspense>
+      </div>
+    </PageContainer>
   );
 };
 

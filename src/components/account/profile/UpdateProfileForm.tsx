@@ -108,15 +108,20 @@ export const UpdateProfileForm = ({
         autoComplete="email"
       />
       <div className="space-y-2">
-        <div className="flex items-center justify-between">
-          <CustomListItem i18nKey={ListItemKey.WHERE_FROM} variant="small" />
+        <div className="flex items-center gap-3">
+          <CustomListItem
+            i18nKey={ListItemKey.WHERE_FROM}
+            variant="small"
+            className="flex-1"
+          />
+
           {countryFlag && (
             <Image
               src={countryFlag}
               alt="Country flag"
               width={32}
               height={20}
-              className="rounded-sm"
+              className="h-auto w-8 shrink-0 rounded-sm"
             />
           )}
         </div>

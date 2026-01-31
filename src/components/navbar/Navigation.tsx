@@ -1,3 +1,4 @@
+'use client';
 import { ThemeToggleButton } from './ThemeToggleButton';
 import { DesktopNavigation } from './DesktopNavigation';
 import { LocaleSwitcher } from './LocaleSwitcher';

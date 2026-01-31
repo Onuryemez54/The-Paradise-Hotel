@@ -37,7 +37,6 @@ export const RoomCard = async ({ room }: RoomCardProps) => {
             100vw
             "
             className="object-cover object-center"
-            priority
           />
         </div>
 

@@ -39,7 +39,6 @@ export const RoomDetail = async ({ room }: RoomDetailProps) => {
           >
             {image && (
               <Image
-                priority
                 src={image}
                 alt={type || 'TypeA'}
                 width={800}

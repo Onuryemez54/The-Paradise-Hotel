@@ -40,44 +40,41 @@ export const BookingSummary = ({
           : 'md:flex-row md:items-baseline md:gap-px lg:gap-2'
       )}
     >
-      <p
-        className={cn(
-          'text-primary-300 inline-flex items-baseline',
-          nightClass
-        )}
-      >
-        {t(BookingKey.NIGHTS_IN, { count: numNights })}
-      </p>
-
-      <p
-        className={cn(
-          'text-accent-500/60 mx-0.5 items-baseline',
-          !bookingId ? 'hidden sm:inline-flex' : 'hidden md:inline-flex'
-        )}
-      >
-        <SlashIcon className="h-[1em] w-[1em]" />
-      </p>
-
-      <p className="inline-flex items-baseline gap-1">
-        <span className="text-primary-300 text-base font-semibold sm:text-lg lg:text-xl 2xl:text-2xl">
-          {t(BookingKey.TOTAL_PRICE)}
-        </span>
-
+      <p className="flex items-center justify-center">
         <span
-          data-testid="total-price"
-          className="text-accent-400 px-1 text-lg font-bold sm:text-xl lg:text-2xl 2xl:text-3xl"
-        >
-          {isLoading ? (
-            <Loader size={14} className="animate-spin" />
-          ) : (
-            formatPrice()
+          className={cn(
+            'text-primary-300 inline-flex items-baseline',
+            nightClass
           )}
+        >
+          {t(BookingKey.NIGHTS_IN, { count: numNights })}
         </span>
 
-        <span className={cn('text-primary-300 font-medium', textClass)}>
-          {numGuests > 1
-            ? t(BookingKey.FOR_GUESTS, { count: numGuests })
-            : t(BookingKey.PER_PERSON)}
+        <span className={cn('text-accent-500/60 mx-1 items-baseline')}>
+          <SlashIcon className="h-[1em] w-[1em]" />
+        </span>
+
+        <span className="inline-flex items-baseline gap-1">
+          <span className="text-primary-300 hidden text-sm font-semibold sm:inline-block sm:text-lg lg:text-xl 2xl:text-2xl">
+            {t(BookingKey.TOTAL_PRICE)}
+          </span>
+
+          <span
+            data-testid="total-price"
+            className="text-accent-400 px-1 text-lg font-bold sm:text-xl lg:text-2xl 2xl:text-3xl"
+          >
+            {isLoading ? (
+              <Loader size={14} className="animate-spin" />
+            ) : (
+              formatPrice()
+            )}
+          </span>
+
+          <span className={cn('text-primary-300 font-medium', textClass)}>
+            {numGuests > 1
+              ? t(BookingKey.FOR_GUESTS, { count: numGuests })
+              : t(BookingKey.PER_PERSON)}
+          </span>
         </span>
       </p>
 

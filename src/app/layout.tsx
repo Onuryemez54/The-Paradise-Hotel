@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       className={`${inter.variable} ${playfair.variable}`}
       suppressHydrationWarning
     >
-      <body className="bg-background">
+      <body className="bg-background overflow-x-hidden">
         <Providers>{children}</Providers>
         <ScrollToTopButton />
       </body>

@@ -56,9 +56,8 @@ export const BookingDatePicker = ({
         classNames={{
           months: cn(
             'flex flex-col gap-2',
-            'sm:flex-row sm:gap-4',
-            'lg:gap-10',
-            isEditMode && 'lg:flex-row'
+            isEditMode ? 'lg:flex-row' : 'md:flex-row md:gap-4',
+            'lg:gap-10'
           ),
           month: 'space-y-2 sm:space-y-3',
         }}

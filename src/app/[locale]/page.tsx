@@ -7,16 +7,16 @@ import { HotelDesc } from '@/components/home/HotelDesc';
 
 const Home = () => {
   return (
-    <div className="flex flex-col gap-10">
-      <main className="mt-24 -mb-50 h-screen w-full">
-        <HeroSlider />
+    <>
+      <HeroSlider />
+      <main className="mx-auto mt-4 flex w-full max-w-7xl flex-col gap-8 px-8 py-12 xl:mt-6 xl:gap-14">
+        <HotelDesc />
+        <Divider />
+        <FacilitiesShowcase items={HOTEL_AMENITIES_GALLERY} />
+        <Divider />
+        <MapAndFeedback />
       </main>
-      <HotelDesc />
-      <Divider />
-      <FacilitiesShowcase items={HOTEL_AMENITIES_GALLERY} />
-      <Divider />
-      <MapAndFeedback />
-    </div>
+    </>
   );
 };
 

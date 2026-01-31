@@ -17,6 +17,7 @@ import { Metadata } from 'next';
 import { BookingReminder } from '@/components/rooms/BookingReminder';
 import { getValidatedLocale } from '@/i18n/server';
 import { MetadataProps } from '@/types/metadataPropsType';
+import { PageContainer } from '@/components/common/PageContainer';
 
 interface RoomsPageProps {
   searchParams: Promise<{
@@ -45,7 +46,7 @@ const RoomsPage = async ({ searchParams }: RoomsPageProps) => {
   const filter = capacity ?? FilterValue.ALL;
 
   return (
-    <div>
+    <PageContainer>
       <CustomTitle variant="section" i18nKey={TitleKey.ROOMS} />
       <CustomSubTitle variant="main" i18nKey={SubTitleKey.ROOMS} />
 
@@ -69,7 +70,7 @@ const RoomsPage = async ({ searchParams }: RoomsPageProps) => {
         <RoomList filter={filter} />
         <BookingReminder />
       </Suspense>
-    </div>
+    </PageContainer>
   );
 };
 

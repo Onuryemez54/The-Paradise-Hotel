@@ -1,3 +1,5 @@
+'use client';
+
 import { NavLinks } from './NavLinks';
 
 export const DesktopNavigation = () => {

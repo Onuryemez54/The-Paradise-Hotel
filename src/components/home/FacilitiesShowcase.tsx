@@ -74,7 +74,7 @@ export const FacilitiesShowcase = ({ items }: FacilitiesShowcaseProps) => {
                     src={item.src}
                     alt={item.title}
                     fill
-                    sizes="(max-width: 1024px) 100vw, 25vw"
+                    sizes="25vw"
                     className={imageClass}
                   />
                 </div>
@@ -112,7 +112,7 @@ export const FacilitiesShowcase = ({ items }: FacilitiesShowcaseProps) => {
                       src={item.src}
                       alt={item.title}
                       fill
-                      sizes="100vw"
+                      sizes="100%"
                       className={imageClass}
                     />
                   </div>

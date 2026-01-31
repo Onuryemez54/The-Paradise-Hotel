@@ -57,13 +57,11 @@ const LocaleLayout = async ({ children, params }: LayoutProps) => {
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
       <ToastProvider>
-        <div className="from-primary-900 via-primary-700 to-primary-600 text-primary-50 relative mx-auto grid min-h-screen max-w-480 grid-rows-[auto_1fr_auto] bg-linear-to-b">
+        <div className="from-primary-900 via-primary-700 to-primary-600 text-primary-50 relative mx-auto grid min-h-screen max-w-480 grid-rows-[auto_1fr_auto] overflow-x-hidden bg-linear-to-b">
           <NavbarSection />
-          <div className="grid flex-1 px-8 py-12">
-            <main className="mx-auto w-full max-w-7xl">
-              <PriceRatesProvider rates={rates}>{children}</PriceRatesProvider>
-            </main>
-          </div>
+
+          <PriceRatesProvider rates={rates}>{children}</PriceRatesProvider>
+
           <Footer />
         </div>
       </ToastProvider>

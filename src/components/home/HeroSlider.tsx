@@ -21,27 +21,28 @@ export const HeroSlider = () => {
   }, []);
 
   return (
-    <div className="overflow-hidden">
-      <div className="absolute inset-0 h-screen">
+    <section className="relative min-h-dvh w-full overflow-hidden">
+      <div className="absolute inset-0">
         {images.map((img, i) => (
           <motion.div
             key={i}
-            className="absolute inset-0"
+            className="will-change-opacity absolute inset-0"
             animate={{ opacity: i === index ? 1 : 0 }}
-            transition={{ duration: 1.3 }}
+            transition={{ duration: 1.3, ease: 'easeInOut' }}
           >
-            <div className="relative h-full w-full">
-              <Image
-                src={img}
-                alt="Hotel background"
-                fill
-                className="object-cover"
-                priority={i === 0}
-              />
-            </div>
+            <Image
+              src={img}
+              alt="Hotel background"
+              fill
+              className="object-cover"
+              priority={i === 0}
+              sizes="100vw"
+            />
           </motion.div>
         ))}
+
         <div className="from-primary-900/70 absolute inset-0 bg-linear-to-b to-transparent" />
+
         <div
           className="pointer-events-none absolute inset-x-0 bottom-0 h-20 backdrop-blur-sm"
           style={{
@@ -52,13 +53,14 @@ export const HeroSlider = () => {
           }}
         />
       </div>
-      <div className="px-6 py-16">
+
+      <div className="relative z-10 flex min-h-dvh items-center justify-center px-6 py-16 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="relative z-10 flex flex-col items-center gap-4 text-center">
+          <div className="flex flex-col items-center gap-4">
             <CustomTitle variant="main" i18nKey={TitleKey.HOME} />
             <CustomButton
               as="link"
@@ -70,6 +72,6 @@ export const HeroSlider = () => {
           </div>
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 };

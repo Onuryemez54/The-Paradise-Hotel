@@ -1,3 +1,4 @@
+'use client';
 import { ButtonKey } from '@/types/i18n/keys';
 import { CustomButton } from '../ui/custom-components/CustomButton';
 
