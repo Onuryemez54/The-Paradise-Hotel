@@ -54,6 +54,7 @@ type BaseProps = {
   onAction?: () => void;
   icon?: ReactNode;
   testId?: string;
+  setIsOpen?: (isOpen: boolean) => void;
 };
 
 type ButtonProps = BaseProps &
@@ -171,7 +172,11 @@ export const CustomButton = (props: CustomButtonProps) => {
 
   if (props.as === 'link') {
     return (
-      <Link href={props.href} className={classNames}>
+      <Link
+        href={props.href}
+        className={classNames}
+        onClick={() => props.setIsOpen && props.setIsOpen(false)}
+      >
         {props.variant === 'bordered' ? (
           <>
             {props.icon && props.icon}

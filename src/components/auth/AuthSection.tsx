@@ -11,7 +11,7 @@ export const AuthSection = ({ setIsOpen }: AuthSectionProps) => {
   const { user, currentUser, isLoading } = useAuth();
 
   if (!user) {
-    return <AuthenticationLinks />;
+    return <AuthenticationLinks setIsOpen={setIsOpen} />;
   }
 
   if (isLoading || !currentUser) {
