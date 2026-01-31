@@ -331,6 +331,7 @@
     "PROFILE_UPDATE_AUTH_FAILED": "Authentifizierung für Profilaktualisierung fehlgeschlagen. Bitte melden Sie sich erneut an.",
     "PROFILE_IMAGE_UPLOAD_FAILED": "Profilbild konnte nicht hochgeladen werden. Bitte versuchen Sie es erneut.",
 
+    "FEEDBACK_SEND_FAILED": "Feedback konnte nicht gesendet werden. Bitte versuchen Sie es später erneut.",
     "TOO_MANY_REQUESTS": "Zu viele Anfragen. Bitte verlangsamen Sie und versuchen Sie es später erneut.",
     "UNKNOWN": "Etwas ist schiefgelaufen.",
     "INTERNAL_ERROR": "Technisches Problem. Bitte versuchen Sie es gleich erneut."

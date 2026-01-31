@@ -92,6 +92,7 @@ export const ERROR_ERROR_CODES: ErrorKey[] = [
   ErrorKey.PROFILE_IMAGE_UPLOAD_FAILED,
 
   // Generic
+  ErrorKey.FEEDBACK_SEND_FAILED,
   ErrorKey.TOO_MANY_REQUESTS,
   ErrorKey.UNKNOWN,
   ErrorKey.INTERNAL_ERROR,

@@ -26,8 +26,8 @@ import { TextField } from '../../ui/form/fields/TextField';
 import { SelectField } from '../../ui/form/fields/SelectField';
 import { CustomListItem } from '../../ui/custom-components/CustomListItem';
 import Image from 'next/image';
-import { User } from '@prisma/client';
 import { useAuth } from '@/context/AuthContext';
+import { User } from '@prisma/client';
 
 interface UpdateProfileFormProps {
   user: User;

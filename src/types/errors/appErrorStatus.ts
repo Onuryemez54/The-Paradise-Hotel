@@ -83,6 +83,7 @@ export const appErrorStatusMap: Record<ErrorKey, number> = {
   [ErrorKey.PROFILE_IMAGE_UPLOAD_FAILED]: 500,
 
   // Generic
+  [ErrorKey.FEEDBACK_SEND_FAILED]: 500,
   [ErrorKey.TOO_MANY_REQUESTS]: 429,
   [ErrorKey.UNKNOWN]: 500,
   [ErrorKey.INTERNAL_ERROR]: 500,

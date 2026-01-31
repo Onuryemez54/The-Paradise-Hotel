@@ -331,6 +331,7 @@
     "PROFILE_UPDATE_AUTH_FAILED": "Failed to re-authenticate. Please log in again.",
     "PROFILE_IMAGE_UPLOAD_FAILED": "Failed to upload profile image. Please try again.",
 
+    "FEEDBACK_SEND_FAILED": "Failed to send feedback. Please try again later.",
     "TOO_MANY_REQUESTS": "Too many requests. Please slow down and try again later.",
     "UNKNOWN": "Something went wrong. Please try again later.",
     "INTERNAL_ERROR": "We’re having a technical issue. Please try again shortly."

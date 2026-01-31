@@ -331,6 +331,7 @@
     "PROFILE_UPDATE_AUTH_FAILED": "Profil güncellemesi için kimlik doğrulama başarısız. Lütfen tekrar giriş yapın.",
     "PROFILE_IMAGE_UPLOAD_FAILED": "Profil resmi yüklenemedi. Lütfen tekrar deneyin.",
 
+    "FEEDBACK_SEND_FAILED": "Görüş gönderilemedi. Lütfen daha sonra tekrar deneyin.",
     "TOO_MANY_REQUESTS": "Çok fazla istek yapıldı. Lütfen yavaşlayın ve daha sonra tekrar deneyin.",
     "UNKNOWN": "Bir şeyler yanlış gitti. Lütfen daha sonra tekrar deneyin.",
     "INTERNAL_ERROR": "Teknik bir sorun yaşıyoruz. Lütfen kısa süre sonra tekrar deneyin."
