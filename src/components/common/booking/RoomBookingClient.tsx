@@ -3,7 +3,6 @@ import { useEffect, useRef } from 'react';
 import { useBookingPrice } from '@/hooks/useBookingPrice';
 import { useReservation } from '@/context/ReservationContext';
 import { differenceInDays } from 'date-fns';
-import { User } from '@prisma/client';
 import { DateSelector } from './DateSelector';
 import { BookingForm } from './BookingForm';
 import { BookingSummary } from './BookingSummary';
@@ -20,12 +19,13 @@ import { FadeLeftToRight } from '../animation/FadeLeftToRight';
 import { FadeRightToLeft } from '../animation/FadeRightToLeft';
 import { FadeUp } from '../animation/FadeUp';
 import { cn } from '@/utils/utils';
+import { dbUser } from '@/types/auth/dbUser';
 
 interface Props {
   room: RoomForBookingType;
   settings: SettingsType;
   bookedRanges: BookingRange[];
-  user: User | null;
+  user: dbUser | null;
   bookingId?: string;
   startDate?: Date;
   endDate?: Date;

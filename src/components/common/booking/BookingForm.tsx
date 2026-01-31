@@ -29,11 +29,11 @@ import { createBookingAction } from '@/lib/actions/booking-actions/create-bookin
 import { isRangeOverlapping } from '@/utils/booking-helpers/isRangeOverlapping';
 import { BookingRange } from '@/utils/booking-helpers/types';
 import { useRates } from '@/context/PriceRatesContext';
-import { User } from '@prisma/client';
 import { useRouter } from 'next/navigation';
+import { dbUser } from '@/types/auth/dbUser';
 
 interface BookingFormProps {
-  user: User;
+  user: dbUser;
   roomId: string;
   roomPrice: number;
   breakfastPrice: number;

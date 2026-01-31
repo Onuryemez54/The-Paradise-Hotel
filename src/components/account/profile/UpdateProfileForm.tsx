@@ -27,10 +27,10 @@ import { SelectField } from '../../ui/form/fields/SelectField';
 import { CustomListItem } from '../../ui/custom-components/CustomListItem';
 import Image from 'next/image';
 import { useAuth } from '@/context/AuthContext';
-import { User } from '@prisma/client';
+import { dbUser } from '@/types/auth/dbUser';
 
 interface UpdateProfileFormProps {
-  user: User;
+  user: dbUser;
   countries: getCountriesResponse[];
 }
 
