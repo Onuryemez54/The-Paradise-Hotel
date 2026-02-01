@@ -8,8 +8,7 @@ import { loginWithGoogle } from '@/lib/actions/auth-actions/login-google-action'
 import Image from 'next/image';
 import Link from 'next/link';
 import { useToast } from '@/context/ToastContext';
-import { handleAppError } from '@/lib/errors/helpers/handleAppError';
-import { ButtonKey, ErrorKey, SuccessKey } from '@/types/i18n/keys';
+import { ButtonKey, SuccessKey } from '@/types/i18n/keys';
 import { useRouter } from 'next/navigation';
 
 type Variant =
@@ -120,7 +119,6 @@ export const CustomButton = (props: CustomButtonProps) => {
   const router = useRouter();
   const toast = useToast();
   const t = useTranslations(ButtonKey.TITLE);
-  const tE = useTranslations(ErrorKey.TITLE);
   const tS = useTranslations(SuccessKey.TITLE);
   const { handleLogout } = useAuth();
   const [isPending, setIsPending] = useState(false);
@@ -136,23 +134,21 @@ export const CustomButton = (props: CustomButtonProps) => {
   );
 
   const handleClick = async () => {
-    try {
-      if (props.variant === 'logout') {
-        await handleLogout();
-        props.onAction?.();
-        router.push('/');
-        router.refresh();
-        toast.success(tS(SuccessKey.LOGOUT));
-        return;
-      } else if (props.variant === 'google') {
-        setIsPending(true);
-        await loginWithGoogle();
-      } else {
-        props.onAction?.();
-      }
-    } catch (err) {
-      handleAppError({ err, t: tE, toast });
+    if (props.variant === 'logout') {
+      await handleLogout();
+      props.onAction?.();
+      router.push('/');
+      router.refresh();
+      toast.success(tS(SuccessKey.LOGOUT));
+      return;
     }
+    if (props.variant === 'google') {
+      setIsPending(true);
+      await loginWithGoogle();
+      return;
+    }
+
+    props.onAction?.();
   };
 
   if (props.as === 'li') {
