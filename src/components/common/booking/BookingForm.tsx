@@ -18,7 +18,10 @@ import { Badge } from '@/components/common/Badge';
 import { UserImage } from '@/components/common/UserImage';
 import { differenceInDays } from 'date-fns';
 import { BookingInput, bookingSchema } from '@/types/schemas/bookingSchemas';
-import { handleAppError } from '@/lib/errors/helpers/handleAppError';
+import {
+  ActionResultType,
+  handleAppError,
+} from '@/lib/errors/helpers/handleAppError';
 import { Form } from '@/components/ui/form/Form';
 import { SelectField } from '../../ui/form/fields/SelectField';
 import { TextareaField } from '../../ui/form/fields/TextareaField';
@@ -295,20 +298,39 @@ export const BookingForm = ({
       formData.append('startDate', startDate.toISOString());
       formData.append('endDate', endDate.toISOString());
 
-      if (!!bookingId) {
+      let result: ActionResultType;
+
+      if (bookingId) {
         formData.append('bookingId', bookingId);
-        await editBookingAction(formData);
-        toast.success(tS(SuccessKey.BOOKING_UPDATED), 2000, true);
+        result = await editBookingAction(formData);
       } else {
-        await createBookingAction(formData);
-        toast.success(tS(SuccessKey.BOOKING_CREATED), 2000, true);
+        result = await createBookingAction(formData);
       }
+
+      const error = handleAppError({
+        result,
+        t: tE,
+        toast,
+      });
+
+      if (error) {
+        setIsPending(false);
+        isSubmittingRef.current = false;
+        return;
+      }
+
+      toast.success(
+        bookingId
+          ? tS(SuccessKey.BOOKING_UPDATED)
+          : tS(SuccessKey.BOOKING_CREATED),
+        2000,
+        true
+      );
+
       resetAll();
       startTransition(() => {
         router.replace('/account/bookings');
       });
-    } catch (err) {
-      handleAppError({ err, t: tE, toast });
     } finally {
       setIsPending(false);
       isSubmittingRef.current = false;

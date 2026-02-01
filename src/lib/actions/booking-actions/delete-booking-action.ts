@@ -6,18 +6,21 @@ import {
 } from '../prisma-actions/db-acitons';
 import { revalidatePath, revalidateTag } from 'next/cache';
 import { ErrorKey } from '@/types/i18n/keys';
+import { ActionResultType } from '@/lib/errors/helpers/handleAppError';
 
-export const deleteBookingAction = async (bookingId: string) => {
+export const deleteBookingAction = async (
+  bookingId: string
+): Promise<ActionResultType> => {
   const currentUser = await getCurrentUser();
   if (!currentUser) {
-    throw new Error(ErrorKey.AUTH_REQUIRED);
+    return { ok: false, error: ErrorKey.AUTH_REQUIRED };
   }
 
   const userBookings = await getBookingsListByUserId(currentUser.id);
   const userBookingsIds = userBookings.map((booking) => booking.id);
 
   if (!userBookingsIds.includes(bookingId)) {
-    throw new Error(ErrorKey.BOOKING_DELETE_FORBIDDEN);
+    return { ok: false, error: ErrorKey.BOOKING_DELETE_FORBIDDEN };
   }
 
   try {
@@ -26,9 +29,10 @@ export const deleteBookingAction = async (bookingId: string) => {
     });
   } catch (err) {
     console.error('deleteBookingAction error:', err);
-    throw new Error(ErrorKey.BOOKING_DELETE_FAILED);
+    return { ok: false, error: ErrorKey.BOOKING_DELETE_FAILED };
   }
 
   revalidateTag(`user-bookings-${currentUser.id}`, 'default');
   revalidatePath('/account/bookings');
+  return { ok: true };
 };

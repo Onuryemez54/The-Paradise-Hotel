@@ -23,7 +23,6 @@ import {
 import { ArrowRight } from 'lucide-react';
 import { useStatusToast } from '@/hooks/useStatusToast';
 import { useSearchParams } from 'next/navigation';
-import { logout } from '@/lib/actions/auth-actions/logout-action';
 import { useAuth } from '@/context/AuthContext';
 
 export const LoginForm = () => {
@@ -58,12 +57,21 @@ export const LoginForm = () => {
   const onSubmit = async (values: LoginInput) => {
     setIsPending(true);
     try {
-      await loginAction(values);
+      const result = await loginAction(values);
+
+      const error = handleAppError({
+        result,
+        t: tE,
+        toast,
+      });
+
+      if (error) {
+        setFormError(true);
+        return;
+      }
+
       toast.success(tS(SuccessKey.LOGGED_IN));
       router.push('/account');
-    } catch (err) {
-      setFormError(true);
-      handleAppError({ err, t: tE, toast });
     } finally {
       setIsPending(false);
     }

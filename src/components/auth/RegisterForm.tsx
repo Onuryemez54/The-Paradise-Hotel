@@ -10,10 +10,12 @@ import { handleAppError } from '@/lib/errors/helpers/handleAppError';
 import { Form } from '../ui/form/Form';
 import { TextField } from '../ui/form/fields/TextField';
 import { CustomButton } from '../ui/custom-components/CustomButton';
-import { ButtonKey, ErrorKey, FormKey } from '@/types/i18n/keys';
+import { ButtonKey, ErrorKey, FormKey, TitleKey } from '@/types/i18n/keys';
 import { PasswordField } from '../ui/form/fields/PasswordField';
+import { useRouter } from 'next/navigation';
 
 export const RegisterForm = () => {
+  const router = useRouter();
   const toast = useToast();
   const t = useTranslations(ErrorKey.TITLE);
   const [isPending, setIsPending] = useState(false);
@@ -30,15 +32,23 @@ export const RegisterForm = () => {
 
   const onSubmit = async (values: RegisterInput) => {
     setIsPending(true);
-    const resgisterPayload = {
+    const registerPayload = {
       email: values.email,
       password: values.password,
       fullName: values.fullName,
     };
     try {
-      await registerAction(resgisterPayload);
-    } catch (err) {
-      handleAppError({ err, t, toast });
+      const result = await registerAction(registerPayload);
+
+      const error = handleAppError({
+        result,
+        t,
+        toast,
+      });
+
+      if (error) return;
+
+      router.push(`/auth/verify?status=${TitleKey.VERIFY_EMAIL}`);
     } finally {
       setIsPending(false);
     }

@@ -8,21 +8,32 @@ import {
   ResendEmailInput,
   resendEmailSchema,
 } from '@/types/schemas/authSchemas';
-import { handleAppError } from '@/lib/errors/helpers/handleAppError';
-import { ButtonKey, ErrorKey, FormKey, ListItemKey } from '@/types/i18n/keys';
+import {
+  ActionResultType,
+  handleAppError,
+} from '@/lib/errors/helpers/handleAppError';
+import {
+  ButtonKey,
+  ErrorKey,
+  FormKey,
+  ListItemKey,
+  TitleKey,
+} from '@/types/i18n/keys';
 import { Form } from '../ui/form/Form';
 import { TextField } from '../ui/form/fields/TextField';
 import { CustomButton } from '@/components/ui/custom-components/CustomButton';
 import { CustomListItem } from '../ui/custom-components/CustomListItem';
 import { ArrowRight } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 type Mode = 'reset' | 'resendVerification' | 'resendReset';
 type Props = {
-  onSubmit: (email: string) => Promise<void>;
+  onSubmit: (email: string) => Promise<ActionResultType>;
   mode: Mode;
 };
 
 export const ResendForm = ({ onSubmit, mode }: Props) => {
+  const router = useRouter();
   const toast = useToast();
   const tE = useTranslations(ErrorKey.TITLE);
   const [isPending, setIsPending] = useState(false);
@@ -45,19 +56,31 @@ export const ResendForm = ({ onSubmit, mode }: Props) => {
   const submit = async ({ email }: ResendEmailInput) => {
     setIsPending(true);
     try {
-      await onSubmit(email);
-    } catch (err) {
-      if (mode === 'resendVerification') {
-        if (err instanceof Error) {
+      const result = await onSubmit(email);
+
+      const error = handleAppError({
+        result,
+        t: tE,
+        toast,
+      });
+
+      if (error) {
+        if (mode === 'resendVerification') {
           if (
-            err.message === ErrorKey.EMAIL_ALREADY_VERIFIED ||
-            err.message === ErrorKey.USER_EXISTS_OAUTH
+            error === ErrorKey.EMAIL_ALREADY_VERIFIED ||
+            error === ErrorKey.USER_EXISTS_OAUTH
           ) {
             setIsLoginAvailable(true);
           }
         }
+        return;
       }
-      handleAppError({ err, t: tE, toast });
+
+      router.push(
+        mode === 'resendVerification'
+          ? `/auth/verify?status=${TitleKey.VERIFY_EMAIL}`
+          : `/auth/verify?status=${TitleKey.RESET_PASSWORD}`
+      );
     } finally {
       setIsPending(false);
     }

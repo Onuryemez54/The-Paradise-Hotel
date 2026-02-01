@@ -77,14 +77,20 @@ export const UpdateProfileForm = ({
         formData.append('profilePhoto', profileImage);
       }
 
-      await updateProfileAction(formData);
+      const result = await updateProfileAction(formData);
+
+      const error = handleAppError({
+        result,
+        t: tE,
+        toast,
+      });
+
+      if (error) return;
 
       await refreshCurrentUser();
 
       toast.success(tS(SuccessKey.PROFILE_UPDATED), 2000, true);
       router.refresh();
-    } catch (err) {
-      handleAppError({ err, t: tE, toast });
     } finally {
       setIsPending(false);
     }

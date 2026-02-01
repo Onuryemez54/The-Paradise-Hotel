@@ -3,15 +3,22 @@ import { RegisterPayload } from '@/types/auth/authTypes';
 import { assertEmailAvailability } from '../helpers/assertEmailAvailability';
 import { createClient } from '@/db/supabase/server';
 import { revalidatePath } from 'next/cache';
-import { redirect } from 'next/navigation';
-import { ErrorKey, TitleKey } from '@/types/i18n/keys';
+import { ErrorKey } from '@/types/i18n/keys';
+import { ActionResultType } from '@/lib/errors/helpers/handleAppError';
 
 export const registerAction = async ({
   email,
   password,
   fullName,
-}: RegisterPayload) => {
-  await assertEmailAvailability({ email, mode: 'register' });
+}: RegisterPayload): Promise<ActionResultType> => {
+  const emailCheck = await assertEmailAvailability({
+    email,
+    mode: 'register',
+  });
+
+  if (!emailCheck.ok) {
+    return emailCheck;
+  }
 
   const origin = process.env.NEXT_PUBLIC_APP_URL;
   const redirectTo = `${origin}/api/auth/confirm`;
@@ -28,9 +35,9 @@ export const registerAction = async ({
 
   if (error || !signupData.user) {
     console.error('Register Action Error:', error?.message);
-    throw new Error(ErrorKey.REGISTER_FAILED);
+    return { ok: false, error: ErrorKey.REGISTER_FAILED };
   }
 
   revalidatePath('/');
-  redirect(`/auth/verify?status=${TitleKey.VERIFY_EMAIL}`);
+  return { ok: true };
 };

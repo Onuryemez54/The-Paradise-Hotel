@@ -52,6 +52,7 @@ const LocaleLayout = async ({ children, params }: LayoutProps) => {
   setRequestLocale(locale);
 
   const rates = await getExchangeRates();
+
   const messages = await getMessages();
 
   return (

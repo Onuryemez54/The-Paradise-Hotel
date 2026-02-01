@@ -4,14 +4,17 @@ import { createClient } from '@/db/supabase/server';
 import { db } from '@/db/prisma';
 import { revalidatePath } from 'next/cache';
 import { ErrorKey } from '@/types/i18n/keys';
+import { ActionResultType } from '@/lib/errors/helpers/handleAppError';
 import sharp from 'sharp';
 
-export const updateProfileAction = async (formData: FormData) => {
+export const updateProfileAction = async (
+  formData: FormData
+): Promise<ActionResultType> => {
   const supabase = await createClient();
   const currentUser = await getCurrentUser();
 
   if (!currentUser) {
-    throw new Error(ErrorKey.AUTH_REQUIRED);
+    return { ok: false, error: ErrorKey.AUTH_REQUIRED };
   }
 
   const name = formData.get('fullName') as string;
@@ -42,7 +45,8 @@ export const updateProfileAction = async (formData: FormData) => {
         cacheControl: '3600',
       });
 
-    if (uploadError) throw new Error(ErrorKey.PROFILE_IMAGE_UPLOAD_FAILED);
+    if (uploadError)
+      return { ok: false, error: ErrorKey.PROFILE_IMAGE_UPLOAD_FAILED };
 
     const { data: publicUrlData } = supabase.storage
       .from('avatars')
@@ -59,7 +63,8 @@ export const updateProfileAction = async (formData: FormData) => {
     },
   });
 
-  if (updateAuthError) throw new Error(ErrorKey.PROFILE_UPDATE_AUTH_FAILED);
+  if (updateAuthError)
+    return { ok: false, error: ErrorKey.PROFILE_UPDATE_AUTH_FAILED };
 
   // Update user profile in Prisma DB
   await db.user.update({
@@ -75,4 +80,5 @@ export const updateProfileAction = async (formData: FormData) => {
 
   revalidatePath('/account/settings');
   revalidatePath('/');
+  return { ok: true };
 };

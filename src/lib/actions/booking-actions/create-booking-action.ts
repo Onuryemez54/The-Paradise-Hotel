@@ -9,10 +9,13 @@ import {
   getRequiredString,
 } from '@/utils/form-helpers/helpers';
 import { ErrorKey } from '@/types/i18n/keys';
+import { ActionResultType } from '@/lib/errors/helpers/handleAppError';
 
-export const createBookingAction = async (formData: FormData) => {
+export const createBookingAction = async (
+  formData: FormData
+): Promise<ActionResultType> => {
   const currentUser = await getCurrentUser();
-  if (!currentUser) throw new Error(ErrorKey.AUTH_REQUIRED);
+  if (!currentUser) return { ok: false, error: ErrorKey.AUTH_REQUIRED };
 
   const roomId = getRequiredNumber(formData, 'roomId');
   const numGuests = getRequiredNumber(formData, 'numGuests');
@@ -55,7 +58,7 @@ export const createBookingAction = async (formData: FormData) => {
       },
     });
 
-    if (overlap) throw new Error(ErrorKey.BOOKING_OVERLAP);
+    if (overlap) return { ok: false, error: ErrorKey.BOOKING_OVERLAP };
 
     booking = await tx.booking.create({
       data: {
@@ -64,9 +67,10 @@ export const createBookingAction = async (formData: FormData) => {
     });
   });
 
-  if (!booking) throw new Error(ErrorKey.BOOKING_CREATE_FAILED);
+  if (!booking) return { ok: false, error: ErrorKey.BOOKING_CREATE_FAILED };
 
   revalidateTag(`user-bookings-${currentUser.id}`, 'default');
   revalidatePath(`/rooms/${roomId}`);
   revalidatePath('/account/bookings');
+  return { ok: true };
 };

@@ -4,7 +4,7 @@ import { PageContainer } from '@/components/common/PageContainer';
 const Loading = () => {
   return (
     <PageContainer>
-      <LoadingSpinner />;
+      <LoadingSpinner />
     </PageContainer>
   );
 };

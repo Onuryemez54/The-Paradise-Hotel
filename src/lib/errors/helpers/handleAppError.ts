@@ -1,34 +1,26 @@
-import { isRedirectError } from 'next/dist/client/components/redirect-error';
 import { ToastContextValue } from '@/context/ToastContext';
 import { ErrorKey } from '@/types/i18n/keys';
 import { getSeverityByCode } from '@/lib/toast-severity/getSeverityByCode';
 
+export type ActionResultType = { ok: true } | { ok: false; error: ErrorKey };
+
 type HandleAppErrorParams = {
-  err: unknown;
+  result: ActionResultType;
   t: (key: ErrorKey) => string;
   toast: ToastContextValue;
 };
 
-export const isValidErrorCode = (value: string): value is ErrorKey =>
-  Object.values(ErrorKey).includes(value as ErrorKey);
-
 export const handleAppError = ({
-  err,
+  result,
   t,
   toast,
 }: HandleAppErrorParams): ErrorKey | null => {
-  if (isRedirectError(err)) {
-    return null;
+  if (!result.ok) {
+    const message = t(result.error);
+    const severity = getSeverityByCode(result.error);
+    toast[severity](message);
+    return result.error;
   }
-  const code =
-    err instanceof Error && isValidErrorCode(err.message)
-      ? (err.message as ErrorKey)
-      : ErrorKey.INTERNAL_ERROR;
 
-  const message = t(code);
-
-  const severity = getSeverityByCode(code);
-  toast[severity](message);
-
-  return code;
+  return null;
 };

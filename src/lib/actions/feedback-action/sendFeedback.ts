@@ -4,11 +4,14 @@ import { enforceRateLimit } from '@/lib/redis/enforceRateLimit';
 import { feedbackEmailTemplate } from '@/utils/feedback-helpers/feedbackEmailTemplate';
 import { formatTopicLabel } from '@/utils/feedback-helpers/formatTopicLabel';
 import { ErrorKey } from '@/types/i18n/keys';
+import { ActionResultType } from '@/lib/errors/helpers/handleAppError';
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY!);
 
-export const sendFeedback = async (data: FormData) => {
+export const sendFeedback = async (
+  data: FormData
+): Promise<ActionResultType> => {
   const parsedData = feedbackSchema.parse({
     topic: data.get('topic'),
     name: data.get('name'),
@@ -21,10 +24,14 @@ export const sendFeedback = async (data: FormData) => {
     return { ok: true };
   }
 
-  await enforceRateLimit({
+  const rateLimitResult = await enforceRateLimit({
     action: 'send-feedback',
     email: parsedData.email,
   });
+
+  if (!rateLimitResult.ok) {
+    return rateLimitResult;
+  }
 
   const prettyTopic = formatTopicLabel(parsedData.topic);
 
@@ -43,6 +50,6 @@ export const sendFeedback = async (data: FormData) => {
     return { ok: true };
   } catch (err) {
     console.error('FEEDBACK_MAIL_FAILED', err);
-    throw new Error(ErrorKey.FEEDBACK_SEND_FAILED);
+    return { ok: false, error: ErrorKey.FEEDBACK_SEND_FAILED };
   }
 };

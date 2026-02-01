@@ -1,11 +1,19 @@
 'use server';
 import { createClient } from '@/db/supabase/server';
-import { redirect } from 'next/navigation';
 import { assertEmailAvailability } from '../helpers/assertEmailAvailability';
-import { ErrorKey, TitleKey } from '@/types/i18n/keys';
+import { ErrorKey } from '@/types/i18n/keys';
+import { ActionResultType } from '@/lib/errors/helpers/handleAppError';
 
-export const requestPasswordReset = async ({ email }: { email: string }) => {
-  await assertEmailAvailability({ email, mode: 'reset' });
+export const requestPasswordReset = async ({
+  email,
+}: {
+  email: string;
+}): Promise<ActionResultType> => {
+  const emailCheck = await assertEmailAvailability({ email, mode: 'reset' });
+
+  if (!emailCheck.ok) {
+    return emailCheck;
+  }
 
   const supabase = await createClient();
 
@@ -16,10 +24,10 @@ export const requestPasswordReset = async ({ email }: { email: string }) => {
   if (error) {
     console.error('Error resending password reset email:', error.message);
     if (error.message.includes('security purposes')) {
-      throw new Error(ErrorKey.TOO_MANY_REQUESTS);
+      return { ok: false, error: ErrorKey.TOO_MANY_REQUESTS };
     }
-    throw new Error(ErrorKey.RESET_PASSWORD_FAILED);
+    return { ok: false, error: ErrorKey.RESET_PASSWORD_FAILED };
   }
 
-  redirect(`/auth/verify?status=${TitleKey.RESET_PASSWORD}`);
+  return { ok: true };
 };

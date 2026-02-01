@@ -9,13 +9,15 @@ import {
   resetPasswordInput,
   resetPasswordSchema,
 } from '@/types/schemas/authSchemas';
-import { ButtonKey, ErrorKey, FormKey } from '@/types/i18n/keys';
+import { ButtonKey, ErrorKey, FormKey, SuccessKey } from '@/types/i18n/keys';
 import { Form } from '../ui/form/Form';
 import { PasswordField } from '../ui/form/fields/PasswordField';
 import { handleAppError } from '@/lib/errors/helpers/handleAppError';
 import { updatePasswordAction } from '@/lib/actions/auth-actions/update-password-action';
+import { useRouter } from 'next/navigation';
 
 export const ResetPasswordForm = () => {
+  const router = useRouter();
   const toast = useToast();
   const t = useTranslations(ErrorKey.TITLE);
   const [isPending, setIsPending] = useState(false);
@@ -31,9 +33,19 @@ export const ResetPasswordForm = () => {
   const submit = async (data: resetPasswordInput) => {
     setIsPending(true);
     try {
-      await updatePasswordAction({ newPassword: data.newPassword });
-    } catch (err) {
-      handleAppError({ err, t, toast });
+      const result = await updatePasswordAction({
+        newPassword: data.newPassword,
+      });
+
+      const error = handleAppError({
+        result,
+        t,
+        toast,
+      });
+
+      if (error) return;
+
+      router.push(`/account?status=${SuccessKey.PASSWORD_UPDATED}`);
     } finally {
       setIsPending(false);
     }

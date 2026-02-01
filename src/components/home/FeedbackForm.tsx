@@ -88,12 +88,18 @@ export const FeedbackForm = () => {
       formData.append('message', data.message);
       formData.append('company', data.company ?? ''); // Honeypot field
 
-      await sendFeedback(formData);
+      const result = await sendFeedback(formData);
+
+      const error = handleAppError({
+        result,
+        t: tE,
+        toast,
+      });
+
+      if (error) return;
 
       toast.success(tS(SuccessKey.FEEDBACK_SENT), 2000, true);
       router.refresh();
-    } catch (err) {
-      handleAppError({ err, t: tE, toast });
     } finally {
       resetForm();
       setIsPending(false);
