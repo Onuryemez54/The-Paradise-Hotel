@@ -31,13 +31,20 @@ export const UserBookingsList = ({ bookings }: UserBookingsListProps) => {
   const handleDelete = async (bookingId: string) => {
     updateOptimistic({ type: 'delete', id: bookingId });
 
-    try {
-      await deleteBookingAction(bookingId);
-      toast.success(tS(SuccessKey.BOOKING_DELETED), 500, true);
-    } catch (err) {
-      handleAppError({ err, t: tE, toast });
+    const result = await deleteBookingAction(bookingId);
+
+    const error = handleAppError({
+      result,
+      t: tE,
+      toast,
+    });
+
+    if (error) {
       updateOptimistic({ type: 'reset' });
+      return;
     }
+
+    toast.success(tS(SuccessKey.BOOKING_DELETED), 500, true);
   };
 
   return (
