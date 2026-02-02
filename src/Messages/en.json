@@ -38,7 +38,8 @@
     "UPDATE_PROFILE": "Update Your Profile",
     "AUTH_ERROR": "Email Verification Failed",
     "GENERAL_ERROR": "An Error Occurred",
-    "FEEDBACK": "We Value Your Feedback"
+    "FEEDBACK": "We Value Your Feedback",
+    "DELETE_ACCOUNT": "Delete Your Account"
   },
   "SUB_TITLE": {
     "ROOMS": "Cozy yet refined rooms, tucked deep inside Germany's mystical Black Forest. Wake up to the soft glow of morning mist drifting through the pines, breathe in the crisp forest air, and listen to nothing but the sound of nature around you. Each of our eight boutique rooms is designed to feel like your own private hideaway—warm, elegant, and perfectly secluded. Spend your days wandering through ancient woodland trails, relaxing by the fire, or simply enjoying the peaceful silence from your balcony. At night, unwind in the comfort of your room as the forest grows quiet and the stars appear above the treetops.",
@@ -66,7 +67,8 @@
     "VERIFY_EMAIL": "We've sent a verification link to your email. Click the link to verify your account and log in automatically.",
     "RESET_PASSWORD": "We've sent a password reset link to your email. Click the link to create a new password and regain access to your account.",
     "UPDATE_PROFILE": "Keep your information up to date.",
-    "FEEDBACK": "Your feedback helps us improve our services. Please share your thoughts and experiences with us."
+    "FEEDBACK": "Your feedback helps us improve our services. Please share your thoughts and experiences with us.",
+    "DELETE_ACCOUNT": "Are you sure you want to delete your account?"
   },
   "BUTTON": {
     "EXPLORE": "Explore Luxury Rooms",
@@ -99,7 +101,9 @@
     "CONNECTING": "Connecting...",
     "SAVING": "Saving...",
     "UPDATING": "Updating...",
-    "SEND": "Send"
+    "SEND": "Send",
+    "DELETE_ACCOUNT": "Delete Account",
+    "CANCEL": "Cancel"
   },
   "LIST_ITEM": {
     "TAGLINE": "Luxury Forest Retreat – Emerald Grove Valley, Black Forest",
@@ -274,6 +278,7 @@
     "RESET_RESTRICTED": "Password reset is not allowed for google accounts.",
     "EMAIL_ALREADY_VERIFIED": "Email is already verified.",
     "PASSWORD_RESET_REQUIRED": "Password reset is required. Please check your email for the reset link.",
+    "ACCOUNT_DELETE_FAILED": "Failed to delete account. Please try again later.",
 
     "NO_CODE": "No authorization code provided. Please request a new link.",
     "NO_TOKEN": "No token hash provided. Please request a new link.",
@@ -349,7 +354,8 @@
 
     "PROFILE_UPDATED": "Your profile has been updated successfully.",
 
-    "FEEDBACK_SENT": "Thank you! Your feedback means a lot to us"
+    "FEEDBACK_SENT": "Thank you! Your feedback means a lot to us",
+    "ACCOUNT_DELETED": "Your account has been deleted successfully."
   },
   "LOADING": {
     "DEFAULT": "Loading...",

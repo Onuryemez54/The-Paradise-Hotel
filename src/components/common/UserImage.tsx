@@ -18,7 +18,7 @@ export const UserImage = ({
 }: UserImageProps) => {
   return (
     <Image
-      src={image}
+      src={image || '/icons/default-user.png'}
       alt="User Avatar"
       width={sizes[size]}
       height={sizes[size]}

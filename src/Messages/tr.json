@@ -38,7 +38,8 @@
     "UPDATE_PROFILE": "Profilinizi Güncelleyin",
     "AUTH_ERROR": "E-posta Doğrulaması Başarısız",
     "GENERAL_ERROR": "Bir Hata Oluştu",
-    "FEEDBACK": "Görüşlerinize Değer Veriyoruz"
+    "FEEDBACK": "Görüşlerinize Değer Veriyoruz",
+    "DELETE_ACCOUNT": "Hesabınızı Silin"
   },
   "SUB_TITLE": {
     "ROOMS": "Almanya'nın mistik Kara Ormanları'nın derinliklerinde gizlenmiş, konforlu ve seçkin odalar. Çam ağaçlarının arasından süzülen sabah sisinin yumuşak parıltısıyla uyanın, taze orman havasını içinize çekin ve doğanın sesinden başka hiçbir şey duymayın. Sekiz butik odamızın her biri; sıcak, zarif ve tamamen izole edilmiş özel bir sığınak hissi verecek şekilde tasarlanmıştır. Günlerinizi antik orman yollarında yürüyerek, şömine başında dinlenerek veya balkonunuzdan huzurlu sessizliğin tadını çıkararak geçirin. Gece olduğunda, orman sessizleşirken ve yıldızlar ağaç tepelerinin üzerinde belirirken odanızın konforunda gevşeyin.",
@@ -66,7 +67,8 @@
     "VERIFY_EMAIL": "E-posta adresinize bir doğrulama bağlantısı gönderdik. Hesabınızı doğrulamak ve otomatik olarak giriş yapmak için bağlantıya tıklayın.",
     "RESET_PASSWORD": "E-posta adresinize bir şifre sıfırlama bağlantısı gönderdik. Yeni bir şifre oluşturmak ve hesabınıza tekrar erişim sağlamak için bağlantıya tıklayın.",
     "UPDATE_PROFILE": "Bilgilerinizi güncel tutun.",
-    "FEEDBACK": "Görüşleriniz hizmetlerimizi geliştirmemize yardımcı olur. Lütfen düşüncelerinizi ve deneyimlerinizi bizimle paylaşın."
+    "FEEDBACK": "Görüşleriniz hizmetlerimizi geliştirmemize yardımcı olur. Lütfen düşüncelerinizi ve deneyimlerinizi bizimle paylaşın.",
+    "DELETE_ACCOUNT": "Hesabınızı silmek istediğinizden emin misiniz?"
   },
   "BUTTON": {
     "EXPLORE": "Lüks Odaları Keşfedin",
@@ -99,7 +101,9 @@
     "CONNECTING": "Bağlanılıyor...",
     "SAVING": "Kaydediliyor...",
     "UPDATING": "Güncelleniyor...",
-    "SEND": "Gönder"
+    "SEND": "Gönder",
+    "DELETE_ACCOUNT": "Hesabı Sil",
+    "CANCEL": "İptal Et"
   },
   "LIST_ITEM": {
     "TAGLINE": "Lüks Orman İnzivası – Emerald Grove Vadisi, Kara Orman",
@@ -274,6 +278,7 @@
     "RESET_RESTRICTED": "Google hesapları için şifre sıfırlamaya izin verilmez.",
     "EMAIL_ALREADY_VERIFIED": "E-posta zaten doğrulanmış.",
     "PASSWORD_RESET_REQUIRED": "Şifre sıfırlama gereklidir. Lütfen sıfırlama bağlantısı için e-postanızı kontrol edin.",
+    "ACCOUNT_DELETE_FAILED": "Hesabınız silinemedi. Lütfen tekrar deneyin.",
 
     "NO_CODE": "Doğrulama kodu sağlanmadı. Lütfen yeni bir bağlantı isteyin.",
     "NO_TOKEN": "Belirteç (token) sağlanmadı. Lütfen yeni bir bağlantı isteyin.",
@@ -349,7 +354,8 @@
 
     "PROFILE_UPDATED": "Profiliniz başarıyla güncellendi.",
 
-    "FEEDBACK_SENT": "Teşekkür ederiz! Görüşleriniz bizim için çok değerli."
+    "FEEDBACK_SENT": "Teşekkür ederiz! Görüşleriniz bizim için çok değerli.",
+    "ACCOUNT_DELETED": "Hesabınız başarıyla silindi."
   },
   "LOADING": {
     "DEFAULT": "Yükleniyor...",

@@ -44,6 +44,7 @@ export enum TitleKey {
   DETAIL = 'DETAIL',
   UPDATE_PROFILE = 'UPDATE_PROFILE',
   FEEDBACK = 'FEEDBACK',
+  DELETE_ACCOUNT = 'DELETE_ACCOUNT',
 }
 
 export enum SubTitleKey {
@@ -68,6 +69,7 @@ export enum SubTitleKey {
   DETAIL = 'DETAIL',
   UPDATE_PROFILE = 'UPDATE_PROFILE',
   FEEDBACK = 'FEEDBACK',
+  DELETE_ACCOUNT = 'DELETE_ACCOUNT',
 }
 
 export enum ButtonKey {
@@ -103,6 +105,8 @@ export enum ButtonKey {
   SAVING = 'SAVING',
   UPDATING = 'UPDATING',
   SEND = 'SEND',
+  DELETE_ACCOUNT = 'DELETE_ACCOUNT',
+  CANCEL = 'CANCEL',
 }
 
 export enum ListItemKey {
@@ -296,6 +300,7 @@ export enum ErrorKey {
   USER_EXISTS = 'USER_EXISTS',
   USER_EXISTS_UNVERIFIED = 'USER_EXISTS_UNVERIFIED',
   USER_EXISTS_OAUTH = 'USER_EXISTS_OAUTH',
+  ACCOUNT_DELETE_FAILED = 'ACCOUNT_DELETE_FAILED',
 
   // Room
   ROOMS_FETCH_FAILED = 'ROOMS_FETCH_FAILED',
@@ -370,6 +375,7 @@ export enum SuccessKey {
   PROFILE_UPDATED = 'PROFILE_UPDATED',
   // Feedback
   FEEDBACK_SENT = 'FEEDBACK_SENT',
+  ACCOUNT_DELETED = 'ACCOUNT_DELETED',
 }
 
 export enum LoadingKey {

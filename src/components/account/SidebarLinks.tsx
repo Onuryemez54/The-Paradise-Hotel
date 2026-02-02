@@ -5,17 +5,21 @@ import {
   LogOutIcon,
   RotateCcwKey,
   UserCog,
+  UserMinus,
 } from 'lucide-react';
 import { CustomButton } from '../ui/custom-components/CustomButton';
 import { cn } from '@/utils/utils';
 import { Link, usePathname } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import { ButtonKey, NavKey } from '@/types/i18n/keys';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
+import { DeleteAccountModal } from './DeleteAccountModal';
 
 export const SidebarLinks = () => {
   const pathName = usePathname();
   const t = useTranslations(NavKey.TITLE);
+
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   const navLinks = useMemo(
     () => [
@@ -71,13 +75,30 @@ export const SidebarLinks = () => {
           );
         })}
       </ul>
-      <CustomButton
-        variant="logout"
-        mode="account"
-        i18nKey={ButtonKey.LOGOUT}
-        as="li"
-        icon={<LogOutIcon size={20} />}
-      />
+      <ul className="flex gap-2 sm:flex-col sm:gap-3">
+        <CustomButton
+          variant="logout"
+          mode="account"
+          i18nKey={ButtonKey.LOGOUT}
+          as="li"
+          icon={<LogOutIcon size={20} />}
+        />
+        <CustomButton
+          variant="delete_account"
+          mode="account"
+          i18nKey={ButtonKey.DELETE_ACCOUNT}
+          as="li"
+          icon={<UserMinus size={20} />}
+          onAction={() => setShowDeleteModal(true)}
+        />
+      </ul>
+
+      {showDeleteModal && (
+        <DeleteAccountModal
+          open={showDeleteModal}
+          onClose={() => setShowDeleteModal(false)}
+        />
+      )}
     </div>
   );
 };

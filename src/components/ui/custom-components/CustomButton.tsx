@@ -24,7 +24,8 @@ type Variant =
   | 'logout'
   | 'details'
   | 'ghost'
-  | 'underlined';
+  | 'underlined'
+  | 'delete_account';
 
 type Href =
   | '/'
@@ -54,6 +55,7 @@ type BaseProps = {
   icon?: ReactNode;
   testId?: string;
   setIsOpen?: (isOpen: boolean) => void;
+  title?: string;
 };
 
 type ButtonProps = BaseProps &
@@ -113,6 +115,8 @@ const variantStyles: Record<Variant, string> = {
     'rounded-xl border px-2 text-primary-300 hover:text-utility-hover-text hover:translate-x-2',
   underlined:
     'text-accent-400 font-semibold hover:underline hover:translate-x-1',
+  delete_account:
+    'justify-center gap-3 rounded-xl border p-2 text-sm font-medium transition-all lg:px-4 lg:py-3 lg:text-base xl:text-lg border-red-400/50 text-red-400 hover:border-red-500 hover:bg-red-500/10 hover:text-red-500 hover:translate-x-1 focus-visible:ring-2 focus-visible:ring-red-500/60 focus-visible:outline-none',
 };
 
 export const CustomButton = (props: CustomButtonProps) => {
@@ -130,6 +134,7 @@ export const CustomButton = (props: CustomButtonProps) => {
     props.isAnimated && 'animate-in fade-in zoom-in duration-700 ease-out',
     props.mode === 'nav' && 'gap-2 rounded-b-lg px-4 py-2',
     props.mode === 'account' &&
+      props.variant === 'logout' &&
       'hover:translate-x-1 border-primary-500 hover:border-sidebar-active-foreground  text-sidebar-foreground hover:bg-sidebar-active-bg/20  justify-center gap-3 rounded-xl border p-2 font-medium lg:px-4 lg:py-3 text-sm lg:text-base xl:text-lg'
   );
 
@@ -153,7 +158,7 @@ export const CustomButton = (props: CustomButtonProps) => {
 
   if (props.as === 'li') {
     return (
-      <li onClick={handleClick} className={classNames}>
+      <li title={t(props.i18nKey)} onClick={handleClick} className={classNames}>
         {props.icon && props.icon}
         <span
           className={cn(

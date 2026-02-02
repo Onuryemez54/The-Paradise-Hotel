@@ -38,7 +38,8 @@
     "UPDATE_PROFILE": "Profil aktualisieren",
     "AUTH_ERROR": "E-Mail-Verifizierung fehlgeschlagen",
     "GENERAL_ERROR": "Ein Fehler ist aufgetreten",
-    "FEEDBACK": "Wir schätzen Ihr Feedback"
+    "FEEDBACK": "Wir schätzen Ihr Feedback",
+    "DELETE_ACCOUNT": "Konto löschen"
   },
   "SUB_TITLE": {
     "ROOMS": "Gemütliche und raffinierte Zimmer, tief im mystischen Schwarzwald gelegen. Wachen Sie mit dem sanften Schein des Morgennebels auf, der durch die Kiefern zieht, atmen Sie die frische Waldluft ein und lauschen Sie nichts als den Klängen der Natur. Jedes unserer acht Boutique-Zimmer ist als Ihr privater Rückzugsort konzipiert – warm, elegant und vollkommen abgeschieden. Verbringen Sie Ihre Tage auf alten Waldpfaden, entspannen Sie am Feuer oder genießen Sie die friedliche Stille von Ihrem Balkon aus.",
@@ -66,7 +67,8 @@
     "VERIFY_EMAIL": "Wir haben einen Verifizierungslink an Ihre E-Mail gesendet. Klicken Sie auf den Link, um Ihr Konto zu verifizieren.",
     "RESET_PASSWORD": "Wir haben einen Link zum Zurücksetzen des Passworts gesendet. Klicken Sie auf den Link, um ein neues Passwort zu erstellen.",
     "UPDATE_PROFILE": "Halten Sie Ihre Informationen auf dem neuesten Stand.",
-    "FEEDBACK": "Ihr Feedback hilft uns, unsere Dienstleistungen zu verbessern. Bitte teilen Sie uns Ihre Gedanken und Erfahrungen mit."
+    "FEEDBACK": "Ihr Feedback hilft uns, unsere Dienstleistungen zu verbessern. Bitte teilen Sie uns Ihre Gedanken und Erfahrungen mit.",
+    "DELETE_ACCOUNT": "Sind Sie sicher, dass Sie Ihr Konto löschen möchten?"
   },
   "BUTTON": {
     "EXPLORE": "Luxuszimmer entdecken",
@@ -99,7 +101,9 @@
     "CONNECTING": "Verbinde...",
     "SAVING": "Speichere...",
     "UPDATING": "Aktualisiere...",
-    "SEND": "Senden"
+    "SEND": "Senden",
+    "DELETE_ACCOUNT": "Konto löschen",
+    "CANCEL": "Abbrechen"
   },
   "LIST_ITEM": {
     "TAGLINE": "Luxuriöses Wald-Retreat – Smaragdhain-Tal, Schwarzwald",
@@ -273,7 +277,8 @@
     "EMAIL_VERIFICATION_FAILED": "E-Mail-Verifizierung fehlgeschlagen.",
     "RESET_RESTRICTED": "Passwort-Reset für Google-Konten nicht möglich.",
     "EMAIL_ALREADY_VERIFIED": "E-Mail ist bereits verifiziert.",
-    "PASSWORD_RESET_REQUIRED": "Passwort-Reset erforderlich.",
+    "PASSWORD_RESET_REQUIRED": "Passwort-Reset erforderlich. Bitte überprüfen Sie Ihre E-Mails für den Reset-Link.",
+    "ACCOUNT_DELETE_FAILED": "Ihr Konto konnte nicht gelöscht werden. Bitte versuchen Sie es erneut.",
 
     "NO_CODE": "Kein Autorisierungscode vorhanden.",
     "NO_TOKEN": "Kein Token vorhanden.",
@@ -349,7 +354,8 @@
 
     "PROFILE_UPDATED": "Profil erfolgreich aktualisiert.",
 
-    "FEEDBACK_SENT": "Vielen Dank! Ihr Feedback ist uns sehr wichtig."
+    "FEEDBACK_SENT": "Vielen Dank! Ihr Feedback ist uns sehr wichtig.",
+    "ACCOUNT_DELETED": "Ihr Konto wurde erfolgreich gelöscht."
   },
   "LOADING": {
     "DEFAULT": "Lädt...",
