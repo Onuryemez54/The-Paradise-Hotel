@@ -139,6 +139,20 @@ It showcases both **frontend excellence** and **backend data integrity**.
 
 ---
 
+## 🔐 Account Deletion
+
+The application supports secure account deletion.
+
+When a user deletes their account:
+
+- The account is removed from Supabase Authentication
+- All related records are deleted from the database
+- The user session is invalidated automatically
+
+This process is executed server-side to ensure security and data integrity.
+
+---
+
 ### 🌍 Internationalization & Currency
 
 - Supported languages:
