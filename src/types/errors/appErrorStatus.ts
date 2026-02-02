@@ -19,6 +19,7 @@ export const appErrorStatusMap: Record<ErrorKey, number> = {
   [ErrorKey.RESET_RESTRICTED]: 403,
   [ErrorKey.EMAIL_ALREADY_VERIFIED]: 400,
   [ErrorKey.PASSWORD_RESET_REQUIRED]: 403,
+  [ErrorKey.ACCOUNT_DELETE_FAILED]: 500,
 
   [ErrorKey.NO_CODE]: 400,
   [ErrorKey.NO_TOKEN]: 400,

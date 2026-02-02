@@ -59,6 +59,7 @@ export const ERROR_ERROR_CODES: ErrorKey[] = [
   ErrorKey.INVALID_EMAIL,
   ErrorKey.SESSION_FAILED,
   ErrorKey.USER_NOT_FOUND,
+  ErrorKey.ACCOUNT_DELETE_FAILED,
 
   // User conflicts
   ErrorKey.USER_EXISTS,
@@ -116,4 +117,5 @@ export const SUCCESS_CODES: SuccessKey[] = [
 
   // feedback
   SuccessKey.FEEDBACK_SENT,
+  SuccessKey.ACCOUNT_DELETED,
 ];
