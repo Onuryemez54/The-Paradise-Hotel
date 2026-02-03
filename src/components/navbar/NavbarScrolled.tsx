@@ -7,7 +7,7 @@ export const NavbarScrolled = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 30);
     };
 
     window.addEventListener('scroll', handleScroll);
