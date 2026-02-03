@@ -76,7 +76,7 @@ export const DeleteAccountModal = ({ open, onClose }: Props) => {
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur">
       <div
         ref={modalRef}
-        className="bg-primary-700/90 border-primary-600 text-primary-200 animate-in zoom-in relative max-h-[90vh] w-[90%] max-w-md overflow-y-auto rounded-2xl border p-4 text-center shadow-2xl duration-400 ease-in-out sm:p-8"
+        className="bg-primary-700/90 border-primary-600 text-primary-200 animate-in fade-in slide-in-from-bottom-4 relative max-h-[90svh] w-[90%] max-w-md overflow-y-auto rounded-2xl border p-4 text-center shadow-2xl duration-400 ease-in-out sm:p-8"
       >
         <CustomTitle
           variant="subheading"

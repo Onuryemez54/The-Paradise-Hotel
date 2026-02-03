@@ -21,7 +21,7 @@ export const HeroSlider = () => {
   }, []);
 
   return (
-    <section className="relative min-h-dvh w-full overflow-hidden">
+    <section className="relative min-h-svh w-full overflow-hidden">
       <div className="absolute inset-0">
         {images.map((img, i) => (
           <motion.div

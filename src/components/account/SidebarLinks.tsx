@@ -48,8 +48,8 @@ export const SidebarLinks = () => {
   );
 
   return (
-    <div className="flex h-full w-full flex-row flex-wrap items-center justify-between sm:flex-col sm:items-stretch sm:gap-4">
-      <ul className="flex gap-4 sm:flex-col sm:gap-3">
+    <div className="flex h-full w-full flex-row flex-wrap items-center justify-between sm:flex-col sm:items-stretch sm:gap-10">
+      <ul className="flex gap-2 sm:flex-col sm:gap-3">
         {navLinks.map((link) => {
           const isActive = pathName === link.href;
           return (
@@ -81,14 +81,14 @@ export const SidebarLinks = () => {
           mode="account"
           i18nKey={ButtonKey.LOGOUT}
           as="li"
-          icon={<LogOutIcon size={20} />}
+          icon={<LogOutIcon size={16} />}
         />
         <CustomButton
           variant="delete_account"
           mode="account"
           i18nKey={ButtonKey.DELETE_ACCOUNT}
           as="li"
-          icon={<UserMinus size={20} />}
+          icon={<UserMinus size={16} />}
           onAction={() => setShowDeleteModal(true)}
         />
       </ul>
