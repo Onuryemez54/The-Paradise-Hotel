@@ -3,7 +3,7 @@ import { BrandLogo } from '../common/BrandLogo';
 import { BrandName } from '../common/BrandName';
 import { ListItemKey } from '@/types/i18n/keys';
 
-export async function Footer() {
+export const Footer = () => {
   return (
     <footer className="bg-primary-900/80 text-footer-foreground/70 border-border/80 mt-8 w-full border-t py-6 lg:py-10 2xl:py-16">
       <div className="mx-auto max-w-7xl px-6 md:px-8">
@@ -47,4 +47,4 @@ export async function Footer() {
       </div>
     </footer>
   );
-}
+};

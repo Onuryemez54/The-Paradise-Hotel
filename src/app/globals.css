@@ -497,3 +497,7 @@
     animation: toast-progress linear forwards;
   }
 }
+
+html {
+  scrollbar-gutter: stable;
+}

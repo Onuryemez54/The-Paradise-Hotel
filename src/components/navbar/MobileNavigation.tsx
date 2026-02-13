@@ -21,18 +21,18 @@ export const MobileNavigation = ({}) => {
   }, []);
 
   return (
-    <>
+    <div className="flex md:hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          'hover:text-nav-hover-foreground text-nav-foreground flex cursor-pointer p-1 transition duration-300 ease-in-out hover:scale-105 md:hidden',
+          'hover:text-nav-hover-foreground text-nav-foreground cursor-pointer p-1 transition duration-300 ease-in-out hover:scale-105',
           isOpen ? 'rotate-90' : 'rotate-0'
         )}
       >
         {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
       </button>
 
-      {isOpen && <MobileSidebarPortal isOpen={isOpen} setIsOpen={setIsOpen} />}
-    </>
+      <MobileSidebarPortal isOpen={isOpen} setIsOpen={setIsOpen} />
+    </div>
   );
 };

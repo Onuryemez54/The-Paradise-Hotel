@@ -15,7 +15,7 @@ export const ScrollToTopButton = () => {
         setVisible(true);
       }
 
-      if (currentY < lastScrollY.current) {
+      if (currentY < lastScrollY.current && currentY < 300) {
         setVisible(false);
       }
 

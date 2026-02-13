@@ -15,7 +15,7 @@ const LOCALES = [
   { code: 'de', label: 'DE' },
 ];
 
-export function LocaleSwitcher() {
+export const LocaleSwitcher = () => {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -45,4 +45,4 @@ export function LocaleSwitcher() {
       </SelectContent>
     </Select>
   );
-}
+};

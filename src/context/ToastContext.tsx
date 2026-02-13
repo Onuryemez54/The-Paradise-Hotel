@@ -19,8 +19,16 @@ export type ToastContextValue = {
 
 const ToastContext = createContext<ToastContextValue | null>(null);
 
+const MAX_TOAST = 3;
+
 export function ToastProvider({ children }: { children: ReactNode }) {
   const [toasts, setToasts] = useState<ToastItemType[]>([]);
+
+  const requestCloseToast = useCallback((id: string) => {
+    setToasts((prev) =>
+      prev.map((t) => (t.id === id && !t.leaving ? { ...t, leaving: true } : t))
+    );
+  }, []);
 
   const removeToast = useCallback((id: string) => {
     setToasts((prev) => prev.filter((t) => t.id !== id));
@@ -28,23 +36,33 @@ export function ToastProvider({ children }: { children: ReactNode }) {
 
   const showToast = useCallback(
     (type: ToastType, message: string, duration = 3000, progress = false) => {
-      const id = nanoid();
+      setToasts((prev) => {
+        const alreadyExists = prev.some(
+          (t) => t.message === message && t.type === type && !t.leaving
+        );
+        if (alreadyExists) return prev;
 
-      setToasts((prev) => [
-        ...prev,
-        {
+        if (prev.length >= MAX_TOAST) return prev;
+
+        const id = nanoid();
+
+        const newToast: ToastItemType = {
           id,
           type,
           message,
           duration,
           progress,
-          onClose: () => removeToast(id),
-        },
-      ]);
+          leaving: false,
+          onRequestClose: () => requestCloseToast(id),
+          onRemove: () => removeToast(id),
+        };
 
-      setTimeout(() => removeToast(id), duration + 300);
+        setTimeout(() => requestCloseToast(id), duration);
+
+        return [...prev, newToast];
+      });
     },
-    [removeToast]
+    [removeToast, requestCloseToast]
   );
 
   const value: ToastContextValue = {

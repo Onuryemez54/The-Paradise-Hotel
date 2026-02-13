@@ -4,7 +4,7 @@ import { DesktopNavigation } from './DesktopNavigation';
 import { LocaleSwitcher } from './LocaleSwitcher';
 import { MobileNavigation } from './MobileNavigation';
 
-const Navigation = () => {
+export const Navigation = () => {
   return (
     <nav className="flex items-center justify-center gap-1 sm:gap-2">
       <DesktopNavigation />
@@ -14,5 +14,3 @@ const Navigation = () => {
     </nav>
   );
 };
-
-export default Navigation;

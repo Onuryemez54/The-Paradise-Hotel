@@ -1,5 +1,5 @@
 'use client';
-import { JSX, useEffect, useState } from 'react';
+import { JSX, useEffect } from 'react';
 import {
   X,
   CheckCircle2,
@@ -15,20 +15,20 @@ export const CustomToast = ({
   message,
   duration,
   progress,
-  onClose,
+  leaving,
+  onRequestClose,
+  onRemove,
 }: ToastItemType) => {
-  const [leaving, setLeaving] = useState(false);
   const isError = type === 'error';
   const isSuccess = type === 'success';
 
   useEffect(() => {
+    if (!leaving) return;
     const timer = setTimeout(() => {
-      setLeaving(true);
-      setTimeout(onClose, 250);
-    }, duration);
-
+      onRemove();
+    }, 200);
     return () => clearTimeout(timer);
-  }, [duration, onClose]);
+  }, [onRemove, leaving]);
 
   const toastTypeStyles: Record<ToastType, string> = {
     success:
@@ -91,10 +91,7 @@ export const CustomToast = ({
 
         <button
           type="button"
-          onClick={() => {
-            setLeaving(true);
-            setTimeout(onClose, 200);
-          }}
+          onClick={onRequestClose}
           className={cn('rounded-lg p-1', hoverStyles[type])}
           aria-label="Close toast"
         >
@@ -102,7 +99,6 @@ export const CustomToast = ({
         </button>
       </div>
 
-      {/* progress bar */}
       {progress && isSuccess && (
         <div className="h-1 w-full overflow-hidden rounded-b-2xl bg-emerald-500/20">
           <div

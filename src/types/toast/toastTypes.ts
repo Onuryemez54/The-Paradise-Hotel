@@ -11,5 +11,8 @@ export type ToastItemType = {
   type: ToastType;
   duration?: number;
   progress?: boolean;
-  onClose: () => void;
+  leaving?: boolean;
+
+  onRequestClose: () => void;
+  onRemove: () => void;
 };
