@@ -4,7 +4,7 @@ const WINDOW_SECONDS = 60;
 const MAX_REQUESTS = 2;
 
 export const rateLimit = async (key: string) => {
-  const redisKey = `ratelimit:${key}`;
+  const redisKey = `ph:ratelimit:${key}`;
 
   const count = await redis.incr(redisKey);
 

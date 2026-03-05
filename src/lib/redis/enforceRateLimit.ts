@@ -20,11 +20,15 @@ export const enforceRateLimit = async ({
     .update(email.toLowerCase())
     .digest('hex');
 
-  const key = `${action}:${ip}:${emailHash}`;
+  const ipKey = `ph:ratelimit:ip:${action}:${ip}`;
+  const emailKey = `ph:ratelimit:email:${action}:${emailHash}`;
 
-  const allowed = await rateLimit(key);
+  const [ipAllowed, emailAllowed] = await Promise.all([
+    rateLimit(ipKey),
+    rateLimit(emailKey),
+  ]);
 
-  if (!allowed) {
+  if (!ipAllowed || !emailAllowed) {
     return { ok: false, error: ErrorKey.TOO_MANY_REQUESTS };
   }
 
